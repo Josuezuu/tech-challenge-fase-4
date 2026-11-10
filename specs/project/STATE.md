@@ -43,7 +43,7 @@ Suíte: 171 testes rápidos + 2 lentos, todos verdes.
 - [ ] Rodar com a chave do Azure e commitar as respostas gravadas
 - [ ] Rodar com as gravações do grupo; ajustar limiares de vídeo se preciso, registrando antes e depois
 - [ ] Conferir se o Text Analytics for health em `pt` marca "falta de ar" e "tontura" como `SymptomOrSign` (senão entram pela lista curada)
-- [ ] Criar o repositório no GitHub e convidar o Gabriel
+- [x] Criar o repositório no GitHub e convidar o Gabriel (`Josuezuu/tech-challenge-fase-4`, público; convite de escrita para `gaburanello` em 10/11)
 
 ## Ideias adiadas
 

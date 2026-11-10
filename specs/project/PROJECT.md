@@ -20,7 +20,7 @@ O sistema **não diagnostica**: sinaliza um desvio com a evidência e deixa a de
 
 - `ultralytics` (YOLOv8n e YOLOv8n-pose)
 - `azure-cognitiveservices-speech` e `azure-ai-textanalytics` (Speech, sentimento, frases-chave, Text Analytics for health)
-- `librosa` e `praat-parselmouth` (atributos acústicos da voz)
+- `praat-parselmouth` + `numpy` (atributos acústicos da voz: F0, jitter, shimmer, HNR, energia, pausas)
 - `pandas` e `numpy` (séries de sinais vitais e detectores)
 - `streamlit` (painel) e `openai` (`gpt-4o-mini` para o texto do alerta, Whisper como linha de base)
 

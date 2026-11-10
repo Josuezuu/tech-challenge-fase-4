@@ -66,3 +66,38 @@ As gravações do grupo (V1–V5) chegam até 12/11 em `data/gravacoes/`. Até l
 ## Fora
 
 Vídeo de cirurgia, OpenPose, treino de modelo, rastreamento com ReID, câmera ao vivo.
+
+## Progresso
+
+- **T1 config** — `video/config.py` (`ConfigInferencia`, `ConfigPaciente`, `Exercicio` + `EXERCICIOS`, `ConfigFisioterapia`, `ConfigQuarto`) e `movimentacao/config.py` (`ConfigMovimentacao`).
+  - SPEC_DEVIATION: `video/tipos.py` (novo) guarda `Pessoa`, `Objeto`, `QuadroAnalisado`; motivo: os módulos puros usam esses tipos e não devem importar o YOLO de `inferencia.py`.
+- **T2 geometria** — ângulo, centro do quadril/ombros, inclinação do tronco, tamanho do corpo (maior lado da caixa, não depende da orientação), deslocamento médio, mediana móvel, ampliação de caixa, ponto no polígono. 6 testes.
+- **T3 sintético** — `tests/video/sintetico.py`: postura (quadril, inclinação, braço) → 17 pontos COCO; cenas prontas da spec.
+- **T4 fisioterapia** — máquina de estados; 10 repetições com 3 de pico 55° → 10 e 3 eventos. Agachamento testado com série de ângulos.
+  - SPEC_DEVIATION: a repetição termina a `histerese` (5°) aquém do limiar, não exatamente no limiar; motivo: tremor do esqueleto em torno de 30° contaria repetições falsas.
+  - Achado: a mediana de 3 quadros corta um pico de um quadro só; a série sintética segura o pico 0,6 s (como no exercício real).
+- **T5 paciente + quarto** — `paciente.py` (regra inicial: mais perto do leito ou maior caixa; depois o mais próximo, até 1 corpo por quadro; perdeu por 3 s, escolhe de novo). `quarto.py`: zona, `EstadoQuadro` por quadro, `detectar_quedas`, `detectar_ausencia`. 11 testes: queda → 1 evento (descida 0,49 corpo); deitar devagar na cama, deitar devagar no chão, o mesmo movimento da queda caindo sobre o leito, queda com recuperação em 0,6 s e queda no fim do vídeo sem 2 s para confirmar → nenhum.
+  - Decisão: `saida_do_leito` e `imobilidade_prolongada` (`Fonte.MOVIMENTACAO`) saem de `movimentacao/detector.py`, como diz o RF-56; `queda` e `paciente_ausente` (`Fonte.VIDEO`) saem de `quarto.py`.
+  - Decisão: "tamanho do corpo" = maior lado da caixa (altura em pé, comprimento deitado), régua igual antes e depois da queda.
+- **T6 movimentação** — `serie.calcular(estados, janela_s)` e `detector.detectar` (saída do leito, imobilidade, agitação). 8 testes: série feita à mão; deitar → nada; levantar e sair → 1 `saida_do_leito`; virar na borda 1 s → nada; parado 70 s → 1 `imobilidade_prolongada`; 50 s → nada; 10 s de agitação depois de 2 min calmos → 1 `movimentacao_atipica`; menos de 6 janelas de histórico → nada.
+  - SPEC_DEVIATION: agitação só com z > +4 (a spec diz |z| > 4); motivo: z muito negativo é o paciente sossegando (ex.: dormiu depois de andar), e a falta de movimento já tem o evento `imobilidade_prolongada`.
+  - Decisão: piso de 0,01 corpo/s no MAD, senão uma série calma quase constante dá z infinito ao menor movimento.
+  - Decisão: velocidade = deslocamento médio dos pontos ÷ tamanho do corpo ÷ intervalo entre quadros (corpos/s, não depende do fps); imobilidade usa a mediana móvel de 5 quadros dessa velocidade.
+  - Decisão: `instante` = começo do fato (quando saiu, quando parou, quando sumiu); `valor` = medida (duração ou z).
+- **T7 leitura, inferência, anotação** — `leitura.py` (amostragem por `grab`, só decodifica o quadro usado), `inferencia.py` (`Analisador` com os dois YOLO; cache em `results/cache_video/<sha256 do arquivo + fps + pesos + limiares>.json`), `anotacao.py` (uma passada: zona, objetos, esqueletos — paciente em verde —, rótulo do quadro, faixa vermelha 3 s depois de cada evento, `.jpg` do primeiro quadro de cada evento). Testes rápidos com vídeo sintético preto (10 s a 30 fps → 50 quadros; anotado com 78 quadros a 5 fps e recorte da queda). Teste `lento` com `bus.jpg` (3 s a 10 fps → 15 quadros, ≥ 3 pessoas por quadro, cache na 2ª execução).
+  - SPEC_DEVIATION: `video/pipeline.py` (novo) orquestra a sessão; motivo: o `run_video`, o `--avaliar` e o teste `lento` chamam o mesmo fluxo.
+  - Os recortes ficam em `results/evidencias/video/<nome>/NN_<tipo>_<t>s.jpg`; o OpenCV não escreve acento, então o texto sobreposto sai sem acento.
+- **T8 relatório, run_video, avaliação** — `relatorio.py` (`dados_da_sessao` → `ClienteLLM.redigir` com `texto_modelo_fixo`; tabela de eventos com link relativo ao recorte), `avaliacao.py` (`avaliar(anotacoes, detectados, tolerancia_s=2)`: acertos, falsos positivos, perdidos, sensibilidade e precisão por tipo; clipe sem anotação pulado com aviso), `experiments/run_video.py`. 3 testes rápidos.
+- **T9 medição** — `pytest -q`: 38 testes de vídeo rápidos (suíte inteira 119 passed, 2 deselected); `pytest -m lento`: 2 passed (~11 s).
+  - **Tempo por quadro em CPU** (YOLOv8n-pose + YOLOv8n, os dois por quadro, sem GPU): 0,07 s (640×240) a 0,10 s (810×1080, `bus.jpg`) em regime; média da execução com o aquecimento do 1º quadro, em clipe curto: 0,21–0,36 s. A 5 quadros/s analisados, 1 s de vídeo custa ~0,35–0,5 s de CPU: mais rápido que o tempo real.
+  - Correção achada nos clipes públicos (com teste): a janela de permanência da queda que termina entre dois quadros amostrados agora confirma no quadro seguinte; e quadro com a pessoa presente mas sem quadril nem ombros medidos não conta contra a confirmação.
+
+### Conjunto público de quedas (UR Fall Detection Dataset)
+
+- **Baixável sem cadastro, licença CC BY-NC-SA 4.0 (uso acadêmico não comercial)**, http://fenix.ur.edu.pl/~mkepski/ds/uf.html, citação Kwolek e Kępski (2014). `scripts/baixar_quedas.py` baixa só a câmera frontal (`*-cam0.mp4`, 640×240 com profundidade à esquerda e RGB à direita, 30 fps, ~1 MB cada) e gera `data/raw/urfall/anotacoes.json` a partir do CSV oficial de rótulos (queda = 1º quadro "deitado no chão").
+- Clipes usados: `fall-01`, `fall-10` (quedas) e `adl-01` (sentar; controle negativo). `python -m experiments.run_video --avaliar --anotacoes data/raw/urfall/anotacoes.json`:
+  - `fall-10`: queda detectada a 2,2 s (anotada 2,3 s), descida 0,50 corpo, tronco a 77°. Acerto.
+  - `fall-01`: **perdida** com os parâmetros da spec. Todos os critérios de queda se cumprem a 3,6 s (anotada 3,73 s; descida 0,56 corpo, tronco 67°), mas o clipe acaba 1,6 s depois, antes dos 2 s de permanência. Com `queda_permanencia_s=1,5` ou `1,0` ela é detectada a 3,6 s.
+  - `adl-01`: nenhum evento (tronco chega a 54°, quadril desce 0,34 corpo: abaixo dos dois limiares).
+  - Resultado: sensibilidade 1/2, precisão 1/1, 0 falso positivo (`results/avaliacao/video.json`).
+- Limite do conjunto: os clipes são cortados logo depois da queda. Pelo CSV, dos 30 clipes de queda, só 2 têm ≥ 2 s de "deitado" até o fim (mediana 0,7 s). Ele serve para conferir descida e inclinação, não a permanência; a permanência de 2 s fica para as gravações do grupo (V1–V5). O padrão segue 2 s, como na spec.

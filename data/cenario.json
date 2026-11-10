@@ -1,0 +1,40 @@
+{
+  "descricao": "Caso central do PRD (§5) e dois pacientes de contraste. Cada fonte aceita uma lista de arquivos: vale o primeiro que existir (gravação do grupo, senão amostra sintética ou clipe público).",
+  "pacientes": [
+    {
+      "paciente_id": "leito-12",
+      "sinais": {"gravacao": 1, "inicio": "2026-11-12T14:00:00", "plantar": ["queda_spo2@120:90"]},
+      "audio": {
+        "arquivo": ["data/gravacoes/A3.m4a", "data/gravacoes/A3.wav", "data/amostras/audio/sintetico_termos.wav"],
+        "inicio": "2026-11-12T14:03:00"
+      },
+      "video": {
+        "arquivo": ["data/gravacoes/V5.mp4", "data/raw/urfall/fall-10-cam0.mp4"],
+        "cenario": "quarto",
+        "inicio": "2026-11-12T14:04:00"
+      },
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 42}
+    },
+    {
+      "paciente_id": "leito-07",
+      "sinais": {"gravacao": 3, "inicio": "2026-11-12T10:00:00"},
+      "audio": {
+        "arquivo": ["data/gravacoes/A2.m4a", "data/gravacoes/A2.wav", "data/amostras/audio/sintetico_alterado.wav"],
+        "referencia": ["data/gravacoes/A1.m4a", "data/gravacoes/A1.wav", "data/amostras/audio/sintetico_normal.wav"],
+        "inicio": "2026-11-12T10:30:00"
+      },
+      "video": {
+        "arquivo": ["data/gravacoes/V2.mp4"],
+        "cenario": "fisioterapia",
+        "exercicio": "elevacao_lateral",
+        "inicio": "2026-11-12T11:00:00"
+      },
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 43}
+    },
+    {
+      "paciente_id": "leito-03",
+      "sinais": {"gravacao": 32, "inicio": "2026-11-12T09:00:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 44}
+    }
+  ]
+}

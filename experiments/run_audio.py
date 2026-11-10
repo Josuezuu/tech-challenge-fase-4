@@ -41,7 +41,7 @@ def gravar_json(caminho: Path, dados: dict) -> None:
     caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Termos críticos e alteração vocal em áudio de consulta.")
     parser.add_argument("--audio", type=Path, help="áudio da consulta (m4a, mp3, mp4, ogg, wav)")
     parser.add_argument("--referencia", type=Path, help="tomada de referência do mesmo paciente")
@@ -50,8 +50,9 @@ def main() -> None:
                         help="horário do início da gravação (ISO, ex.: 2026-11-13T09:00:00)")
     parser.add_argument("--whisper", action="store_true", help="transcreve também com o Whisper e calcula o WER")
     parser.add_argument("--avaliar", action="store_true", help="grava results/avaliacao/audio.json")
-    args = parser.parse_args()
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # console do Windows vem em cp1252
+    args = parser.parse_args(argv)
+    if hasattr(sys.stdout, "reconfigure"):  # console do Windows vem em cp1252; capturado não tem reconfigure
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     if not args.audio and not args.avaliar:
         parser.error("informe --audio ou --avaliar")
@@ -79,7 +80,8 @@ def main() -> None:
             print(f"{p['referencia']} × {p['atual']}: alteração={p['alteracao']} "
                   f"(esperada {p['alteracao_esperada']}) alterados={p['alterados']} termos={p['termos']['achados']}")
         print(f"resumo: {resultado['resumo']} → {destino}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

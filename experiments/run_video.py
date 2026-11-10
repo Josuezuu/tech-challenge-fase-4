@@ -68,7 +68,7 @@ def _avaliar(args: argparse.Namespace) -> None:
     print(f"avaliação: {destino}")
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--video", type=Path, help="vídeo gravado (.mp4, .avi)")
     p.add_argument("--cenario", choices=["quarto", "fisioterapia"], default="quarto")
@@ -79,18 +79,19 @@ def main() -> None:
     p.add_argument("--sem-cache", action="store_true", help="roda o modelo mesmo com cache")
     p.add_argument("--avaliar", action="store_true", help="avalia os clipes de --anotacoes")
     p.add_argument("--anotacoes", type=Path, default=CAMINHOS.gravacoes / "anotacoes.json")
-    args = p.parse_args()
+    args = p.parse_args(argv)
     logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(message)s")
 
     if args.avaliar:
         _avaliar(args)
-        return
+        return 0
     if args.video is None:
         p.error("informe --video (ou --avaliar)")
     r = processar(args.video, args.cenario, args.paciente or args.video.stem, datetime.fromisoformat(args.inicio),
                   args.fps, args.exercicio, usar_cache=not args.sem_cache)
     print(_resumo(args.video.name, r))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

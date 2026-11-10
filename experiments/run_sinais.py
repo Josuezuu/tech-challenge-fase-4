@@ -14,14 +14,13 @@ import sys
 import time
 from datetime import datetime
 
-import pandas as pd
-
 from monitor.config import CAMINHOS, SEMENTE
 from monitor.eventos import Evento, salvar_jsonl
 from monitor.sinais import bidmc
 from monitor.sinais.avaliacao import avaliar
 from monitor.sinais.config import AVALIACAO, CONFIG
 from monitor.sinais.detectores import MonitorVitais
+from monitor.sinais.evidencia import gravar_evidencia
 from monitor.sinais.fluxo import reproduzir
 from monitor.sinais.injecao import TIPOS, Especificacao, plantar, pressao_sintetica
 
@@ -39,17 +38,6 @@ def especificacao(texto: str) -> Especificacao:
     if esp.tipo not in TIPOS:
         raise argparse.ArgumentTypeError(f"tipo {esp.tipo!r} desconhecido; use {', '.join(TIPOS)}")
     return esp
-
-
-def gravar_evidencia(df: pd.DataFrame, evento: Evento, inicio: datetime) -> None:
-    """CSV com os 120 s ao redor do evento, no caminho que a evidência já aponta."""
-    t = (evento.instante - inicio).total_seconds()
-    meia = CONFIG.meia_janela_evidencia_s
-    trecho = df[(df["t_s"] >= t - meia) & (df["t_s"] <= t + meia)].copy()
-    trecho.insert(1, "instante", [(inicio + pd.Timedelta(seconds=s)).isoformat() for s in trecho["t_s"]])
-    caminho = CAMINHOS.raiz / evento.evidencia["serie"]
-    caminho.parent.mkdir(parents=True, exist_ok=True)
-    trecho.to_csv(caminho, index=False)
 
 
 def executar_fluxo(args: argparse.Namespace) -> int:

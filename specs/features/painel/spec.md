@@ -52,3 +52,15 @@ Aceite: `streamlit.testing.v1.AppTest.from_file("app/painel.py").run()` sem exce
 2. `experiments/run_avaliacao.py` + teste do formato do `resultados.json`.
 3. `app/painel.py` + teste com `AppTest` nos dois estados.
 4. README: instalação, `check_env`, execução de cada fonte, cenário, painel, o que roda sem chave.
+
+## Progresso
+
+**Status:** concluída, 10/11/2026.
+
+**Feito:** `src/monitor/cenario.py` (orquestração; fonte ausente é pulada e fonte com erro não derruba as outras; vídeo anotado recodificado em H.264), `data/cenario.json` (leito-12 caso central, leito-07 voz alterada e fisioterapia, leito-03 SpO2 baixa real do BIDMC 32), `experiments/run_cenario.py`, `experiments/run_avaliacao.py`, `app/painel.py`, `tests/painel/` (cenário com fontes falsas, limpeza, painel vazio e painel com cenário em todos os pacientes via `AppTest`). `gravar_evidencia` saiu do `run_sinais` para `monitor/sinais/evidencia.py`; `run_video` e `run_audio` passaram a aceitar `main(argv)`.
+
+**Execução real** (sem chave; vídeo do leito-12 = `fall-10-cam0` do UR Fall; áudio = amostras sintéticas): 21 eventos, 18 alertas (8 críticos, 8 atenção, 2 informativos), **2 concordâncias** no leito-12 — 14:03:03 áudio + sinais vitais e 14:04:02 áudio + sinais + vídeo. A primeira concordância sai 179 s depois do primeiro evento que ela reúne. Vídeo do leito-07 pulado (sem `V2.mp4`).
+
+**Avaliação consolidada:** as cinco seções do `results/resultados.json` com `status: ok` (sinais nas 53 gravações, vídeo nos 3 clipes do UR Fall, áudio nas 3 amostras sintéticas, prescrições, cenário).
+
+SPEC_DEVIATION: o manifesto traz `primeira_concordancia` além de `primeiro_critico`. O primeiro crítico do cenário é uma prescrição de severidade máxima (dias antes), que não mede a fusão; o RF-69 passa a ser lido pela primeira concordância.

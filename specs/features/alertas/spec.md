@@ -44,3 +44,19 @@ Receber os Eventos de todas as fontes, decidir o nível do alerta (com **fusão 
 ## Fora
 
 Webhook (D-2), escalonamento por tempo sem resposta, confirmação de leitura pela equipe.
+
+## Progresso
+
+**Status:** concluída (tarefas 1–4), 10/11/2026.
+
+**Feito:** `src/monitor/alertas/` (`config.py`, `motor.py`, `redacao.py`, `saida.py`, `avaliacao.py`), `experiments/run_alertas.py`, `tests/alertas/` (17 testes: cenário 14:02/14:04, um alerta por evento, vídeo + movimentação não concordam, 10 min concordam e 11 min não, INFO fora da concordância, sem repetição sem modalidade nova, janela expirada, intervalo por `(paciente, tipo, nível)`, ordem embaralhada com 5 sementes, modelo fixo, guarda com 5 textos ruins, ida e volta em JSONL com evidência).
+
+**Execução real** (`python -m experiments.run_alertas`, sem chave da OpenAI → texto do modelo fixo, `texto_origem = "simulado"`): 2 arquivos de eventos (`sinais_vitais_leito-12` desta frente e `audio_leito-12` da frente de áudio) → 7 alertas: 1 CRÍTICO (`severidade_maxima`, SpO2 85%), 4 ATENÇÃO, 2 INFORMATIVO. Nenhuma concordância, porque os sinais estão em 12/11 14:00 e o áudio em 13/11 09:00. `results/avaliacao/alertas.json` traz contagem por nível, regra, paciente e origem do texto. Rodada final, já com as prescrições (8 pacientes) e os eventos de vídeo da outra frente: 16 arquivos → 24 alertas (5 CRÍTICO, 17 ATENÇÃO, 2 INFORMATIVO), ainda sem concordância — as fontes não se sobrepõem no tempo enquanto o `data/cenario.json` não alinhar os horários.
+
+**RF-69 (latência ponta a ponta):** `avaliacao.latencia_ponta_a_ponta(alerta)` = instante do alerta de concordância − instante do primeiro evento que ele carrega. Simulação em memória com os eventos reais de sinais (BIDMC 01, `queda_spo2@120`, início 14:00) + uma queda de vídeo feita à mão às 14:03:30 (horário do `data/cenario.json` da spec do painel): CRÍTICO `concordancia` às 14:03:30 com 4 eventos, latência **206 s** (o primeiro evento da janela é o `fr_alta` das 14:00:04). O número oficial sai do `run_cenario` (feature painel).
+
+**Desvios da spec:**
+- SPEC_DEVIATION: quando a concordância é barrada pela regra de não repetição, o evento **cai na regra seguinte** (MAXIMA → CRÍTICO `severidade_maxima`; ALTA → ATENÇÃO `severidade_alta`, ambos sujeitos ao intervalo de 5 min). Motivo: a spec não diz se o evento é absorvido; absorver esconderia, por exemplo, uma segunda queda (MAXIMA) logo depois de um alerta de concordância.
+- SPEC_DEVIATION: o RF-69 está em `monitor.alertas.avaliacao` (convenção 9 da fundação), que também expõe `avaliar(alertas) -> dict`; `run_alertas` grava `results/avaliacao/alertas.json`. O `resultados.json` consolidado é da feature painel.
+- Texto da LLM com origem `real` vira `texto_origem = "openai"` (o campo do `Alerta` documenta `openai | gravado | simulado`); texto reprovado pela guarda vira modelo fixo com `"simulado"`. A guarda também recusa texto vazio. Termos proibidos são comparados sem acento (`monitor.nuvem.lexico.normalizar`). `run_alertas --sem-llm` pula a OpenAI.
+- Empate de instante: a ordem total usa `(instante, paciente, fonte, tipo, severidade, descrição)`; o `id` do alerta é um hash desses campos, então o mesmo alerta tem o mesmo id em qualquer ordem de entrada.

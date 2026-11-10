@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "monitor-multimodal"
+version = "0.1.0"
+description = "Monitoramento multimodal de pacientes: vídeo, áudio, sinais vitais e prescrições com alertas"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+markers = [
+    "lento: carrega modelo YOLO ou processa mídia real (rode com -m lento)",
+    "nuvem: chama serviço real do Azure ou da OpenAI (exige chave no .env)",
+]
+addopts = "-m 'not lento and not nuvem'"

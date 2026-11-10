@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+
+.env
+
+# Pesos baixados automaticamente
+models/
+*.pt
+
+# Dados brutos e artefatos gerados: recriados por script
+data/raw/
+data/gravacoes/
+results/
+runs/
+
+.ipynb_checkpoints/

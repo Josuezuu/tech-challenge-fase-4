@@ -48,7 +48,7 @@ Dados públicos:
 
 ```bash
 python scripts/baixar_bidmc.py    # 53 gravações do BIDMC (PhysioNet, acesso aberto)
-python scripts/baixar_quedas.py   # 3 clipes do UR Fall Detection Dataset (CC BY-NC-SA 4.0)
+python scripts/baixar_quedas.py   # 5 clipes do UR Fall Detection Dataset (CC BY-NC-SA 4.0)
 ```
 
 Os pesos do YOLOv8 (`models/`) baixam sozinhos no primeiro uso.
@@ -135,8 +135,8 @@ docs/execucoes_gravadas/  respostas reais gravadas dos serviços de nuvem
 ## Dados e limites
 
 - **BIDMC PPG and Respiration** (PhysioNet, acesso aberto): sinais de pacientes de UTI a 1 Hz. Não tem pressão arterial; a PA é sintética e marcada como tal quando usada.
-- **UR Fall Detection Dataset** (CC BY-NC-SA 4.0): clipes de queda usados para avaliar o vídeo enquanto as gravações do grupo não chegam. Os clipes terminam pouco depois da queda, o que limita a confirmação de permanência no chão.
+- **UR Fall Detection Dataset** (CC BY-NC-SA 4.0): clipes de queda usados para avaliar o vídeo enquanto as gravações do grupo não chegam. Os clipes terminam pouco depois da queda: só `fall-10` e `fall-20` ficam os 2 s no chão que confirmam a queda. A avaliação separa a queda perdida pelo corte do clipe (`sensibilidade_confirmavel`) da perda de verdade.
 - **Áudio sintético** (voz Microsoft Maria, pt-BR) em `data/amostras/audio/`: serve para o fluxo rodar. A voz sintética não tem a variação de jitter e shimmer de uma voz humana; a alteração das amostras vem de taxa de fala e pausas.
 - **Prescrições sintéticas** com catálogo didático, **não é referência clínica**. Precisão 1,0 nelas mede consistência entre o que foi plantado e o que é detectado, não generalização.
-- **Vídeos e áudios encenados pelo grupo**, com consentimento (LGPD: dado de saúde é dado sensível). Nenhum dado real de paciente é usado.
+- **Vídeos e áudios encenados pelo grupo**, com consentimento (LGPD: dado de saúde é dado sensível). Nenhum dado real de paciente é usado. As gravações de queda do Josué (`data/gravacoes/*.mp4`, com a anotação em `anotacoes.json`) são versionadas com o consentimento dele; o `run_avaliacao` as usa no lugar do UR Fall, e o painel mostra cada uma, anotada, na aba Avaliação.
 - **Fora do escopo:** vídeo de cirurgia (sem dado público viável), OpenPose (exige GPU; o YOLOv8-pose faz a mesma tarefa), PhysioNet credenciado (MIMIC), AudioSet (não tem voz de paciente) e treino de modelo próprio.

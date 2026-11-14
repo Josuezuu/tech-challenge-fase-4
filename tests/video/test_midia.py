@@ -10,7 +10,7 @@ import pytest
 from monitor.config import Credenciais
 from monitor.nuvem.gravacao import Gravador
 from monitor.nuvem.openai_llm import ClienteLLM
-from monitor.video.anotacao import gravar_anotado
+from monitor.video.anotacao import gravar_anotado, para_h264
 from monitor.video.avaliacao import avaliar
 from monitor.video.leitura import iterar_quadros, ler_metadados
 from monitor.video.paciente import escolher_paciente
@@ -50,6 +50,18 @@ def test_video_anotado_tem_a_duracao_amostrada_e_recorte_da_queda(tmp_path):
     assert len(recortes) == 1 and recortes[0].name.startswith("00_queda_")
     imagem = cv2.imread(str(recortes[0]))
     assert imagem is not None and imagem.sum() > 0  # o esqueleto e o aviso foram desenhados
+
+
+def test_para_h264_recodifica_o_video_do_opencv_e_reaproveita_a_conversao(tmp_path):
+    origem = s.gravar_video(tmp_path / "anotado.mp4", np.zeros((48, 64, 3), np.uint8), segundos=1, fps=5)
+    destino = para_h264(origem)
+    assert destino == tmp_path / "anotado_h264.mp4" and destino.stat().st_size > 0
+    cap = cv2.VideoCapture(str(destino))
+    codec = int(cap.get(cv2.CAP_PROP_FOURCC)).to_bytes(4, "little").decode("ascii", "replace")
+    cap.release()
+    assert codec.lower() in ("avc1", "h264")  # o navegador toca H.264; o mp4v do OpenCV, não
+    antes = destino.stat().st_mtime_ns
+    assert para_h264(origem) == destino and destino.stat().st_mtime_ns == antes  # já convertido: não refaz
 
 
 def test_relatorio_sem_chave_usa_o_modelo_fixo_e_linka_o_recorte(tmp_path):
@@ -95,6 +107,8 @@ def test_avaliacao_conta_acerto_com_tolerancia_falso_positivo_e_pula_clipe_sem_a
     assert r["por_tipo"]["queda"] == {"esperados": 1, "acertos": 1, "falsos_positivos": 0,
                                       "sensibilidade": 1.0, "precisao": 1.0}
     assert r["total"]["sensibilidade"] == 0.5
+    assert r["total"]["precisao"] == 0.333  # 1 acerto, 2 falsos positivos
+    assert r["total"]["f1"] == 0.4
     assert r["pulados"] == ["extra.mp4"]
 
 
@@ -102,3 +116,29 @@ def _cena_queda_com_zona():
     quadros = s.cena_queda()
     zona = estimar_zona(quadros)
     return quadros, escolher_paciente(quadros, zona), zona
+
+
+def test_queda_perdida_porque_o_clipe_acaba_antes_da_permanencia_sai_da_sensibilidade_confirmavel():
+    # fall-01 do UR Fall: queda anotada a 3,73 s num clipe de 5,33 s (1,6 s no chão, abaixo dos 2 s).
+    anotacoes = {
+        "curto.mp4": {"cenario": "quarto", "eventos": [{"tipo": "queda", "t_s": 3.73}]},
+        "longo.mp4": {"cenario": "quarto", "eventos": [{"tipo": "queda", "t_s": 2.3}]},
+        "longo_perdido.mp4": {"cenario": "quarto", "eventos": [{"tipo": "queda", "t_s": 1.0}]},
+    }
+    detectados = {"curto.mp4": [], "longo.mp4": [("queda", 2.2)], "longo_perdido.mp4": []}
+    duracoes = {"curto.mp4": 5.33, "longo.mp4": 4.33, "longo_perdido.mp4": 10.0}
+    r = avaliar(anotacoes, detectados, duracoes=duracoes, permanencia_s=2.0)
+    assert r["clipes"]["curto.mp4"]["perdidos"] == [{"tipo": "queda", "t_s": 3.73,
+                                                     "motivo": "clipe_acaba_antes_da_confirmacao",
+                                                     "segundos_no_chao_no_clipe": 1.6}]
+    assert r["clipes"]["longo_perdido.mp4"]["perdidos"] == [{"tipo": "queda", "t_s": 1.0}]  # perda de verdade
+    assert r["total"]["sensibilidade"] == 0.333  # o número bruto não muda
+    assert r["total"]["perdidos_sem_cauda"] == 1
+    assert r["total"]["sensibilidade_confirmavel"] == 0.5
+
+
+def test_sem_duracao_nenhuma_perda_e_reclassificada():
+    anotacoes = {"V5.mp4": {"cenario": "quarto", "eventos": [{"tipo": "queda", "t_s": 3.73}]}}
+    r = avaliar(anotacoes, {"V5.mp4": []})
+    assert "motivo" not in r["clipes"]["V5.mp4"]["perdidos"][0]
+    assert r["total"]["sensibilidade_confirmavel"] == 0.0

@@ -215,6 +215,72 @@ def area_prescricoes(fonte: dict[str, Any], eventos: list[dict[str, Any]]) -> No
             st.markdown(f"- **{hora(e['instante'])}** `{e['tipo']}`: {e['descricao']}")
 
 
+def observacao_video(t: dict[str, Any]) -> str:
+    texto = f"{t.get('acertos')}/{t.get('esperados')} eventos, {t.get('falsos_positivos')} falsos positivos"
+    if t.get("perdidos_sem_cauda"):
+        texto += f"; {t.get('acertos')}/{t['esperados'] - t['perdidos_sem_cauda']} nos clipes confirmáveis"
+    return texto
+
+
+def legenda_video(t: dict[str, Any]) -> str | None:
+    """Explica a queda perdida porque o clipe acaba antes da confirmação (longa demais para a célula)."""
+    n = t.get("perdidos_sem_cauda")
+    if not n:
+        return None
+    return (f"Vídeo: {n} das {t['esperados']} quedas anotadas acontecem perto do fim do clipe, que acaba antes dos "
+            f"{t.get('permanencia_s', 2):g} s no chão que confirmam a queda. Elas contam no recall bruto "
+            f"({t.get('sensibilidade')}) e ficam fora do recall nos clipes confirmáveis "
+            f"({t.get('sensibilidade_confirmavel')}).")
+
+
+def origem_extracao(origem: dict[str, int]) -> str:
+    """{'simulado': 259} → '259 itens em modo simulado'."""
+    partes = [f"{n} {'item' if n == 1 else 'itens'} em modo {modo}" for modo, n in origem.items()]
+    return ", ".join(partes) or "origem não registrada"
+
+
+TIPOS_VIDEO = {"queda": "queda", "queda_com_recuperacao": "queda com recuperação", "saida_do_leito": "saída do leito",
+               "imobilidade_prolongada": "imobilidade prolongada", "paciente_ausente": "paciente ausente",
+               "movimentacao_atipica": "movimentação atípica", "amplitude_insuficiente": "amplitude insuficiente"}
+
+
+def area_videos_avaliados(v: dict[str, Any]) -> None:
+    """Um bloco por clipe anotado: vídeo com o esqueleto, o que era esperado e o que o detector achou."""
+    clipes = {nome: c for nome, c in v.get("clipes", {}).items() if c.get("sessao")}
+    if not clipes:
+        return
+    st.subheader("Vídeos avaliados")
+    st.caption(f"Anotação: `{v.get('anotacoes', '?')}` · acerto = mesmo tipo a até {v.get('tolerancia_s', 2):g} s "
+               "do instante anotado")
+    for nome, c in clipes.items():
+        sessao = c["sessao"]
+        perdidos = len(c.get("perdidos", []))
+        sinal = "✓" if not perdidos and not c.get("falsos_positivos") else "✗"
+        titulo = (f"{sinal} {nome} · {c.get('acertos')}/{c.get('esperados')} esperados"
+                  + (f" · {c['falsos_positivos']} falso(s) positivo(s)" if c.get("falsos_positivos") else ""))
+        with st.expander(titulo):
+            video = arquivo(sessao.get("video_navegador"))
+            if video:
+                st.video(str(video))
+            linhas = [["esperado", TIPOS_VIDEO.get(a["tipo"], a["tipo"]), f"{a['t_s']:.2f} s", ""]
+                      for a in c.get("anotados", [])]
+            linhas += [["detectado", TIPOS_VIDEO.get(e["tipo"], e["tipo"]), f"{e['t_s']:.2f} s",
+                        SEVERIDADES.get({"INFO": 1, "ALTA": 2, "MAXIMA": 3}.get(e["severidade"], 0), "")]
+                       for e in sessao.get("eventos", [])]
+            if linhas:
+                st.dataframe(pd.DataFrame(linhas, columns=["", "Evento", "Instante no vídeo", "Severidade"]),
+                             hide_index=True, width="stretch")
+            else:
+                st.markdown("Nada esperado e nada detectado.")
+            for e in sessao.get("eventos", []):
+                st.markdown(f"- **{e['t_s']:.1f} s** `{e['tipo']}`: {e['descricao']}")
+                recorte = arquivo(e.get("recorte"))
+                if recorte:
+                    st.image(str(recorte), width=360)
+            for d in c.get("perdidos", []):
+                st.markdown(f"- :red[**perdido**] {TIPOS_VIDEO.get(d['tipo'], d['tipo'])} anotado a {d['t_s']:.2f} s")
+
+
 def area_avaliacao() -> None:
     r = ler_json(RESULTADOS / "resultados.json")
     if r is None:
@@ -230,28 +296,33 @@ def area_avaliacao() -> None:
     v = r.get("video", {})
     if v.get("status") == "ok":
         t = v["total"]
-        linhas.append(["Vídeo (clipes anotados)", t.get("sensibilidade"), None, None,
-                       f"{t.get('acertos')}/{t.get('esperados')} eventos, {t.get('falsos_positivos')} falsos positivos"])
+        linhas.append(["Vídeo (clipes anotados)", t.get("sensibilidade"), t.get("precisao"), t.get("f1"),
+                       observacao_video(t)])
     p = r.get("prescricoes", {})
     if p.get("status") == "ok":
         g = p["geral"]
         linhas.append(["Prescrições (sintéticas)", g["recall"], g["precisao"], g["f1"],
-                       f"extração: {p['extracao']['acerto_item']} dos itens ({p['extracao']['origem']})"])
+                       f"extração do texto livre: {p['extracao']['acerto_item']:.0%} dos itens certos "
+                       f"({origem_extracao(p['extracao'].get('origem', {}))})"])
     a = r.get("audio", {})
     if a.get("status") == "ok":
         m = a["resumo"]
-        linhas.append(["Áudio: termos críticos", m.get("termos_recall"), m.get("termos_precisao"), None,
+        linhas.append(["Áudio: termos críticos", m.get("termos_recall"), m.get("termos_precisao"), m.get("termos_f1"),
                        f"alteração vocal certa em {m.get('acertos_alteracao')}/{m.get('pares_com_gabarito')} pares"
                        + (" (amostras sintéticas)" if m.get("so_amostras_sinteticas") else "")])
     if linhas:
         st.dataframe(pd.DataFrame(linhas, columns=["Fonte", "Recall", "Precisão", "F1", "Observação"]),
                      hide_index=True, use_container_width=True)
+    if v.get("status") == "ok" and (legenda := legenda_video(v["total"])):
+        st.caption(legenda)
     c = r.get("cenario", {})
     if c.get("primeira_concordancia"):
         pc = c["primeira_concordancia"]
         st.markdown(f"**Cenário:** primeira concordância em {pc['paciente_id']} às {hora(pc['instante'])} "
                     f"({', '.join(pc['modalidades'])}), {pc['segundos_desde_primeiro_evento']:.0f} s depois do "
                     f"primeiro evento que ela reúne.")
+    if v.get("status") == "ok":
+        area_videos_avaliados(v)
     with st.expander("resultados.json completo"):
         st.json(r)
 

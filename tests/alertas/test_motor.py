@@ -33,6 +33,13 @@ def test_cenario_spo2_seguido_de_queda():
     assert latencia_ponta_a_ponta(alertas[1]) == 120
 
 
+def test_queda_com_recuperacao_sozinha_e_atencao_e_com_outra_modalidade_e_critico():
+    recuperou = ev(4, Fonte.VIDEO, "queda_com_recuperacao", Severidade.ALTA)
+    assert resumo(MotorAlertas().processar_todos([recuperou])) == [("14:04", NivelAlerta.ATENCAO, "severidade_alta", 1)]
+    spo2 = ev(2, Fonte.SINAIS_VITAIS, "spo2_baixa", Severidade.ALTA)
+    assert resumo(MotorAlertas().processar_todos([spo2, recuperou]))[-1] == ("14:04", NivelAlerta.CRITICO, "concordancia", 2)
+
+
 def test_no_maximo_um_alerta_por_evento():
     eventos = [ev(m, f, t, s) for m, f, t, s in [
         (1, Fonte.SINAIS_VITAIS, "fc_alta", Severidade.ALTA),

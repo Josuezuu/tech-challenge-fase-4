@@ -84,6 +84,8 @@ def avaliar(
     vp = sum(t["verdadeiros_positivos"] for t in termos)
     fp = sum(len(t["falsos_positivos"]) for t in termos)
     fn = sum(len(t["falsos_negativos"]) for t in termos)
+    precisao = round(vp / (vp + fp), 3) if vp + fp else None
+    recall = round(vp / (vp + fn), 3) if vp + fn else None
     return {
         "pares": por_par,
         "resumo": {
@@ -93,8 +95,16 @@ def avaliar(
             "termos_vp": vp,
             "termos_fp": fp,
             "termos_fn": fn,
-            "termos_precisao": round(vp / (vp + fp), 3) if vp + fp else None,
-            "termos_recall": round(vp / (vp + fn), 3) if vp + fn else None,
+            "termos_precisao": precisao,
+            "termos_recall": recall,
+            "termos_f1": _f1(recall, precisao),
             "so_amostras_sinteticas": all(p["sintetico"] for p in por_par),
         },
     }
+
+
+def _f1(recall: float | None, precisao: float | None) -> float | None:
+    """Média harmônica; None quando falta um dos dois."""
+    if recall is None or precisao is None:
+        return None
+    return round(2 * recall * precisao / (recall + precisao), 3) if recall + precisao else 0.0

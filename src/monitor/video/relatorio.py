@@ -27,6 +27,7 @@ INSTRUCOES = (
 
 NOMES = {
     "queda": "queda",
+    "queda_com_recuperacao": "queda com recuperação",
     "saida_do_leito": "saída do leito",
     "imobilidade_prolongada": "imobilidade prolongada",
     "paciente_ausente": "paciente ausente",

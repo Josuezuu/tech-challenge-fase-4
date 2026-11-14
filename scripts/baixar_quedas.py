@@ -11,7 +11,12 @@ Só a câmera frontal (cam0, RGB, 30 fps, ~1,3 MB por clipe). O conjunto tem 30 
 oficial de rótulos por quadro (-1 não deitado, 0 caindo, 1 deitado no chão): o instante
 da queda é o primeiro quadro com rótulo 1.
 
-    python scripts/baixar_quedas.py [--clipes fall-01 fall-02 adl-01]
+    python scripts/baixar_quedas.py [--clipes fall-01 fall-02 fall-10 fall-20 adl-01]
+
+Dos 30 clipes de queda, só fall-10 e fall-20 ficam ao menos 2 s no chão (a permanência
+que confirma a queda); os dois entram para a avaliação ter quedas confirmáveis. O fall-10
+também é o vídeo do leito-12 em data/cenario.json. fall-01 e fall-02 acabam antes da
+confirmação e entram para mostrar esse limite do conjunto.
     python -m experiments.run_video --avaliar --anotacoes data/raw/urfall/anotacoes.json
 """
 
@@ -48,7 +53,7 @@ def instante_da_queda(rotulos_csv: str, clipe: str) -> float | None:
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--clipes", nargs="+", default=["fall-01", "fall-02", "adl-01"])
+    p.add_argument("--clipes", nargs="+", default=["fall-01", "fall-02", "fall-10", "fall-20", "adl-01"])
     args = p.parse_args()
     DESTINO.mkdir(parents=True, exist_ok=True)
     rotulos = baixar(CSV_QUEDAS, DESTINO).read_text(encoding="utf-8")

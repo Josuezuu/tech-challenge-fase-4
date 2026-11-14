@@ -54,4 +54,6 @@ def test_avaliacao_das_amostras_sinteticas(amostras, clientes, tmp_path):
     resumo = resultado["resumo"]
     assert (resumo["acertos_alteracao"], resumo["pares_com_gabarito"]) == (2, 2)
     assert resumo["so_amostras_sinteticas"] is True
+    p, r = resumo["termos_precisao"], resumo["termos_recall"]
+    assert resumo["termos_f1"] == (None if p is None or r is None else round(2 * p * r / (p + r), 3) if p + r else 0.0)
     assert resultado["pares"][1]["z"]["taxa_fala_ppm"] <= -2

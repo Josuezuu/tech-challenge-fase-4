@@ -10,7 +10,7 @@
 | Sinais vitais | pronta, avaliada nas 53 gravações reais do BIDMC | `features/sinais-vitais/spec.md` |
 | Alertas e fusão | pronta | `features/alertas/spec.md` |
 | Prescrições | pronta (dados sintéticos) | `features/prescricoes/spec.md` |
-| Vídeo e movimentação | pronta, avaliada em 3 clipes do UR Fall | `features/video/spec.md` |
+| Vídeo e movimentação | pronta, avaliada em 7 gravações do grupo (6/10, 0 falso positivo) e 5 clipes do UR Fall | `features/video/spec.md` |
 | Áudio | pronta, testada com voz sintética | `features/audio/spec.md` |
 | Cenário, avaliação, painel | pronta | `features/painel/spec.md` |
 

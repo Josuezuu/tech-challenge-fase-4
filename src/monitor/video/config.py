@@ -88,11 +88,23 @@ class ConfigFisioterapia:
 @dataclass(frozen=True)
 class ConfigQuarto:
     zona_s: float = 10.0  # o leito é estimado pela mediana das caixas `bed` nos primeiros 10 s
+    # ...desde que `bed` apareça em pelo menos metade desses quadros. Leito de verdade é móvel e aparece
+    # sempre (76/76 e 70/70 quadros nas gravações de 14/11); o YOLOv8n às vezes chama de `bed` a pessoa
+    # deitada no chão (7/112 e 1/122), e a zona nascia embaixo de quem caiu.
+    zona_presenca_min: float = 0.5
     ampliacao_leito: float = 0.10  # caixa do leito ampliada 10% (quadril de quem senta na borda fica dentro)
     poligono_leito: tuple[tuple[float, float], ...] | None = None  # px; usado quando o modelo não acha o leito
     queda_inclinacao_graus: float = 60.0  # tronco a mais de 60° da vertical = deitado/caído
-    queda_descida_corpos: float = 0.4  # quadril desce mais que 0,4 tamanho do corpo...
+    # Quadril desce mais que 0,3 tamanho do corpo... Recalibrado (era 0,4) com as gravações do grupo de
+    # 14/11, câmera de lado na altura do peito: queda real 0,39, deitar devagar no chão 0,20. Com câmera
+    # lateral, 0,4 fica perto do máximo físico (quadril em pé ~metade da altura; no chão, rente ao piso).
+    # O tropeço desce 0,40 e quem o barra é a permanência abaixo, não a descida.
+    queda_descida_corpos: float = 0.3
     queda_janela_s: float = 1.5  # ...em até 1,5 s (deitar devagar leva mais)
+    # Levantou = quadril voltou a menos de 0,15 corpo da altura de antes da queda (metade da descida que
+    # caracteriza a queda). Sentar no chão não é levantar: o tronco fica abaixo de 60°, mas o quadril segue
+    # rente ao piso (gravação de 14/11: sentado, 0,27 corpo abaixo; de pé de novo, ~0).
+    queda_recuperacao_corpos: float = 0.15
     queda_permanencia_s: float = 2.0  # e fica baixo/horizontal por 2 s (descarta tropeço com recuperação)
     queda_refratario_s: float = 10.0  # uma queda gera um evento, não um por quadro
     ausencia_s: float = 10.0  # ninguém no quadro por 10 s = paciente ausente

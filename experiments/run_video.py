@@ -8,7 +8,8 @@
 
 Saídas: ``results/eventos/video_<paciente>.jsonl``, ``results/eventos/movimentacao_<paciente>.jsonl``,
 ``results/evidencias/video/<nome>_anotado.mp4`` + recortes, ``results/relatorios/<nome>.md``;
-com ``--avaliar``, ``results/avaliacao/video.json``.
+com ``--avaliar``, ``results/avaliacao/video.json`` e as saídas de cada clipe em ``results/avaliacao/video/``
+(separadas das do cenário: o mesmo vídeo pode ser o do leito-12 e um clipe avaliado).
 """
 
 from __future__ import annotations
@@ -22,7 +23,9 @@ from pathlib import Path
 from monitor.config import CAMINHOS
 from monitor.video.avaliacao import avaliar, carregar_anotacoes
 from monitor.video.config import EXERCICIOS
-from monitor.video.pipeline import ResultadoSessao, processar
+from monitor.video.anotacao import para_h264
+from monitor.video.leitura import ler_metadados
+from monitor.video.pipeline import ResultadoSessao, processar, relativo
 
 INICIO_PADRAO = "2026-11-12T14:00:00"
 
@@ -44,10 +47,23 @@ def _resumo(nome: str, r: ResultadoSessao) -> str:
     return "\n".join(linhas)
 
 
+def _sessao(r: ResultadoSessao, inicio: datetime) -> dict:
+    """O que o painel mostra de um clipe avaliado: vídeo anotado tocável no navegador e eventos com recorte."""
+    return {
+        "video_navegador": relativo(para_h264(r.video_anotado)) if r.video_anotado else None,
+        "relatorio": relativo(r.relatorio),
+        "eventos": [{"t_s": round((e.instante - inicio).total_seconds(), 2), "tipo": e.tipo,
+                     "severidade": e.severidade.name, "descricao": e.descricao,
+                     "recorte": e.evidencia.get("recorte")} for e in r.eventos],
+    }
+
+
 def _avaliar(args: argparse.Namespace) -> None:
     anotacoes = carregar_anotacoes(args.anotacoes)
     pasta = args.anotacoes.parent
     detectados: dict[str, list[tuple[str, float]]] = {}
+    duracoes: dict[str, float] = {}
+    sessoes: dict[str, dict] = {}
     inicio = datetime.fromisoformat(args.inicio)
     for arquivo, anotacao in anotacoes.items():
         if args.video and Path(args.video).name != arquivo:
@@ -57,10 +73,17 @@ def _avaliar(args: argparse.Namespace) -> None:
             logging.warning("Clipe anotado %s não encontrado em %s", arquivo, pasta)
             continue
         r = processar(caminho, anotacao.get("cenario", "quarto"), caminho.stem, inicio, args.fps,
-                      anotacao.get("exercicio", args.exercicio))
+                      anotacao.get("exercicio", args.exercicio), saida=CAMINHOS.resultados / "avaliacao" / "video",
+                      dir_cache=CAMINHOS.resultados / "cache_video")
         print(_resumo(arquivo, r))
         detectados[arquivo] = [(e.tipo, (e.instante - inicio).total_seconds()) for e in r.eventos]
-    resultado = avaliar(anotacoes, detectados)
+        meta = ler_metadados(caminho)
+        duracoes[arquivo] = meta.total_quadros / meta.fps
+        sessoes[arquivo] = _sessao(r, inicio)
+    resultado = avaliar(anotacoes, detectados, duracoes=duracoes)
+    for arquivo, sessao in sessoes.items():
+        if arquivo in resultado["clipes"]:
+            resultado["clipes"][arquivo]["sessao"] = sessao
     destino = CAMINHOS.resultados / "avaliacao" / "video.json"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(json.dumps(resultado, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -13,7 +13,8 @@ models/
 
 # Dados brutos e artefatos gerados: recriados por script
 data/raw/
-data/gravacoes/
+# Cópias de trabalho das gravações; as versionadas ficam em data/gravacoes/
+videos/
 results/
 runs/
 

@@ -78,10 +78,12 @@ def processar(
     usar_cache: bool = True,
     anotar: bool = True,
     cliente_llm: ClienteLLM | None = None,
+    dir_cache: Path | None = None,
 ) -> ResultadoSessao:
+    """``dir_cache`` separado de ``saida`` deixa outra pasta de saída reaproveitar a inferência já feita."""
     video = Path(video)
     nome = video.stem
-    cfg_inferencia = replace(ConfigInferencia(), fps_alvo=fps_alvo, dir_cache=saida / "cache_video")
+    cfg_inferencia = replace(ConfigInferencia(), fps_alvo=fps_alvo, dir_cache=dir_cache or saida / "cache_video")
     inferencia = analisar_video(video, cfg_inferencia, usar_cache)
     quadros = inferencia.quadros
     t_s = [q.t_s for q in quadros]

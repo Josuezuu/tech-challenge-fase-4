@@ -28,6 +28,7 @@ from monitor.alertas.saida import gravar_alertas
 from monitor.config import CAMINHOS, SEMENTE
 from monitor.eventos import Alerta, Evento, Fonte, NivelAlerta, salvar_jsonl
 from monitor.nuvem.openai_llm import ClienteLLM
+from monitor.video.anotacao import para_h264
 
 log = logging.getLogger(__name__)
 
@@ -100,23 +101,6 @@ def rodar_sinais(pid: str, cfg: dict[str, Any], saida: Path) -> ResultadoFonte:
         "plantadas": [r.to_dict() for r in rotulos],
         "latencia_media_ms": round(monitor.latencia_media_ms, 4),
     })
-
-
-def para_h264(origem: Path) -> Path:
-    """Recodifica o vídeo anotado (mp4v do OpenCV, que o navegador não toca) em H.264 para o painel."""
-    import subprocess
-
-    import imageio_ffmpeg
-
-    destino = origem.with_name(f"{origem.stem}_h264.mp4")
-    if destino.exists() and destino.stat().st_mtime >= origem.stat().st_mtime:
-        return destino
-    subprocess.run(
-        [imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(origem),
-         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(destino)],
-        check=True, timeout=600,
-    )
-    return destino
 
 
 def rodar_video(pid: str, cfg: dict[str, Any], saida: Path) -> ResultadoFonte:

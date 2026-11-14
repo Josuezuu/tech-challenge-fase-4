@@ -116,3 +116,20 @@ def _salvar_recorte(imagem: np.ndarray, pasta: Path, k: int, texto: str, t_s: fl
     caminho = pasta / f"{k:02d}_{nome}_{t_s:06.1f}s.jpg"
     cv2.imwrite(str(caminho), imagem)
     return caminho
+
+
+def para_h264(origem: Path) -> Path:
+    """Recodifica o vídeo anotado (mp4v do OpenCV, que o navegador não toca) em H.264 para o painel."""
+    import subprocess
+
+    import imageio_ffmpeg
+
+    destino = origem.with_name(f"{origem.stem}_h264.mp4")
+    if destino.exists() and destino.stat().st_mtime >= origem.stat().st_mtime:
+        return destino
+    subprocess.run(
+        [imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(origem),
+         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(destino)],
+        check=True, timeout=600,
+    )
+    return destino

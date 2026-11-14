@@ -1,6 +1,6 @@
 # Estado
 
-**Atualizado:** 10/11/2026 · **Marco atual:** código de M0–M5 pronto; falta rodar com chave do Azure e com as gravações do grupo
+**Atualizado:** 14/11/2026 · **Marco atual:** vídeo validado com gravações do grupo; OpenAI rodando com chave real; Azure configurado, falta a primeira rodada real
 
 ## Onde está
 
@@ -11,10 +11,10 @@
 | Alertas e fusão | pronta | `features/alertas/spec.md` |
 | Prescrições | pronta (dados sintéticos) | `features/prescricoes/spec.md` |
 | Vídeo e movimentação | pronta, avaliada em 7 gravações do grupo (6/10, 0 falso positivo) e 5 clipes do UR Fall | `features/video/spec.md` |
-| Áudio | pronta, testada com voz sintética | `features/audio/spec.md` |
-| Cenário, avaliação, painel | pronta | `features/painel/spec.md` |
+| Áudio | pronta, testada com voz sintética; Azure Language respondeu com a chave real (teste de 1 frase), Speech ainda não chamado | `features/audio/spec.md` |
+| Cenário, avaliação, painel | pronta; aba Avaliação mostra cada vídeo gravado, anotado | `features/painel/spec.md` |
 
-Suíte: 171 testes rápidos + 2 lentos, todos verdes.
+Suíte: 181 testes rápidos + 2 lentos, todos verdes (14/11).
 
 ## Decisões
 
@@ -32,16 +32,24 @@ Suíte: 171 testes rápidos + 2 lentos, todos verdes.
 | 10/11 | Sem `librosa`: atributos de voz com `numpy` + Praat | Menos dependência; o Praat mede F0, jitter, shimmer e HNR |
 | 10/11 | UR Fall Detection (CC BY-NC-SA 4.0) para avaliar o vídeo | Baixável sem cadastro; substitui as gravações até elas chegarem |
 | 10/11 | Vídeo anotado recodificado em H.264 para o painel | O `mp4v` do OpenCV não toca no navegador |
+| 14/11 | `queda_com_recuperacao` (ALTA) além de `queda` (MAXIMA) | Cair e levantar em < 2 s ainda é queda, só não é a mais grave; vira crítico por concordância |
+| 14/11 | Permanência de 2 s mantida; descida 0,4 → 0,3 | Nas gravações, o tropeço desce tanto quanto a queda (0,40 × 0,39): quem o barra é a permanência; deitar devagar fica em 0,20 |
+| 14/11 | Gravações do Josué versionadas em `data/gravacoes/` | Pedido dele, com consentimento; o repositório é público |
+| 14/11 | Azure via **um recurso Foundry** (`tc4-josue`, East US, grupo `rg-tech-challenge-fase4`) | O portal não oferece mais Speech e Language separados no fluxo padrão; uma chave serve aos dois |
+| 14/11 | Rodar o Azure uma vez e depois usar `MONITOR_MODO_NUVEM=simulado` | Com chave, cada execução chama o serviço de novo; em `simulado` o projeto reaproveita as respostas reais gravadas |
 
 ## Bloqueios
 
-- **Chave do Azure** (Speech e Language): sem ela, transcrição e análise de texto rodam no modo simulado. Com a chave, rodar `python -m experiments.run_cenario` e `run_avaliacao` grava as respostas reais em `docs/execucoes_gravadas/`, que entram no git.
-- **Gravações do grupo** (V1–V5, A1–A3) em `data/gravacoes/` com `anotacoes.json`: o cenário já procura por elas antes das amostras públicas e sintéticas.
+- **Áudios reais (A1–A3):** só existem as 3 amostras de voz sintética (Microsoft Maria, Windows). Com voz sintética, o Azure Speech transcreve quase perfeito e a demonstração do edital ("áudios de consultas") fica fraca. O cenário já procura `data/gravacoes/A1|A2|A3` (`.m4a` ou `.wav`) antes das amostras.
+- **Vídeo de fisioterapia (V2):** o leito-07 continua com o vídeo pulado.
 
 ## A fazer
 
-- [ ] Rodar com a chave do Azure e commitar as respostas gravadas
-- [ ] Rodar com as gravações do grupo; ajustar limiares de vídeo se preciso, registrando antes e depois
+- [ ] Primeira rodada real do Azure (só áudio + cenário), conferir as chamadas em tc4-josue → Monitoramento → Métricas, commitar `docs/execucoes_gravadas/azure_*` e trocar para `MONITOR_MODO_NUVEM=simulado`
+- [ ] Gravar A1 (voz normal), A2 (voz cansada) e A3 (consulta do leito-12: falta de ar, dor no peito, tontura); roteiros nos `.txt` de `data/amostras/audio/`
+- [ ] Gravar V2 (fisioterapia, elevação lateral) para o leito-07
+- [ ] Padronizar o texto dos alertas da OpenAI (`src/monitor/alertas/redacao.py`): hoje alterna "Alerta CRÍTICO:" e "Nível: ATENÇÃO. Fonte: …"
+- [x] Rodar com as gravações do grupo (vídeo): 7 gravações, 6/10 eventos, 0 falso positivo; ver `features/video/spec.md`, seção "Gravações do grupo (14/11)"
 - [ ] Conferir se o Text Analytics for health em `pt` marca "falta de ar" e "tontura" como `SymptomOrSign` (senão entram pela lista curada)
 - [x] Criar o repositório no GitHub e convidar o Gabriel (`Josuezuu/tech-challenge-fase-4`, público; convite de escrita para `gaburanello` em 10/11)
 
@@ -51,3 +59,12 @@ Suíte: 171 testes rápidos + 2 lentos, todos verdes.
 - Isolation Forest como comparação aos detectores simples
 - Webhook de alerta
 - MediaPipe como comparação ao YOLOv8-pose
+
+## Passagem para o Gabriel (14/11)
+
+O trabalho de 14/11 está na branch **`feat/gravacoes-de-queda`** (não está na `main`). Para continuar: `git fetch && git checkout feat/gravacoes-de-queda`, depois o passo a passo do README (venv, `pip install`, `python scripts/check_env.py`).
+
+- **Chaves:** o `.env` não vai para o git. Sem ele tudo roda: a OpenAI usa as 19 respostas reais gravadas em `docs/execucoes_gravadas/openai_texto/`, e o Azure cai no simulado. As chaves (OpenAI e o recurso Azure `tc4-josue`) são do Josué; peça a ele por um canal privado, nunca pelo repositório.
+- **Custo do Azure:** recurso Foundry pago por uso (sem plano grátis para o Text Analytics for health). Antes de rodar com chave, avise o Josué; depois da primeira rodada, use `MONITOR_MODO_NUVEM=simulado`. Até 14/11 foram feitas só 2 chamadas de sentimento (teste).
+- **Vídeo:** câmera do quarto de lado e **alta** (1,8–2 m, inclinada para baixo). Na altura do colchão o chão em frente à cama entra no retângulo da zona do leito (a queda passou a funcionar, mas a saída do leito não sai); do alto olhando ao longo do corpo, o tronco no chão parece em pé e a queda não sai.
+- **Painel:** `streamlit run app/painel.py`; os vídeos gravados ficam na aba Avaliação, seção "Vídeos avaliados". Antes, `python -m experiments.run_cenario` e `python -m experiments.run_avaliacao`.

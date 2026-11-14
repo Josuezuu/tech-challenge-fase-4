@@ -1,0 +1,76 @@
+{
+  "V5.mp4": {
+    "cenario": "quarto",
+    "eventos": [
+      {
+        "tipo": "queda",
+        "t_s": 6.25
+      }
+    ]
+  },
+  "queda_cama_fica_no_chao.mp4": {
+    "cenario": "quarto",
+    "eventos": [
+      {
+        "tipo": "saida_do_leito",
+        "t_s": 5.5
+      },
+      {
+        "tipo": "queda",
+        "t_s": 5.75
+      }
+    ]
+  },
+  "queda_cama_levanta_rapido.mp4": {
+    "cenario": "quarto",
+    "eventos": [
+      {
+        "tipo": "saida_do_leito",
+        "t_s": 6.5
+      },
+      {
+        "tipo": "queda_com_recuperacao",
+        "t_s": 6.75
+      }
+    ]
+  },
+  "tropeco_rapido.mp4": {
+    "cenario": "quarto",
+    "eventos": [
+      {
+        "tipo": "queda_com_recuperacao",
+        "t_s": 6.0
+      }
+    ]
+  },
+  "deitar_devagar_no_chao.mp4": {
+    "cenario": "quarto",
+    "eventos": []
+  },
+  "queda_cama_fica_no_chao_2.mp4": {
+    "cenario": "quarto",
+    "eventos": [
+      {
+        "tipo": "saida_do_leito",
+        "t_s": 3.75
+      },
+      {
+        "tipo": "queda",
+        "t_s": 4.25
+      }
+    ]
+  },
+  "queda_cama_levanta_2.mp4": {
+    "cenario": "quarto",
+    "eventos": [
+      {
+        "tipo": "saida_do_leito",
+        "t_s": 5.0
+      },
+      {
+        "tipo": "queda_com_recuperacao",
+        "t_s": 5.5
+      }
+    ]
+  }
+}

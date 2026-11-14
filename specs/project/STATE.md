@@ -62,7 +62,7 @@ Suíte: 181 testes rápidos + 2 lentos, todos verdes (14/11).
 
 ## Passagem para o Gabriel (14/11)
 
-O trabalho de 14/11 está na branch **`feat/gravacoes-de-queda`** (não está na `main`). Para continuar: `git fetch && git checkout feat/gravacoes-de-queda`, depois o passo a passo do README (venv, `pip install`, `python scripts/check_env.py`).
+O trabalho de 14/11 está na **`main`** (veio da branch `feat/gravacoes-de-queda` por fast-forward). Para continuar: `git pull` na `main`, depois o passo a passo do README (venv, `pip install`, `python scripts/check_env.py`).
 
 - **Chaves:** o `.env` não vai para o git. Sem ele tudo roda: a OpenAI usa as 19 respostas reais gravadas em `docs/execucoes_gravadas/openai_texto/`, e o Azure cai no simulado. As chaves (OpenAI e o recurso Azure `tc4-josue`) são do Josué; peça a ele por um canal privado, nunca pelo repositório.
 - **Custo do Azure:** recurso Foundry pago por uso (sem plano grátis para o Text Analytics for health). Antes de rodar com chave, avise o Josué; depois da primeira rodada, use `MONITOR_MODO_NUVEM=simulado`. Até 14/11 foram feitas só 2 chamadas de sentimento (teste).

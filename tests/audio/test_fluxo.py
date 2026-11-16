@@ -40,7 +40,7 @@ def test_transcricao_vazia_nao_chama_o_servico():
 def test_fluxo_da_amostra_de_termos(amostras, clientes, tmp_path):
     r = processar(amostras / "sintetico_termos.wav", "leito-12", INICIO, clientes=clientes, dir_saida=tmp_path)
     termos = [e for e in r.eventos if e.tipo == "termo_critico"]
-    assert [e.evidencia["termo"] for e in termos] == ["falta de ar", "dor no peito", "tontura"]
+    assert [e.evidencia["termo"] for e in termos] == ["falta de ar", "dor no peito", "tontura", "cansado"]
     assert all(e.evidencia["audio"] == "data/amostras/audio/sintetico_termos.wav" for e in r.eventos)
     assert r.voz is None
     assert r.stt["azure"]["wer"] is None  # transcrição simulada

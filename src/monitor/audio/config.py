@@ -23,13 +23,22 @@ TERMOS_CRITICOS: dict[str, Severidade] = {
     "fadiga": Severidade.INFO,
     "palpitacao": Severidade.INFO,
     "febre": Severidade.INFO,
-    # Queixas comuns de consulta, vistas nas gravações problemas (1..6) e sem termo na lista original.
+    # Queixas comuns de consulta, vistas nas consultas data/amostras/audio/paciente_*.mp3 e sem termo na lista original.
     "dor de cabeca": Severidade.INFO,
     "nausea": Severidade.INFO,
     "enjoo": Severidade.INFO,
     "tosse": Severidade.INFO,
     "dor abdominal": Severidade.INFO,
     "dor no estomago": Severidade.INFO,
+    # Formas faladas: o paciente diz "estou cansada" e "comecei a tossir", não "cansaço" e "tosse".
+    "cansado": Severidade.INFO,
+    "cansada": Severidade.INFO,
+    "tossir": Severidade.INFO,
+    "tossindo": Severidade.INFO,
+    # Queixas cardíacas da consulta paciente_8830 ("aperto no peito", "coração acelerado"), que passavam sem evento.
+    "aperto no peito": Severidade.ALTA,  # mesma gravidade de "dor no peito"
+    "coracao acelerado": Severidade.INFO,  # forma falada de "palpitacao"
+    "taquicardia": Severidade.INFO,
 }
 
 # Atributos acústicos, na ordem em que aparecem no relatório.

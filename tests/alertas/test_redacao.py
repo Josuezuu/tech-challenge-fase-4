@@ -34,7 +34,7 @@ def test_modelo_fixo_deterministico_cita_fonte_horario_e_fecha():
     texto = modelo_fixo(dados_do_alerta(alerta))
     assert texto == modelo_fixo(dados_do_alerta(alerta))
     assert texto == (
-        "Alerta crítico para leito-12 por concordância entre sinais vitais e vídeo. "
+        "Alerta CRÍTICO · leito-12 · concordância entre sinais vitais e vídeo. "
         "Sinais vitais às 14:02:00: SpO2 90 %, abaixo de 92 % há 5 s; vídeo às 14:04:00: "
         "Queda detectada ao lado do leito. Avaliação da equipe necessária."
     )
@@ -49,11 +49,13 @@ def test_modelo_fixo_resume_muitos_eventos():
     assert "e mais 6 evento(s)" in texto and len(texto) <= 600
 
 
-def test_texto_bom_da_llm_e_usado():
-    bom = "Alerta crítico: SpO2 90% às 14:02 (sinais vitais) e queda às 14:04 (vídeo). Avaliação da equipe necessária."
-    llm = LLMFalsa(bom)
+def test_texto_bom_da_llm_vira_o_corpo_com_cabecalho_padrao():
+    corpo = "SpO2 de 90% às 14:02 (sinais vitais) e queda ao lado do leito às 14:04 (vídeo)."
+    llm = LLMFalsa(corpo)
     texto, origem = redigir_alerta(_alerta_concordancia(), llm)
-    assert (texto, origem) == (bom, "openai")
+    assert origem == "openai"
+    assert texto == ("Alerta CRÍTICO · leito-12 · concordância entre sinais vitais e vídeo. "
+                     f"{corpo} Avaliação da equipe necessária.")
     instrucoes, dados = llm.chamadas[0]
     assert instrucoes == INSTRUCOES and "diagnóstico" in INSTRUCOES
     assert set(dados) == {"paciente", "nivel", "regra", "modalidades", "eventos"}  # só dados estruturados
@@ -72,9 +74,18 @@ def test_guarda_troca_texto_com_diagnostico_pelo_modelo_fixo():
         assert redigir_alerta(alerta, LLMFalsa(ruim)) == (fixo, "simulado")
 
 
-def test_texto_gravado_mantem_origem():
-    bom = "Alerta crítico às 14:04. Avaliação da equipe necessária."
-    assert redigir_alerta(_alerta_concordancia(), LLMFalsa(bom, "gravado")) == (bom, "gravado")
+def test_texto_gravado_mantem_origem_e_frase_final_nao_duplica():
+    texto, origem = redigir_alerta(_alerta_concordancia(), LLMFalsa("Queda às 14:04. Avaliação da equipe necessária.", "gravado"))
+    assert origem == "gravado"
+    assert texto.endswith("Queda às 14:04. Avaliação da equipe necessária.")
+    assert texto.count("Avaliação da equipe necessária.") == 1
+
+
+def test_corpo_que_repete_o_cabecalho_cai_no_modelo_fixo():
+    alerta = _alerta_concordancia()
+    fixo = modelo_fixo(dados_do_alerta(alerta))
+    for ruim in ["Alerta CRÍTICO: queda às 14:04.", "Nível: ATENÇÃO. Queda às 14:04.", "Fonte: vídeo, 14:04."]:
+        assert redigir_alerta(alerta, LLMFalsa(ruim)) == (fixo, "simulado")
 
 
 def test_cliente_real_sem_chave_cai_no_modelo_fixo(tmp_path):

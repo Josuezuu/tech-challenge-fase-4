@@ -340,11 +340,32 @@ def reproduzir_cenario() -> None:
         st.rerun()
 
 
+def ordem_paciente(pid: str) -> tuple[int, str, int]:
+    """Leitos primeiro, em ordem numérica (leito-03 antes de leito-12); depois os demais (fisioterapia-01...)."""
+    m = re.fullmatch(r"(.*?)-?(\d+)", pid)
+    prefixo, numero = (m.group(1), int(m.group(2))) if m else (pid, 0)
+    return (0 if prefixo == "leito" else 1, prefixo, numero)
+
+
+VISAO_PACIENTES = "Pacientes"
+VISAO_AVALIACAO = "Avaliação do sistema"
+
+
 def main() -> None:
     st.set_page_config(page_title="Monitoramento Multimodal", layout="wide")
     st.sidebar.title("Central de monitoramento")
     if st.sidebar.button("Reproduzir cenário", use_container_width=True):
         reproduzir_cenario()
+    visao = st.sidebar.radio("Visão", [VISAO_PACIENTES, VISAO_AVALIACAO], key="visao", horizontal=True)
+
+    if visao == VISAO_AVALIACAO:
+        st.title("Avaliação do sistema")
+        st.caption("Quanto os detectores acertam, medido num conjunto de teste com gabarito: as 53 gravações do "
+                   "BIDMC com anomalias plantadas, os clipes anotados em `data/gravacoes/anotacoes.json`, as "
+                   "amostras de áudio com `.esperado.json` e prescrições sintéticas rotuladas. Não depende do "
+                   "paciente selecionado.")
+        area_avaliacao()
+        return
 
     manifesto = ler_json(RESULTADOS / "cenario.json")
     alertas = ler_jsonl(RESULTADOS / "alertas.jsonl")
@@ -352,18 +373,16 @@ def main() -> None:
         st.title("Monitoramento multimodal de pacientes")
         st.info("Ainda não há resultados. Clique em **Reproduzir cenário** ou rode "
                 "`python -m experiments.run_cenario`.")
-        st.subheader("Avaliação")
-        area_avaliacao()
         return
 
     pacientes = list(manifesto["pacientes"])
     pior = {pid: max((a["nivel"] for a in alertas if a["paciente_id"] == pid), default=0) for pid in pacientes}
-    pacientes.sort(key=lambda pid: -pior[pid])
+    pacientes.sort(key=ordem_paciente)
 
     def rotulo(pid: str) -> str:
         return f"{pid} · {NIVEIS[pior[pid]][0] if pior[pid] else 'sem alerta'}"
 
-    pid = st.sidebar.radio("Pacientes", pacientes, format_func=rotulo)
+    pid = st.sidebar.radio("Pacientes", pacientes, format_func=rotulo, key="paciente")
     st.sidebar.caption(f"Cenário gerado em {manifesto['gerado_em']} · {manifesto['eventos']} eventos · "
                        f"{sum(manifesto['alertas'].values())} alertas")
 
@@ -381,7 +400,7 @@ def main() -> None:
     if puladas:
         st.warning("Fontes não processadas — " + " · ".join(puladas))
 
-    abas = st.tabs(["Alertas", "Sinais vitais", "Vídeo", "Áudio", "Prescrições", "Avaliação"])
+    abas = st.tabs(["Alertas", "Sinais vitais", "Vídeo", "Áudio", "Prescrições"])
     with abas[0]:
         area_alertas(alertas_pid)
     with abas[1]:
@@ -392,8 +411,6 @@ def main() -> None:
         area_audio(fontes.get("audio", {}), eventos)
     with abas[4]:
         area_prescricoes(fontes.get("prescricoes", {}), eventos)
-    with abas[5]:
-        area_avaliacao()
 
 
 main()

@@ -28,7 +28,21 @@ def test_painel_sem_resultados(tmp_path):
 def test_painel_com_cenario():
     app = _app(RESULTADOS)
     assert not app.exception
-    pacientes = app.sidebar.radio[0].options
+    pacientes = app.radio(key="paciente").options
+    ids = [p.split(" ")[0] for p in pacientes]  # o rótulo é "<id> · <nível>"
+    leitos = [p for p in ids if p.startswith("leito-")]
+    assert leitos == sorted(leitos, key=lambda p: int(p.split("-")[1]))
+    assert ids[:len(leitos)] == leitos
     for pid in pacientes:
-        app.sidebar.radio[0].set_value(pid).run()
+        app.radio(key="paciente").set_value(pid).run()
         assert not app.exception, pid
+    assert [t.label for t in app.tabs] == ["Alertas", "Sinais vitais", "Vídeo", "Áudio", "Prescrições"]
+
+
+def test_avaliacao_e_visao_separada():
+    app = _app(RESULTADOS)
+    app.radio(key="visao").set_value("Avaliação do sistema").run()
+    assert not app.exception
+    assert app.title[0].value == "Avaliação do sistema"
+    assert not app.tabs
+    assert not [r for r in app.radio if r.key == "paciente"]

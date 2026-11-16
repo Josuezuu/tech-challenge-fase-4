@@ -72,5 +72,19 @@
         "t_s": 5.5
       }
     ]
+  },
+  "V2.mp4": {
+    "cenario": "fisioterapia",
+    "exercicio": "elevacao_lateral",
+    "eventos": [
+      {
+        "tipo": "amplitude_insuficiente",
+        "t_s": 9.5
+      },
+      {
+        "tipo": "amplitude_insuficiente",
+        "t_s": 20.5
+      }
+    ]
   }
 }

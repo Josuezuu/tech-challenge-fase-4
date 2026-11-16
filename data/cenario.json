@@ -23,13 +23,16 @@
         "referencia": ["data/gravacoes/A1.m4a", "data/gravacoes/A1.wav", "data/amostras/audio/sintetico_normal.wav"],
         "inicio": "2026-11-12T10:30:00"
       },
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 43}
+    },
+    {
+      "paciente_id": "fisioterapia-01",
       "video": {
         "arquivo": ["data/gravacoes/V2.mp4"],
         "cenario": "fisioterapia",
         "exercicio": "elevacao_lateral",
         "inicio": "2026-11-12T11:00:00"
-      },
-      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 43}
+      }
     },
     {
       "paciente_id": "leito-03",
@@ -38,30 +41,55 @@
     },
     {
       "paciente_id": "leito-20",
-      "audio": {
-        "arquivo": ["data/amostras/audio/problemas (1).mp3"],
-        "inicio": "2026-11-12T16:00:00"
-      }
+      "audio": {"arquivo": ["data/amostras/audio/paciente_6946.mp3"], "inicio": "2026-11-12T16:00:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 45}
     },
     {
       "paciente_id": "leito-21",
-      "audio": {"arquivo": ["data/amostras/audio/problemas (2).mp3"], "inicio": "2026-11-12T16:10:00"}
+      "audio": {"arquivo": ["data/amostras/audio/paciente_9301.mp3"], "inicio": "2026-11-12T16:10:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 46}
     },
     {
       "paciente_id": "leito-22",
-      "audio": {"arquivo": ["data/amostras/audio/problemas (3).mp3"], "inicio": "2026-11-12T16:20:00"}
+      "audio": {"arquivo": ["data/amostras/audio/paciente_2842.mp3"], "inicio": "2026-11-12T16:20:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 47}
     },
     {
       "paciente_id": "leito-23",
-      "audio": {"arquivo": ["data/amostras/audio/problemas (4).mp3"], "inicio": "2026-11-12T16:30:00"}
+      "audio": {"arquivo": ["data/amostras/audio/paciente_6173.mp3"], "inicio": "2026-11-12T16:30:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 48}
     },
     {
       "paciente_id": "leito-24",
-      "audio": {"arquivo": ["data/amostras/audio/problemas (5).mp3"], "inicio": "2026-11-12T16:40:00"}
+      "audio": {"arquivo": ["data/amostras/audio/paciente_7045.mp3"], "inicio": "2026-11-12T16:40:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 49}
     },
     {
       "paciente_id": "leito-25",
-      "audio": {"arquivo": ["data/amostras/audio/problemas (6).mp3"], "inicio": "2026-11-12T16:50:00"}
+      "audio": {"arquivo": ["data/amostras/audio/paciente_7828.mp3"], "inicio": "2026-11-12T16:50:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 50}
+    },
+    {
+      "paciente_id": "leito-26",
+      "audio": {"arquivo": ["data/amostras/audio/paciente_1010.m4a"], "inicio": "2026-11-12T17:00:00"},
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 51}
+    },
+    {
+      "paciente_id": "leito-28",
+      "audio": {
+        "arquivo": ["data/amostras/audio/paciente_7870.m4a"],
+        "referencia": ["data/amostras/audio/paciente_1010.m4a"],
+        "inicio": "2026-11-12T17:20:00"
+      },
+      "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 53}
+    },
+    {
+      "paciente_id": "leito-29",
+      "audio": {
+        "arquivo": ["data/amostras/audio/paciente_8830_cansada.wav"],
+        "referencia": ["data/amostras/audio/paciente_8830.m4a"],
+        "inicio": "2026-11-12T17:30:00"
+      }
     }
   ]
 }

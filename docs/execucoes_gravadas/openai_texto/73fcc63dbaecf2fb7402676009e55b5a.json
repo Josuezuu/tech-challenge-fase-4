@@ -1,4 +1,4 @@
 {
-  "texto": "Durante a sessão de monitoramento, ocorreu um evento de queda com recuperação, classificado como de alta severidade. O paciente apresentou uma queda em que o tronco ficou a 85° da vertical e o quadril desceu 0.31 do tamanho do corpo em 0.8 segundos, fora do leito. Dois segundos após a queda, o quadril já havia retornado à altura anterior, sem completar o tempo no chão que indicaria uma queda grave. A sessão teve duração de 0.2 minutos e transcorreu até 14:00:09.",
+  "texto": "Durante a sessão de monitoramento, ocorreu um evento de queda com recuperação, classificado como de alta severidade. O paciente apresentou uma queda em que o tronco ficou a 85° da vertical e o quadril desceu 0,31 do tamanho do corpo em 0,8 segundos, ficando fora do leito. Dois segundos depois, o quadril já havia retornado à altura anterior, sem completar os dois segundos no chão que confirmariam uma queda grave. A sessão teve duração de 0,2 minutos e não houve outros eventos registrados.",
   "modelo": "gpt-4o-mini"
 }

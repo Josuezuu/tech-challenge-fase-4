@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "omeprazol",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 9,
+      "confianca": 1.0,
+      "normalizado": "omeprazole",
+      "negada": false
+    },
+    {
+      "texto": "70mg",
+      "categoria": "Dosage",
+      "offset": 19,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 25,
+      "comprimento": 10,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "24/24h",
+      "categoria": "Frequency",
+      "offset": 37,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

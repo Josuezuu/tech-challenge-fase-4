@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Dipirona",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "dipyrone",
+      "negada": false
+    },
+    {
+      "texto": "750mg",
+      "categoria": "Dosage",
+      "offset": 17,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 23,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "4 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 26,
+      "comprimento": 14,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

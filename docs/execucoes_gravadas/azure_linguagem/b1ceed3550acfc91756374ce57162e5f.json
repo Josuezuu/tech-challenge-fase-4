@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "dipirona",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "dipyrone",
+      "negada": false
+    },
+    {
+      "texto": "250mg",
+      "categoria": "Dosage",
+      "offset": 18,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "oral",
+      "categoria": "MedicationRoute",
+      "offset": 28,
+      "comprimento": 4,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6 em 6 horas",
+      "categoria": "Frequency",
+      "offset": 36,
+      "comprimento": 12,
+      "confianca": 0.78,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

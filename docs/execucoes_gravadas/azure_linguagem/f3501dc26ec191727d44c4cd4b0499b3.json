@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Anlodipino",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "amlodipine",
+      "negada": false
+    },
+    {
+      "texto": "10 mg",
+      "categoria": "Dosage",
+      "offset": 19,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "oral",
+      "categoria": "MedicationRoute",
+      "offset": 29,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "24/24h",
+      "categoria": "Frequency",
+      "offset": 34,
+      "comprimento": 6,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

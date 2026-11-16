@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "tramadol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "tramadol",
+      "negada": false
+    },
+    {
+      "texto": "100 mg",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 6,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "3 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 19,
+      "comprimento": 14,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

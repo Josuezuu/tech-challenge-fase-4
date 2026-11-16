@@ -1,0 +1,170 @@
+{
+  "texto": "Boa tarde, Dr. Tenho sentido meu coração acelerado. Um aperto no peito quando faço esforço. Então queria saber se é grave ou se precisa fazer um eletrocardiograma.",
+  "palavras": [
+    {
+      "texto": "boa",
+      "inicio_s": 0.9,
+      "fim_s": 1.1,
+      "confianca": 0.82933235
+    },
+    {
+      "texto": "tarde",
+      "inicio_s": 1.1,
+      "fim_s": 1.5,
+      "confianca": 0.99159664
+    },
+    {
+      "texto": "dr",
+      "inicio_s": 1.5,
+      "fim_s": 1.94,
+      "confianca": 0.2178615
+    },
+    {
+      "texto": "tenho",
+      "inicio_s": 2.18,
+      "fim_s": 2.42,
+      "confianca": 0.9346623
+    },
+    {
+      "texto": "sentido",
+      "inicio_s": 2.42,
+      "fim_s": 2.94,
+      "confianca": 0.8452031
+    },
+    {
+      "texto": "meu",
+      "inicio_s": 2.94,
+      "fim_s": 3.06,
+      "confianca": 0.4355984
+    },
+    {
+      "texto": "coração",
+      "inicio_s": 3.66,
+      "fim_s": 3.94,
+      "confianca": 0.9892629
+    },
+    {
+      "texto": "acelerado",
+      "inicio_s": 3.94,
+      "fim_s": 4.3,
+      "confianca": 0.84797937
+    },
+    {
+      "texto": "um",
+      "inicio_s": 7.47,
+      "fim_s": 7.55,
+      "confianca": 0.40446356
+    },
+    {
+      "texto": "aperto",
+      "inicio_s": 7.67,
+      "fim_s": 8.19,
+      "confianca": 0.32625708
+    },
+    {
+      "texto": "no",
+      "inicio_s": 8.19,
+      "fim_s": 8.27,
+      "confianca": 0.73579377
+    },
+    {
+      "texto": "peito",
+      "inicio_s": 9.07,
+      "fim_s": 9.75,
+      "confianca": 0.8191071
+    },
+    {
+      "texto": "quando",
+      "inicio_s": 9.99,
+      "fim_s": 10.35,
+      "confianca": 0.90862393
+    },
+    {
+      "texto": "faço",
+      "inicio_s": 10.35,
+      "fim_s": 10.75,
+      "confianca": 0.97593987
+    },
+    {
+      "texto": "esforço",
+      "inicio_s": 10.75,
+      "fim_s": 11.03,
+      "confianca": 0.77000666
+    },
+    {
+      "texto": "então",
+      "inicio_s": 13.26,
+      "fim_s": 13.62,
+      "confianca": 0.9360591
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 13.62,
+      "fim_s": 13.94,
+      "confianca": 0.8234097
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 13.94,
+      "fim_s": 14.42,
+      "confianca": 0.99107176
+    },
+    {
+      "texto": "se",
+      "inicio_s": 14.42,
+      "fim_s": 14.62,
+      "confianca": 0.8530502
+    },
+    {
+      "texto": "é",
+      "inicio_s": 14.62,
+      "fim_s": 14.66,
+      "confianca": 0.41574368
+    },
+    {
+      "texto": "grave",
+      "inicio_s": 15.34,
+      "fim_s": 15.7,
+      "confianca": 0.90104413
+    },
+    {
+      "texto": "ou",
+      "inicio_s": 15.7,
+      "fim_s": 15.78,
+      "confianca": 0.31646895
+    },
+    {
+      "texto": "se",
+      "inicio_s": 15.78,
+      "fim_s": 15.9,
+      "confianca": 0.7789596
+    },
+    {
+      "texto": "precisa",
+      "inicio_s": 15.94,
+      "fim_s": 16.26,
+      "confianca": 0.056814823
+    },
+    {
+      "texto": "fazer",
+      "inicio_s": 16.26,
+      "fim_s": 16.46,
+      "confianca": 0.8431846
+    },
+    {
+      "texto": "um",
+      "inicio_s": 17.02,
+      "fim_s": 17.1,
+      "confianca": 0.8185541
+    },
+    {
+      "texto": "eletrocardiograma",
+      "inicio_s": 17.46,
+      "fim_s": 18.14,
+      "confianca": 0.81168455
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 20.7408125,
+  "servico": "azure"
+}

@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "dipirona",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "dipyrone",
+      "negada": false
+    },
+    {
+      "texto": "1g",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 2,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 12,
+      "comprimento": 10,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6",
+      "categoria": "Dosage",
+      "offset": 26,
+      "comprimento": 1,
+      "confianca": 0.66,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6 horas",
+      "categoria": "Frequency",
+      "offset": 31,
+      "comprimento": 7,
+      "confianca": 0.68,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

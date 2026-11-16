@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "DIPIRONA",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "dipyrone",
+      "negada": false
+    },
+    {
+      "texto": "2950 mg",
+      "categoria": "Dosage",
+      "offset": 18,
+      "comprimento": 7,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6 em 6 horas",
+      "categoria": "Frequency",
+      "offset": 34,
+      "comprimento": 12,
+      "confianca": 0.81,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

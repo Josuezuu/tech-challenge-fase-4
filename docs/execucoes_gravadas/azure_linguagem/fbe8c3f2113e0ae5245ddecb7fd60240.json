@@ -1,0 +1,96 @@
+{
+  "sentimento": "negative",
+  "frases": [
+    {
+      "texto": "Bom dia, doutora, estou com uma dor de garganta muito forte há 4 dias e dificuldade para engolir. ",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 0
+    },
+    {
+      "texto": "Queria saber se pode ser infeção, se preciso tomar antibiótico.",
+      "sentimento": "neutral",
+      "positivo": 0.02,
+      "neutro": 0.76,
+      "negativo": 0.22,
+      "offset": 98
+    }
+  ],
+  "frases_chave": [
+    "Bom dia",
+    "infeção",
+    "antibiótico",
+    "doutora",
+    "dor",
+    "garganta",
+    "4 dias",
+    "dificuldade"
+  ],
+  "entidades": [
+    {
+      "texto": "doutora",
+      "categoria": "HealthcareProfession",
+      "offset": 9,
+      "comprimento": 7,
+      "confianca": 0.6,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "dor de garganta",
+      "categoria": "SymptomOrSign",
+      "offset": 32,
+      "comprimento": 15,
+      "confianca": 0.96,
+      "normalizado": "Sore Throat",
+      "negada": false
+    },
+    {
+      "texto": "muito forte",
+      "categoria": "ConditionQualifier",
+      "offset": 48,
+      "comprimento": 11,
+      "confianca": 0.95,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "4 dias",
+      "categoria": "Time",
+      "offset": 63,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "dificuldade para engolir",
+      "categoria": "SymptomOrSign",
+      "offset": 72,
+      "comprimento": 24,
+      "confianca": 0.99,
+      "normalizado": "Deglutition Disorders",
+      "negada": false
+    },
+    {
+      "texto": "infeção",
+      "categoria": "Diagnosis",
+      "offset": 123,
+      "comprimento": 7,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "antibiótico",
+      "categoria": "MedicationClass",
+      "offset": 149,
+      "comprimento": 11,
+      "confianca": 0.97,
+      "normalizado": "Antibiotics",
+      "negada": false
+    }
+  ]
+}

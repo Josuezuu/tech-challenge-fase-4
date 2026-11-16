@@ -1,4 +1,4 @@
 {
-  "texto": "Durante a sessão de monitoramento, ocorreu um evento grave de queda, onde o paciente apresentou um tronco a 69° da vertical e o quadril desceu 0,32 do tamanho do corpo em 1 segundo, saindo do leito e permanecendo no chão. O evento foi registrado às 14:00:04 e classificado com severidade máxima. A sessão teve duração total de 24 minutos e transcorreu sem outras ocorrências. É fundamental que a equipe de enfermagem esteja atenta a esse tipo de situação para garantir a segurança do paciente.",
+  "texto": "Durante a sessão de monitoramento, ocorreu um evento grave de queda, onde o paciente apresentou um tronco a 69° da vertical e o quadril desceu 0,32 do tamanho do corpo em 1,0 segundo, saindo do leito e permanecendo no chão. O evento foi registrado às 14:00:04 e classificado com severidade máxima. A sessão teve duração de 0,4 minutos e foi realizada no quarto do paciente. A equipe de enfermagem deve ser alertada para a situação e tomar as devidas providências.",
   "modelo": "gpt-4o-mini"
 }

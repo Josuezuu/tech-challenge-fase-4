@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "metoprolol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "metoprolol",
+      "negada": false
+    },
+    {
+      "texto": "50 mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 3,
+      "confianca": 0.65,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "oral",
+      "categoria": "MedicationRoute",
+      "offset": 21,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12 em 12 horas",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 14,
+      "confianca": 0.58,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

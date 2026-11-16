@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "ENOXAPARINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "enoxaparin",
+      "negada": false
+    },
+    {
+      "texto": "60mg",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "SC",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "uma vez ao dia",
+      "categoria": "Frequency",
+      "offset": 20,
+      "comprimento": 14,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.8,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VANCOMICINA",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "vancomycin",
+      "negada": false
+    },
+    {
+      "texto": "500mg",
+      "categoria": "Dosage",
+      "offset": 23,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 29,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 35,
+      "comprimento": 6,
+      "confianca": 0.93,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

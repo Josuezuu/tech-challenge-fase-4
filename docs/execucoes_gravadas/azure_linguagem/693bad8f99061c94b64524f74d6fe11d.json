@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "ceftriaxona",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "ceftriaxone",
+      "negada": false
+    },
+    {
+      "texto": "1 g",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 3,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2x ao dia",
+      "categoria": "Frequency",
+      "offset": 21,
+      "comprimento": 9,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

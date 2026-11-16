@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "vancomicina",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "vancomycin",
+      "negada": false
+    },
+    {
+      "texto": "750 mg",
+      "categoria": "Dosage",
+      "offset": 21,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 28,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2x ao dia",
+      "categoria": "Frequency",
+      "offset": 39,
+      "comprimento": 9,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

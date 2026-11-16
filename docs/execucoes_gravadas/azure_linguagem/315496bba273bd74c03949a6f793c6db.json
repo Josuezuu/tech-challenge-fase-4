@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "DIPIRONA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "dipyrone",
+      "negada": false
+    },
+    {
+      "texto": "500mg",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 15,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6/6h",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 4,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

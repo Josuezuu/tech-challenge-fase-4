@@ -1,4 +1,4 @@
 {
-  "texto": "Alerta CRÍTICO: Sinais vitais, 09:05:04. SpO2 em 85%, abaixo de 88% por 305 segundos. Avaliação da equipe necessária.",
+  "texto": "Alerta CRÍTICO: Fonte \"sinais vitais\" registrou SpO2 a 85% abaixo de 88% por 305 segundos, às 09:05:04. Avaliação da equipe necessária.",
   "modelo": "gpt-4o-mini"
 }

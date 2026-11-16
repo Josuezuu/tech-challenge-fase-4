@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "FUROSEMIDA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "furosemide",
+      "negada": false
+    },
+    {
+      "texto": "20 mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 8,
+      "confianca": 0.94,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 26,
+      "comprimento": 14,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

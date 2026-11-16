@@ -1,6 +1,6 @@
 # Estado
 
-**Atualizado:** 14/11/2026 · **Marco atual:** vídeo validado com gravações do grupo; OpenAI rodando com chave real; Azure configurado, falta a primeira rodada real
+**Atualizado:** 16/11/2026 · **Marco atual:** Azure Speech e Azure AI Language rodando com chave real; 6 consultas gravadas (`problemas (1..6)`) nos leitos 20–25; avaliação completa gerada
 
 ## Onde está
 
@@ -11,10 +11,10 @@
 | Alertas e fusão | pronta | `features/alertas/spec.md` |
 | Prescrições | pronta (dados sintéticos) | `features/prescricoes/spec.md` |
 | Vídeo e movimentação | pronta, avaliada em 7 gravações do grupo (6/10, 0 falso positivo) e 5 clipes do UR Fall | `features/video/spec.md` |
-| Áudio | pronta, testada com voz sintética; Azure Language respondeu com a chave real (teste de 1 frase), Speech ainda não chamado | `features/audio/spec.md` |
+| Áudio | pronta; Azure Speech + Language reais em 9 áudios (3 sintéticos e as 6 consultas `problemas`, leitos 20–25); alteração vocal ainda só validada com voz sintética | `features/audio/spec.md` |
 | Cenário, avaliação, painel | pronta; aba Avaliação mostra cada vídeo gravado, anotado | `features/painel/spec.md` |
 
-Suíte: 181 testes rápidos + 2 lentos, todos verdes (14/11).
+Suíte: 182 testes rápidos + 2 lentos, todos verdes (16/11).
 
 ## Decisões
 
@@ -37,6 +37,8 @@ Suíte: 181 testes rápidos + 2 lentos, todos verdes (14/11).
 | 14/11 | Gravações do Josué versionadas em `data/gravacoes/` | Pedido dele, com consentimento; o repositório é público |
 | 14/11 | Azure via **um recurso Foundry** (`tc4-josue`, East US, grupo `rg-tech-challenge-fase4`) | O portal não oferece mais Speech e Language separados no fluxo padrão; uma chave serve aos dois |
 | 14/11 | Rodar o Azure uma vez e depois usar `MONITOR_MODO_NUVEM=simulado` | Com chave, cada execução chama o serviço de novo; em `simulado` o projeto reaproveita as respostas reais gravadas |
+| 15/11 | Consultas `problemas (1..6).mp3` como pacientes só de áudio, `leito-20` a `leito-25` | Voz humana real no cenário; cada uma traz uma queixa diferente |
+| 16/11 | Lista de termos ganha dor de cabeça, náusea, enjoo, tosse, dor abdominal e dor no estômago (INFO) | Queixas das consultas reais que passavam sem evento; INFO porque são inespecíficas |
 
 ## Bloqueios
 
@@ -45,7 +47,8 @@ Suíte: 181 testes rápidos + 2 lentos, todos verdes (14/11).
 
 ## A fazer
 
-- [ ] Primeira rodada real do Azure (só áudio + cenário), conferir as chamadas em tc4-josue → Monitoramento → Métricas, commitar `docs/execucoes_gravadas/azure_*` e trocar para `MONITOR_MODO_NUVEM=simulado`
+- [x] Primeira rodada real do Azure (15/11): Speech e Language reais no cenário e na avaliação; respostas em `docs/execucoes_gravadas/azure_*`. Usar `MONITOR_MODO_NUVEM=simulado` daqui em diante
+- [ ] Termos que a lista ainda não pega nas consultas reais: "tossir" (verbo; a lista tem "tosse"), "cansada/cansado" (a lista tem "cansaço"; mudar quebraria o gabarito de `sintetico_termos`) e sintoma de terceiro ("meu filho está com febre", leito-24)
 - [ ] Gravar A1 (voz normal), A2 (voz cansada) e A3 (consulta do leito-12: falta de ar, dor no peito, tontura); roteiros nos `.txt` de `data/amostras/audio/`
 - [ ] Gravar V2 (fisioterapia, elevação lateral) para o leito-07
 - [ ] Padronizar o texto dos alertas da OpenAI (`src/monitor/alertas/redacao.py`): hoje alterna "Alerta CRÍTICO:" e "Nível: ATENÇÃO. Fonte: …"

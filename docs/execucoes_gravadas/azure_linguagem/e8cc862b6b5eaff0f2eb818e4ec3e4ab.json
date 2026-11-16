@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "LOSARTANA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "25 mg",
+      "categoria": "Dosage",
+      "offset": 10,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 8,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 25,
+      "comprimento": 14,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

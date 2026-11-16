@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "TRAMADOL",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "tramadol",
+      "negada": false
+    },
+    {
+      "texto": "300mg",
+      "categoria": "Dosage",
+      "offset": 18,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 25,
+      "comprimento": 10,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "3x ao dia",
+      "categoria": "Frequency",
+      "offset": 37,
+      "comprimento": 9,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

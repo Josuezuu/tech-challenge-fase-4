@@ -1,0 +1,200 @@
+{
+  "texto": "Bom dia, doutora. Estou com uma dor de cabeça muito forte há 2 dias e uma sensação de enjoo, então queria saber se pode ser enxaqueca ou se preciso fazer algum exame.",
+  "palavras": [
+    {
+      "texto": "bom",
+      "inicio_s": 0.15,
+      "fim_s": 0.51,
+      "confianca": 0.83050424
+    },
+    {
+      "texto": "dia",
+      "inicio_s": 0.51,
+      "fim_s": 0.99,
+      "confianca": 0.80983406
+    },
+    {
+      "texto": "doutora",
+      "inicio_s": 0.99,
+      "fim_s": 1.79,
+      "confianca": 0.81699955
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 1.79,
+      "fim_s": 2.23,
+      "confianca": 0.99037665
+    },
+    {
+      "texto": "com",
+      "inicio_s": 2.23,
+      "fim_s": 2.43,
+      "confianca": 0.9910156
+    },
+    {
+      "texto": "uma",
+      "inicio_s": 2.43,
+      "fim_s": 2.59,
+      "confianca": 0.8260428
+    },
+    {
+      "texto": "dor",
+      "inicio_s": 2.59,
+      "fim_s": 2.87,
+      "confianca": 0.85868174
+    },
+    {
+      "texto": "de",
+      "inicio_s": 2.87,
+      "fim_s": 2.99,
+      "confianca": 0.8241996
+    },
+    {
+      "texto": "cabeça",
+      "inicio_s": 2.99,
+      "fim_s": 3.47,
+      "confianca": 0.9765063
+    },
+    {
+      "texto": "muito",
+      "inicio_s": 3.47,
+      "fim_s": 3.91,
+      "confianca": 0.9894024
+    },
+    {
+      "texto": "forte",
+      "inicio_s": 3.91,
+      "fim_s": 4.35,
+      "confianca": 0.94522166
+    },
+    {
+      "texto": "há",
+      "inicio_s": 4.35,
+      "fim_s": 4.39,
+      "confianca": 0.79753304
+    },
+    {
+      "texto": "dois",
+      "inicio_s": 4.39,
+      "fim_s": 4.71,
+      "confianca": 0.9917184
+    },
+    {
+      "texto": "dias",
+      "inicio_s": 4.71,
+      "fim_s": 5.07,
+      "confianca": 0.9914113
+    },
+    {
+      "texto": "e",
+      "inicio_s": 5.07,
+      "fim_s": 5.15,
+      "confianca": 0.85932124
+    },
+    {
+      "texto": "uma",
+      "inicio_s": 5.15,
+      "fim_s": 5.35,
+      "confianca": 0.9901569
+    },
+    {
+      "texto": "sensação",
+      "inicio_s": 5.35,
+      "fim_s": 5.91,
+      "confianca": 0.86992854
+    },
+    {
+      "texto": "de",
+      "inicio_s": 5.91,
+      "fim_s": 6.03,
+      "confianca": 0.9913862
+    },
+    {
+      "texto": "enjoo",
+      "inicio_s": 6.03,
+      "fim_s": 6.55,
+      "confianca": 0.8125575
+    },
+    {
+      "texto": "então",
+      "inicio_s": 6.75,
+      "fim_s": 7.15,
+      "confianca": 0.81997544
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 7.15,
+      "fim_s": 7.51,
+      "confianca": 0.94697815
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 7.51,
+      "fim_s": 7.87,
+      "confianca": 0.99178106
+    },
+    {
+      "texto": "se",
+      "inicio_s": 7.87,
+      "fim_s": 8.03,
+      "confianca": 0.94212294
+    },
+    {
+      "texto": "pode",
+      "inicio_s": 8.03,
+      "fim_s": 8.31,
+      "confianca": 0.95930016
+    },
+    {
+      "texto": "ser",
+      "inicio_s": 8.31,
+      "fim_s": 8.47,
+      "confianca": 0.9915264
+    },
+    {
+      "texto": "enxaqueca",
+      "inicio_s": 8.47,
+      "fim_s": 9.07,
+      "confianca": 0.97940034
+    },
+    {
+      "texto": "ou",
+      "inicio_s": 9.07,
+      "fim_s": 9.23,
+      "confianca": 0.9906522
+    },
+    {
+      "texto": "se",
+      "inicio_s": 9.23,
+      "fim_s": 9.39,
+      "confianca": 0.93035066
+    },
+    {
+      "texto": "preciso",
+      "inicio_s": 9.39,
+      "fim_s": 9.87,
+      "confianca": 0.9877082
+    },
+    {
+      "texto": "fazer",
+      "inicio_s": 9.87,
+      "fim_s": 10.23,
+      "confianca": 0.984108
+    },
+    {
+      "texto": "algum",
+      "inicio_s": 10.23,
+      "fim_s": 10.55,
+      "confianca": 0.8516699
+    },
+    {
+      "texto": "exame",
+      "inicio_s": 10.55,
+      "fim_s": 11.11,
+      "confianca": 0.9914875
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 11.904,
+  "servico": "azure"
+}

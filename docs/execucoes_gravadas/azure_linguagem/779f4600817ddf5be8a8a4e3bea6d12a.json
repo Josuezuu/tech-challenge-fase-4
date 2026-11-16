@@ -1,0 +1,104 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Bom dia, doutor. ",
+      "sentimento": "positive",
+      "positivo": 0.99,
+      "neutro": 0.01,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Sinto uma dor no estômago depois de comer e uma queimação que sobe pela garganta, então queria saber se pode ser gastrite, se preciso mudar a alimentação.",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 17
+    }
+  ],
+  "frases_chave": [
+    "Bom dia",
+    "estômago",
+    "queimação",
+    "alimentação",
+    "doutor",
+    "dor",
+    "garganta"
+  ],
+  "entidades": [
+    {
+      "texto": "doutor",
+      "categoria": "HealthcareProfession",
+      "offset": 9,
+      "comprimento": 6,
+      "confianca": 0.79,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "dor",
+      "categoria": "SymptomOrSign",
+      "offset": 27,
+      "comprimento": 3,
+      "confianca": 1.0,
+      "normalizado": "Pain",
+      "negada": false
+    },
+    {
+      "texto": "estômago",
+      "categoria": "SymptomOrSign",
+      "offset": 34,
+      "comprimento": 8,
+      "confianca": 0.55,
+      "normalizado": "Stomach",
+      "negada": false
+    },
+    {
+      "texto": "queimação",
+      "categoria": "SymptomOrSign",
+      "offset": 65,
+      "comprimento": 9,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "garganta",
+      "categoria": "BodyStructure",
+      "offset": 89,
+      "comprimento": 8,
+      "confianca": 0.78,
+      "normalizado": "Pharyngeal structure",
+      "negada": false
+    },
+    {
+      "texto": "gastrite",
+      "categoria": "Diagnosis",
+      "offset": 130,
+      "comprimento": 8,
+      "confianca": 0.99,
+      "normalizado": "Gastritis",
+      "negada": false
+    },
+    {
+      "texto": "mudar",
+      "categoria": "Course",
+      "offset": 151,
+      "comprimento": 5,
+      "confianca": 0.64,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "alimentação",
+      "categoria": "TreatmentName",
+      "offset": 159,
+      "comprimento": 11,
+      "confianca": 0.89,
+      "normalizado": "Feeding activity",
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "sentimento": "positive",
+  "frases": [
+    {
+      "texto": "Bom dia. ",
+      "sentimento": "positive",
+      "positivo": 1.0,
+      "neutro": 0.0,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Ponto hoje eu acordei cedo e tomei o café da manhã no quarto ponto. ",
+      "sentimento": "neutral",
+      "positivo": 0.03,
+      "neutro": 0.96,
+      "negativo": 0.0,
+      "offset": 9
+    },
+    {
+      "texto": "A enfermeira passou às 8:00 para medir a pressão e depois eu conversei com a minha filha pelo telefone. ",
+      "sentimento": "neutral",
+      "positivo": 0.0,
+      "neutro": 1.0,
+      "negativo": 0.0,
+      "offset": 77
+    },
+    {
+      "texto": "Ponto, ela vem me visitar no sábado à tarde com os meus nitos. ",
+      "sentimento": "neutral",
+      "positivo": 0.05,
+      "neutro": 0.94,
+      "negativo": 0.01,
+      "offset": 181
+    },
+    {
+      "texto": "Ponto, almoço estava gostoso e eu consegui caminhar um pouco pelo corredor. ",
+      "sentimento": "positive",
+      "positivo": 0.95,
+      "neutro": 0.04,
+      "negativo": 0.01,
+      "offset": 244
+    },
+    {
+      "texto": "Ponto à tarde, eu li o jornal e assisti a um programa de música na televisão.",
+      "sentimento": "neutral",
+      "positivo": 0.01,
+      "neutro": 0.98,
+      "negativo": 0.01,
+      "offset": 320
+    }
+  ],
+  "frases_chave": [
+    "Bom dia",
+    "pressão",
+    "sábado",
+    "almoço",
+    "música",
+    "televisão",
+    "quarto ponto",
+    "café",
+    "manhã",
+    "enfermeira",
+    "filha",
+    "telefone",
+    "tarde",
+    "nitos",
+    "corredor",
+    "jornal",
+    "programa"
+  ],
+  "entidades": [
+    {
+      "texto": "hoje",
+      "categoria": "Time",
+      "offset": 15,
+      "comprimento": 4,
+      "confianca": 0.87,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "acordei cedo",
+      "categoria": "SymptomOrSign",
+      "offset": 23,
+      "comprimento": 12,
+      "confianca": 0.88,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "enfermeira",
+      "categoria": "HealthcareProfession",
+      "offset": 79,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "8:00",
+      "categoria": "Time",
+      "offset": 100,
+      "comprimento": 4,
+      "confianca": 0.89,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "medir a",
+      "categoria": "ExaminationName",
+      "offset": 110,
+      "comprimento": 7,
+      "confianca": 0.85,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "pressão",
+      "categoria": "ExaminationName",
+      "offset": 118,
+      "comprimento": 7,
+      "confianca": 0.99,
+      "normalizado": "Pressure - physical agent",
+      "negada": false
+    },
+    {
+      "texto": "filha",
+      "categoria": "FamilyRelation",
+      "offset": 160,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "visitar",
+      "categoria": "AdministrativeEvent",
+      "offset": 199,
+      "comprimento": 7,
+      "confianca": 0.76,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "sábado à tarde",
+      "categoria": "Time",
+      "offset": 210,
+      "comprimento": 14,
+      "confianca": 0.68,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

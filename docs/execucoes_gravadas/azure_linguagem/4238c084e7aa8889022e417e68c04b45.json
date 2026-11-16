@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "paracetamol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "acetaminophen",
+      "negada": false
+    },
+    {
+      "texto": "500 mg",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 19,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 6 horas",
+      "categoria": "Frequency",
+      "offset": 22,
+      "comprimento": 14,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

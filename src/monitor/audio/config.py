@@ -23,6 +23,13 @@ TERMOS_CRITICOS: dict[str, Severidade] = {
     "fadiga": Severidade.INFO,
     "palpitacao": Severidade.INFO,
     "febre": Severidade.INFO,
+    # Queixas comuns de consulta, vistas nas gravações problemas (1..6) e sem termo na lista original.
+    "dor de cabeca": Severidade.INFO,
+    "nausea": Severidade.INFO,
+    "enjoo": Severidade.INFO,
+    "tosse": Severidade.INFO,
+    "dor abdominal": Severidade.INFO,
+    "dor no estomago": Severidade.INFO,
 }
 
 # Atributos acústicos, na ordem em que aparecem no relatório.

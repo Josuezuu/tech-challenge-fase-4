@@ -1,0 +1,188 @@
+{
+  "texto": "Boa tarde, doutor. Comecei a tossir muito na segunda-feira e agora estou com falta de ar e febre. Então queria saber se pode ser pneumonia e se preciso tomar antibiótico.",
+  "palavras": [
+    {
+      "texto": "boa",
+      "inicio_s": 0.15,
+      "fim_s": 0.55,
+      "confianca": 0.9031954
+    },
+    {
+      "texto": "tarde",
+      "inicio_s": 0.55,
+      "fim_s": 1.11,
+      "confianca": 0.97726905
+    },
+    {
+      "texto": "doutor",
+      "inicio_s": 1.15,
+      "fim_s": 1.95,
+      "confianca": 0.8654307
+    },
+    {
+      "texto": "comecei",
+      "inicio_s": 2.03,
+      "fim_s": 2.67,
+      "confianca": 0.84365207
+    },
+    {
+      "texto": "a",
+      "inicio_s": 2.67,
+      "fim_s": 2.75,
+      "confianca": 0.97275895
+    },
+    {
+      "texto": "tossir",
+      "inicio_s": 2.75,
+      "fim_s": 3.19,
+      "confianca": 0.99150485
+    },
+    {
+      "texto": "muito",
+      "inicio_s": 3.19,
+      "fim_s": 3.59,
+      "confianca": 0.83864987
+    },
+    {
+      "texto": "na",
+      "inicio_s": 3.59,
+      "fim_s": 3.71,
+      "confianca": 0.8413501
+    },
+    {
+      "texto": "segunda-feira",
+      "inicio_s": 3.71,
+      "fim_s": 4.55,
+      "confianca": 0.8417235
+    },
+    {
+      "texto": "e",
+      "inicio_s": 4.55,
+      "fim_s": 4.63,
+      "confianca": 0.81276226
+    },
+    {
+      "texto": "agora",
+      "inicio_s": 4.63,
+      "fim_s": 4.95,
+      "confianca": 0.9913167
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 4.95,
+      "fim_s": 5.23,
+      "confianca": 0.8227311
+    },
+    {
+      "texto": "com",
+      "inicio_s": 5.23,
+      "fim_s": 5.47,
+      "confianca": 0.99142176
+    },
+    {
+      "texto": "falta",
+      "inicio_s": 5.47,
+      "fim_s": 5.79,
+      "confianca": 0.9916745
+    },
+    {
+      "texto": "de",
+      "inicio_s": 5.79,
+      "fim_s": 5.95,
+      "confianca": 0.98436326
+    },
+    {
+      "texto": "ar",
+      "inicio_s": 5.95,
+      "fim_s": 6.07,
+      "confianca": 0.9913707
+    },
+    {
+      "texto": "e",
+      "inicio_s": 6.07,
+      "fim_s": 6.15,
+      "confianca": 0.9235269
+    },
+    {
+      "texto": "febre",
+      "inicio_s": 6.15,
+      "fim_s": 6.71,
+      "confianca": 0.8032186
+    },
+    {
+      "texto": "então",
+      "inicio_s": 6.83,
+      "fim_s": 7.23,
+      "confianca": 0.9673438
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 7.23,
+      "fim_s": 7.55,
+      "confianca": 0.84794337
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 7.55,
+      "fim_s": 7.95,
+      "confianca": 0.99171597
+    },
+    {
+      "texto": "se",
+      "inicio_s": 7.95,
+      "fim_s": 8.11,
+      "confianca": 0.84044486
+    },
+    {
+      "texto": "pode",
+      "inicio_s": 8.11,
+      "fim_s": 8.39,
+      "confianca": 0.98891747
+    },
+    {
+      "texto": "ser",
+      "inicio_s": 8.39,
+      "fim_s": 8.63,
+      "confianca": 0.9916608
+    },
+    {
+      "texto": "pneumonia",
+      "inicio_s": 8.63,
+      "fim_s": 9.27,
+      "confianca": 0.18502067
+    },
+    {
+      "texto": "e",
+      "inicio_s": 9.27,
+      "fim_s": 9.35,
+      "confianca": 0.9817801
+    },
+    {
+      "texto": "se",
+      "inicio_s": 9.35,
+      "fim_s": 9.51,
+      "confianca": 0.81224847
+    },
+    {
+      "texto": "preciso",
+      "inicio_s": 9.51,
+      "fim_s": 9.99,
+      "confianca": 0.99133193
+    },
+    {
+      "texto": "tomar",
+      "inicio_s": 9.99,
+      "fim_s": 10.27,
+      "confianca": 0.9146609
+    },
+    {
+      "texto": "antibiótico",
+      "inicio_s": 10.27,
+      "fim_s": 11.16,
+      "confianca": 0.81714237
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 12.0,
+  "servico": "azure"
+}

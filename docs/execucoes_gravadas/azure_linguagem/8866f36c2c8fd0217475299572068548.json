@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Furosemida",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "furosemide",
+      "negada": false
+    },
+    {
+      "texto": "60 mg",
+      "categoria": "Dosage",
+      "offset": 20,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 26,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 12 horas",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 15,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

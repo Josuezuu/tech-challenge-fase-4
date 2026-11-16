@@ -1,0 +1,58 @@
+{
+  "entidades": [
+    {
+      "texto": "TRAMADOL",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "tramadol",
+      "negada": false
+    },
+    {
+      "texto": "300mg",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 15,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "8",
+      "categoria": "Time",
+      "offset": 21,
+      "comprimento": 1,
+      "confianca": 0.65,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "em 8",
+      "categoria": "Frequency",
+      "offset": 23,
+      "comprimento": 4,
+      "confianca": 0.62,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "horas",
+      "categoria": "Time",
+      "offset": 28,
+      "comprimento": 5,
+      "confianca": 0.58,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

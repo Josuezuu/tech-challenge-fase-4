@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "HEPARINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "heparin",
+      "negada": false
+    },
+    {
+      "texto": "2500 UI",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 7,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "3x ao dia",
+      "categoria": "Frequency",
+      "offset": 28,
+      "comprimento": 9,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

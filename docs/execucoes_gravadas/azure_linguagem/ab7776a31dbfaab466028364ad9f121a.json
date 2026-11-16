@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.93,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "Ceftriaxona",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "ceftriaxone",
+      "negada": false
+    },
+    {
+      "texto": "2g",
+      "categoria": "Dosage",
+      "offset": 23,
+      "comprimento": 2,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 12 horas",
+      "categoria": "Frequency",
+      "offset": 31,
+      "comprimento": 15,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

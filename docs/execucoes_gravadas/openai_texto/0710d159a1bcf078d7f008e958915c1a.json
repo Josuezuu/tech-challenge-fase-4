@@ -1,4 +1,4 @@
 {
-  "texto": "Alerta CRÍTICO. \n\nFonte: sinais vitais, horário 14:00:04 - FR 26 rpm, acima de 24 rpm há 5 s.  \nFonte: sinais vitais, horário 14:02:18 - SpO2 90 %, abaixo de 92 % há 5 s.  \nFonte: sinais vitais, horário 14:02:28 - SpO2 86 %, abaixo de 88 % há 5 s.  \nFonte: áudio, horário 14:03:03 - Paciente relatou \"falta de ar\".  \nFonte: áudio, horário 14:03:07 - Paciente relatou \"dor no peito\".  \nFonte: vídeo, horário 14:04:06 - Queda: tronco a 64° da vertical e quadril desceu 0.38 do tamanho do corpo em 0.8 s, fora do leito; continua no chão.  \n\nAvaliação da equipe necessária.",
+  "texto": "Alerta CRÍTICO. \n\n1. Sinais vitais: FR de 26 rpm, acima de 24 rpm às 14:00:04.  \n2. Sinais vitais: SpO2 de 90%, abaixo de 92% às 14:02:18.  \n3. Sinais vitais: SpO2 de 86%, abaixo de 88% às 14:02:28.  \n4. Áudio: Paciente relatou \"falta de ar\" às 14:03:03.  \n5. Áudio: Paciente relatou \"dor no peito\" às 14:03:07.  \n6. Vídeo: Queda do paciente, tronco a 64° da vertical, às 14:04:06.  \n\nAvaliação da equipe necessária.",
   "modelo": "gpt-4o-mini"
 }

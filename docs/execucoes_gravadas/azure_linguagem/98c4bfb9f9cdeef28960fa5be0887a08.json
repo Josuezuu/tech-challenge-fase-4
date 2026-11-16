@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Metoprolol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "metoprolol",
+      "negada": false
+    },
+    {
+      "texto": "75mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 8,
+      "confianca": 0.85,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2x ao dia",
+      "categoria": "Frequency",
+      "offset": 25,
+      "comprimento": 9,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

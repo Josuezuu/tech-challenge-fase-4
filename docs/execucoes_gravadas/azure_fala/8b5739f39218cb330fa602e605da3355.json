@@ -1,0 +1,470 @@
+{
+  "texto": "Bom dia. Ponto hoje eu acordei cedo e tomei o café da manhã no quarto ponto. A enfermeira passou às 8:00 para medir a pressão e depois eu conversei com a minha filha pelo telefone. Ponto, ela vem me visitar no sábado à tarde com os meus nitos. Ponto, almoço estava gostoso e eu consegui caminhar um pouco pelo corredor. Ponto à tarde, eu li o jornal e assisti a um programa de música na televisão.",
+  "palavras": [
+    {
+      "texto": "bom",
+      "inicio_s": 0.07,
+      "fim_s": 0.47,
+      "confianca": 0.9776788
+    },
+    {
+      "texto": "dia",
+      "inicio_s": 0.47,
+      "fim_s": 0.83,
+      "confianca": 0.9861901
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 0.83,
+      "fim_s": 1.31,
+      "confianca": 0.8102643
+    },
+    {
+      "texto": "hoje",
+      "inicio_s": 1.31,
+      "fim_s": 1.67,
+      "confianca": 0.8001705
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 1.67,
+      "fim_s": 1.83,
+      "confianca": 0.81956536
+    },
+    {
+      "texto": "acordei",
+      "inicio_s": 1.83,
+      "fim_s": 2.43,
+      "confianca": 0.98975104
+    },
+    {
+      "texto": "cedo",
+      "inicio_s": 2.43,
+      "fim_s": 2.95,
+      "confianca": 0.9913902
+    },
+    {
+      "texto": "e",
+      "inicio_s": 2.95,
+      "fim_s": 3.07,
+      "confianca": 0.8187351
+    },
+    {
+      "texto": "tomei",
+      "inicio_s": 3.07,
+      "fim_s": 3.51,
+      "confianca": 0.99069464
+    },
+    {
+      "texto": "o",
+      "inicio_s": 3.51,
+      "fim_s": 3.55,
+      "confianca": 0.81649303
+    },
+    {
+      "texto": "café",
+      "inicio_s": 3.55,
+      "fim_s": 3.99,
+      "confianca": 0.9917088
+    },
+    {
+      "texto": "da",
+      "inicio_s": 3.99,
+      "fim_s": 4.15,
+      "confianca": 0.99102414
+    },
+    {
+      "texto": "manhã",
+      "inicio_s": 4.15,
+      "fim_s": 4.51,
+      "confianca": 0.98609877
+    },
+    {
+      "texto": "no",
+      "inicio_s": 4.51,
+      "fim_s": 4.71,
+      "confianca": 0.84363765
+    },
+    {
+      "texto": "quarto",
+      "inicio_s": 4.71,
+      "fim_s": 5.35,
+      "confianca": 0.99085706
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 5.35,
+      "fim_s": 5.79,
+      "confianca": 0.83788115
+    },
+    {
+      "texto": "a",
+      "inicio_s": 5.79,
+      "fim_s": 5.87,
+      "confianca": 0.83480805
+    },
+    {
+      "texto": "enfermeira",
+      "inicio_s": 5.87,
+      "fim_s": 6.59,
+      "confianca": 0.8995578
+    },
+    {
+      "texto": "passou",
+      "inicio_s": 6.59,
+      "fim_s": 7.11,
+      "confianca": 0.92863584
+    },
+    {
+      "texto": "às",
+      "inicio_s": 7.11,
+      "fim_s": 7.31,
+      "confianca": 0.9492064
+    },
+    {
+      "texto": "oito",
+      "inicio_s": 7.31,
+      "fim_s": 7.75,
+      "confianca": 0.8763913
+    },
+    {
+      "texto": "horas",
+      "inicio_s": 7.75,
+      "fim_s": 8.15,
+      "confianca": 0.9910184
+    },
+    {
+      "texto": "para",
+      "inicio_s": 8.15,
+      "fim_s": 8.43,
+      "confianca": 0.8395035
+    },
+    {
+      "texto": "medir",
+      "inicio_s": 8.43,
+      "fim_s": 8.83,
+      "confianca": 0.93152386
+    },
+    {
+      "texto": "a",
+      "inicio_s": 8.83,
+      "fim_s": 8.91,
+      "confianca": 0.9144647
+    },
+    {
+      "texto": "pressão",
+      "inicio_s": 8.91,
+      "fim_s": 9.51,
+      "confianca": 0.91969377
+    },
+    {
+      "texto": "e",
+      "inicio_s": 9.51,
+      "fim_s": 9.63,
+      "confianca": 0.8394894
+    },
+    {
+      "texto": "depois",
+      "inicio_s": 9.63,
+      "fim_s": 10.19,
+      "confianca": 0.99160814
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 10.19,
+      "fim_s": 10.31,
+      "confianca": 0.8370072
+    },
+    {
+      "texto": "conversei",
+      "inicio_s": 10.31,
+      "fim_s": 11.03,
+      "confianca": 0.85100895
+    },
+    {
+      "texto": "com",
+      "inicio_s": 11.03,
+      "fim_s": 11.31,
+      "confianca": 0.8431419
+    },
+    {
+      "texto": "a",
+      "inicio_s": 11.31,
+      "fim_s": 11.35,
+      "confianca": 0.83775294
+    },
+    {
+      "texto": "minha",
+      "inicio_s": 11.35,
+      "fim_s": 11.71,
+      "confianca": 0.99136776
+    },
+    {
+      "texto": "filha",
+      "inicio_s": 11.71,
+      "fim_s": 12.19,
+      "confianca": 0.9907583
+    },
+    {
+      "texto": "pelo",
+      "inicio_s": 12.19,
+      "fim_s": 12.51,
+      "confianca": 0.8237024
+    },
+    {
+      "texto": "telefone",
+      "inicio_s": 12.51,
+      "fim_s": 13.19,
+      "confianca": 0.84557396
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 13.19,
+      "fim_s": 13.67,
+      "confianca": 0.8183153
+    },
+    {
+      "texto": "ela",
+      "inicio_s": 13.67,
+      "fim_s": 13.99,
+      "confianca": 0.40661603
+    },
+    {
+      "texto": "vem",
+      "inicio_s": 13.99,
+      "fim_s": 14.19,
+      "confianca": 0.9538141
+    },
+    {
+      "texto": "me",
+      "inicio_s": 14.19,
+      "fim_s": 14.39,
+      "confianca": 0.98212266
+    },
+    {
+      "texto": "visitar",
+      "inicio_s": 14.39,
+      "fim_s": 14.99,
+      "confianca": 0.83772194
+    },
+    {
+      "texto": "no",
+      "inicio_s": 14.99,
+      "fim_s": 15.19,
+      "confianca": 0.95034546
+    },
+    {
+      "texto": "sábado",
+      "inicio_s": 15.19,
+      "fim_s": 15.83,
+      "confianca": 0.8122172
+    },
+    {
+      "texto": "à",
+      "inicio_s": 15.83,
+      "fim_s": 15.87,
+      "confianca": 0.78931284
+    },
+    {
+      "texto": "tarde",
+      "inicio_s": 15.87,
+      "fim_s": 16.67,
+      "confianca": 0.8538899
+    },
+    {
+      "texto": "com",
+      "inicio_s": 16.71,
+      "fim_s": 17.03,
+      "confianca": 0.9479948
+    },
+    {
+      "texto": "os",
+      "inicio_s": 17.03,
+      "fim_s": 17.23,
+      "confianca": 0.82015085
+    },
+    {
+      "texto": "meus",
+      "inicio_s": 17.23,
+      "fim_s": 17.59,
+      "confianca": 0.9897656
+    },
+    {
+      "texto": "nitos",
+      "inicio_s": 17.59,
+      "fim_s": 18.11,
+      "confianca": 0.20231698
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 18.11,
+      "fim_s": 18.63,
+      "confianca": 0.79066765
+    },
+    {
+      "texto": "almoço",
+      "inicio_s": 18.63,
+      "fim_s": 19.27,
+      "confianca": 0.94301033
+    },
+    {
+      "texto": "estava",
+      "inicio_s": 19.27,
+      "fim_s": 19.79,
+      "confianca": 0.87045527
+    },
+    {
+      "texto": "gostoso",
+      "inicio_s": 19.79,
+      "fim_s": 20.55,
+      "confianca": 0.83004963
+    },
+    {
+      "texto": "e",
+      "inicio_s": 20.55,
+      "fim_s": 20.71,
+      "confianca": 0.81675833
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 20.71,
+      "fim_s": 20.91,
+      "confianca": 0.81069493
+    },
+    {
+      "texto": "consegui",
+      "inicio_s": 20.91,
+      "fim_s": 21.51,
+      "confianca": 0.9769877
+    },
+    {
+      "texto": "caminhar",
+      "inicio_s": 21.51,
+      "fim_s": 22.07,
+      "confianca": 0.8976219
+    },
+    {
+      "texto": "um",
+      "inicio_s": 22.07,
+      "fim_s": 22.27,
+      "confianca": 0.97895324
+    },
+    {
+      "texto": "pouco",
+      "inicio_s": 22.27,
+      "fim_s": 22.75,
+      "confianca": 0.8009477
+    },
+    {
+      "texto": "pelo",
+      "inicio_s": 22.75,
+      "fim_s": 23.07,
+      "confianca": 0.81660455
+    },
+    {
+      "texto": "corredor",
+      "inicio_s": 23.07,
+      "fim_s": 23.67,
+      "confianca": 0.9491906
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 23.67,
+      "fim_s": 24.15,
+      "confianca": 0.87037045
+    },
+    {
+      "texto": "à",
+      "inicio_s": 24.15,
+      "fim_s": 24.23,
+      "confianca": 0.23488306
+    },
+    {
+      "texto": "tarde",
+      "inicio_s": 24.23,
+      "fim_s": 24.79,
+      "confianca": 0.82137954
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 24.79,
+      "fim_s": 24.95,
+      "confianca": 0.90686154
+    },
+    {
+      "texto": "li",
+      "inicio_s": 24.95,
+      "fim_s": 25.11,
+      "confianca": 0.89764005
+    },
+    {
+      "texto": "o",
+      "inicio_s": 25.11,
+      "fim_s": 25.19,
+      "confianca": 0.8093866
+    },
+    {
+      "texto": "jornal",
+      "inicio_s": 25.19,
+      "fim_s": 25.75,
+      "confianca": 0.8583543
+    },
+    {
+      "texto": "e",
+      "inicio_s": 25.75,
+      "fim_s": 25.95,
+      "confianca": 0.8408665
+    },
+    {
+      "texto": "assisti",
+      "inicio_s": 25.95,
+      "fim_s": 26.51,
+      "confianca": 0.74603105
+    },
+    {
+      "texto": "a",
+      "inicio_s": 26.51,
+      "fim_s": 26.59,
+      "confianca": 0.83199584
+    },
+    {
+      "texto": "um",
+      "inicio_s": 26.59,
+      "fim_s": 26.75,
+      "confianca": 0.8123078
+    },
+    {
+      "texto": "programa",
+      "inicio_s": 26.75,
+      "fim_s": 27.39,
+      "confianca": 0.85864323
+    },
+    {
+      "texto": "de",
+      "inicio_s": 27.39,
+      "fim_s": 27.55,
+      "confianca": 0.9793113
+    },
+    {
+      "texto": "música",
+      "inicio_s": 27.55,
+      "fim_s": 28.11,
+      "confianca": 0.85437757
+    },
+    {
+      "texto": "na",
+      "inicio_s": 28.11,
+      "fim_s": 28.27,
+      "confianca": 0.97918427
+    },
+    {
+      "texto": "televisão",
+      "inicio_s": 28.27,
+      "fim_s": 29.11,
+      "confianca": 0.82514703
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 29.908,
+  "servico": "azure"
+}

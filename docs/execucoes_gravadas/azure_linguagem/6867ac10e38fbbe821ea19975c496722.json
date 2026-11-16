@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "TRAMADOL",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "tramadol",
+      "negada": false
+    },
+    {
+      "texto": "50mg",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "oral",
+      "categoria": "MedicationRoute",
+      "offset": 19,
+      "comprimento": 4,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "8/8h",
+      "categoria": "Frequency",
+      "offset": 25,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

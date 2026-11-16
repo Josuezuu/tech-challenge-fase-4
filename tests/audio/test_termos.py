@@ -82,3 +82,12 @@ def test_sentimento_negativo_acima_do_limiar():
     assert [e.tipo for e in eventos] == ["sentimento_negativo"]
     assert eventos[0].valor == pytest.approx(0.9)
     assert eventos[0].instante == INICIO
+
+
+def test_queixas_comuns_viram_termo_info(tmp_path):
+    texto = "Estou com uma dor de cabeça muito forte há 2 dias e uma sensação de enjoo"
+    analise = ClienteLinguagem(SEM_CHAVE, "simulado", Gravador("l", tmp_path)).analisar(texto)
+    eventos = detectar(analise, transcricao_de(texto), "leito-22", INICIO)
+
+    termos = {e.evidencia["termo"]: e.severidade for e in do_tipo(eventos, "termo_critico")}
+    assert termos == {"dor de cabeca": Severidade.INFO, "enjoo": Severidade.INFO}

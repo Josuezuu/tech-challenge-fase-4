@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "INSULINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "Insulin",
+      "negada": false
+    },
+    {
+      "texto": "8 UI",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "SC",
+      "categoria": "MedicationRoute",
+      "offset": 14,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "8 em 8 horas",
+      "categoria": "Frequency",
+      "offset": 20,
+      "comprimento": 12,
+      "confianca": 0.75,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

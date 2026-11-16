@@ -1,0 +1,4 @@
+{
+  "texto": "Durante a sessão de monitoramento, foi registrado um evento de alta severidade: o paciente saiu do leito e permaneceu fora por pelo menos 3 segundos, às 14:00:05. A duração total da sessão foi de 0,3 minutos. Não houve outros eventos registrados. A equipe deve estar atenta a possíveis riscos relacionados a essa saída do leito. A sessão foi finalizada às 14:00:15.",
+  "modelo": "gpt-4o-mini"
+}

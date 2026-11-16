@@ -1,0 +1,242 @@
+{
+  "texto": "Doutor, eu não tenho febre, mas estou com falta de ar desde ontem. Ponto à noite. Eu senti dor no peito e um pouco de tontura quando levantei ponto hoje. Eu estou muito cansado e com medo de piorar.",
+  "palavras": [
+    {
+      "texto": "doutor",
+      "inicio_s": 0.07,
+      "fim_s": 0.91,
+      "confianca": 0.7658673
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 0.99,
+      "fim_s": 1.19,
+      "confianca": 0.8400243
+    },
+    {
+      "texto": "não",
+      "inicio_s": 1.19,
+      "fim_s": 1.47,
+      "confianca": 0.98717946
+    },
+    {
+      "texto": "tenho",
+      "inicio_s": 1.47,
+      "fim_s": 1.83,
+      "confianca": 0.8533503
+    },
+    {
+      "texto": "febre",
+      "inicio_s": 1.83,
+      "fim_s": 2.55,
+      "confianca": 0.9658998
+    },
+    {
+      "texto": "mas",
+      "inicio_s": 2.59,
+      "fim_s": 2.95,
+      "confianca": 0.8222101
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 2.95,
+      "fim_s": 3.35,
+      "confianca": 0.8121339
+    },
+    {
+      "texto": "com",
+      "inicio_s": 3.35,
+      "fim_s": 3.63,
+      "confianca": 0.9872525
+    },
+    {
+      "texto": "falta",
+      "inicio_s": 3.63,
+      "fim_s": 4.15,
+      "confianca": 0.99098796
+    },
+    {
+      "texto": "de",
+      "inicio_s": 4.15,
+      "fim_s": 4.31,
+      "confianca": 0.95512336
+    },
+    {
+      "texto": "ar",
+      "inicio_s": 4.31,
+      "fim_s": 4.47,
+      "confianca": 0.81367826
+    },
+    {
+      "texto": "desde",
+      "inicio_s": 4.47,
+      "fim_s": 4.99,
+      "confianca": 0.99043745
+    },
+    {
+      "texto": "ontem",
+      "inicio_s": 4.99,
+      "fim_s": 5.43,
+      "confianca": 0.99005413
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 5.43,
+      "fim_s": 5.95,
+      "confianca": 0.8381481
+    },
+    {
+      "texto": "à",
+      "inicio_s": 5.95,
+      "fim_s": 5.99,
+      "confianca": 0.32117122
+    },
+    {
+      "texto": "noite",
+      "inicio_s": 5.99,
+      "fim_s": 6.47,
+      "confianca": 0.99161166
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 6.47,
+      "fim_s": 6.67,
+      "confianca": 0.8229588
+    },
+    {
+      "texto": "senti",
+      "inicio_s": 6.67,
+      "fim_s": 7.11,
+      "confianca": 0.9892938
+    },
+    {
+      "texto": "dor",
+      "inicio_s": 7.11,
+      "fim_s": 7.39,
+      "confianca": 0.9917373
+    },
+    {
+      "texto": "no",
+      "inicio_s": 7.39,
+      "fim_s": 7.67,
+      "confianca": 0.872332
+    },
+    {
+      "texto": "peito",
+      "inicio_s": 7.67,
+      "fim_s": 8.11,
+      "confianca": 0.991704
+    },
+    {
+      "texto": "e",
+      "inicio_s": 8.11,
+      "fim_s": 8.27,
+      "confianca": 0.98541534
+    },
+    {
+      "texto": "um",
+      "inicio_s": 8.27,
+      "fim_s": 8.47,
+      "confianca": 0.9912963
+    },
+    {
+      "texto": "pouco",
+      "inicio_s": 8.47,
+      "fim_s": 8.99,
+      "confianca": 0.98257416
+    },
+    {
+      "texto": "de",
+      "inicio_s": 8.99,
+      "fim_s": 9.11,
+      "confianca": 0.85854167
+    },
+    {
+      "texto": "tontura",
+      "inicio_s": 9.11,
+      "fim_s": 9.75,
+      "confianca": 0.83602166
+    },
+    {
+      "texto": "quando",
+      "inicio_s": 9.75,
+      "fim_s": 10.15,
+      "confianca": 0.97801113
+    },
+    {
+      "texto": "levantei",
+      "inicio_s": 10.15,
+      "fim_s": 10.79,
+      "confianca": 0.8501342
+    },
+    {
+      "texto": "ponto",
+      "inicio_s": 10.79,
+      "fim_s": 11.31,
+      "confianca": 0.8702067
+    },
+    {
+      "texto": "hoje",
+      "inicio_s": 11.31,
+      "fim_s": 11.59,
+      "confianca": 0.986579
+    },
+    {
+      "texto": "eu",
+      "inicio_s": 11.59,
+      "fim_s": 11.75,
+      "confianca": 0.8179961
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 11.75,
+      "fim_s": 12.19,
+      "confianca": 0.9904102
+    },
+    {
+      "texto": "muito",
+      "inicio_s": 12.19,
+      "fim_s": 12.67,
+      "confianca": 0.806397
+    },
+    {
+      "texto": "cansado",
+      "inicio_s": 12.67,
+      "fim_s": 13.39,
+      "confianca": 0.93908554
+    },
+    {
+      "texto": "e",
+      "inicio_s": 13.39,
+      "fim_s": 13.51,
+      "confianca": 0.99145484
+    },
+    {
+      "texto": "com",
+      "inicio_s": 13.51,
+      "fim_s": 13.75,
+      "confianca": 0.99091434
+    },
+    {
+      "texto": "medo",
+      "inicio_s": 13.75,
+      "fim_s": 14.15,
+      "confianca": 0.99134576
+    },
+    {
+      "texto": "de",
+      "inicio_s": 14.15,
+      "fim_s": 14.31,
+      "confianca": 0.83612067
+    },
+    {
+      "texto": "piorar",
+      "inicio_s": 14.31,
+      "fim_s": 14.95,
+      "confianca": 0.8019197
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 15.805,
+  "servico": "azure"
+}

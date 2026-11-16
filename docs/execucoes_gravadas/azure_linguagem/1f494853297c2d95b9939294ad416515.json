@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "HEPARINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 0.99,
+      "normalizado": "heparin",
+      "negada": false
+    },
+    {
+      "texto": "2500UI",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 8 horas",
+      "categoria": "Frequency",
+      "offset": 21,
+      "comprimento": 14,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

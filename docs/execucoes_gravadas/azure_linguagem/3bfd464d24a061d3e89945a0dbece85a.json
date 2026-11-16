@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "enoxaparina",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "enoxaparin",
+      "negada": false
+    },
+    {
+      "texto": "40 mg",
+      "categoria": "Dosage",
+      "offset": 20,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "subcutânea",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 10,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "24",
+      "categoria": "Time",
+      "offset": 42,
+      "comprimento": 2,
+      "confianca": 0.66,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "em 24",
+      "categoria": "Frequency",
+      "offset": 45,
+      "comprimento": 5,
+      "confianca": 0.57,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

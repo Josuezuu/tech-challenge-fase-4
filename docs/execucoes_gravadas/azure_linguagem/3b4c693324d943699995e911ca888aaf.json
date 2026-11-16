@@ -1,0 +1,112 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Boa tarde, doutor. ",
+      "sentimento": "positive",
+      "positivo": 1.0,
+      "neutro": 0.0,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Comecei a tossir muito na segunda-feira e agora estou com falta de ar e febre. ",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 19
+    },
+    {
+      "texto": "Então queria saber se pode ser pneumonia e se preciso tomar antibiótico.",
+      "sentimento": "neutral",
+      "positivo": 0.01,
+      "neutro": 0.94,
+      "negativo": 0.05,
+      "offset": 98
+    }
+  ],
+  "frases_chave": [
+    "antibiótico",
+    "tarde",
+    "doutor",
+    "segunda-feira",
+    "falta",
+    "febre",
+    "pneumonia"
+  ],
+  "entidades": [
+    {
+      "texto": "doutor",
+      "categoria": "HealthcareProfession",
+      "offset": 11,
+      "comprimento": 6,
+      "confianca": 0.77,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "tossir",
+      "categoria": "SymptomOrSign",
+      "offset": 29,
+      "comprimento": 6,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "muito",
+      "categoria": "ConditionQualifier",
+      "offset": 36,
+      "comprimento": 5,
+      "confianca": 0.66,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "segunda-feira",
+      "categoria": "Time",
+      "offset": 45,
+      "comprimento": 13,
+      "confianca": 0.7,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "falta de ar",
+      "categoria": "SymptomOrSign",
+      "offset": 77,
+      "comprimento": 11,
+      "confianca": 0.99,
+      "normalizado": "Dyspnea",
+      "negada": false
+    },
+    {
+      "texto": "febre",
+      "categoria": "SymptomOrSign",
+      "offset": 91,
+      "comprimento": 5,
+      "confianca": 0.96,
+      "normalizado": "Fever",
+      "negada": false
+    },
+    {
+      "texto": "pneumonia",
+      "categoria": "Diagnosis",
+      "offset": 129,
+      "comprimento": 9,
+      "confianca": 0.98,
+      "normalizado": "Pneumonia",
+      "negada": false
+    },
+    {
+      "texto": "antibiótico",
+      "categoria": "MedicationClass",
+      "offset": 158,
+      "comprimento": 11,
+      "confianca": 0.99,
+      "normalizado": "Antibiotics",
+      "negada": false
+    }
+  ]
+}

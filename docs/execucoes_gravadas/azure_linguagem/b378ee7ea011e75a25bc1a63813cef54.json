@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "dipirona",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "dipyrone",
+      "negada": false
+    },
+    {
+      "texto": "500 mg",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 8,
+      "confianca": 0.81,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6/6h",
+      "categoria": "Frequency",
+      "offset": 28,
+      "comprimento": 4,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

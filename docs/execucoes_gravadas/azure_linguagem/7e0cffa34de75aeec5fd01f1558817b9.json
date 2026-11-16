@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.84,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "Insulina",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 8,
+      "confianca": 0.99,
+      "normalizado": "Insulin",
+      "negada": false
+    },
+    {
+      "texto": "6 UI",
+      "categoria": "Dosage",
+      "offset": 20,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "subcutânea",
+      "categoria": "MedicationRoute",
+      "offset": 25,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "8/8h",
+      "categoria": "Frequency",
+      "offset": 39,
+      "comprimento": 4,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

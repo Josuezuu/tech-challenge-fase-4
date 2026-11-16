@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "furosemida",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "furosemide",
+      "negada": false
+    },
+    {
+      "texto": "40 mg",
+      "categoria": "Dosage",
+      "offset": 19,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 26,
+      "comprimento": 8,
+      "confianca": 0.78,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 36,
+      "comprimento": 14,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

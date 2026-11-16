@@ -35,6 +35,33 @@
       "paciente_id": "leito-03",
       "sinais": {"gravacao": 32, "inicio": "2026-11-12T09:00:00"},
       "prescricoes": {"dias": 5, "inicio": "2026-11-10T08:00:00", "semente": 44}
+    },
+    {
+      "paciente_id": "leito-20",
+      "audio": {
+        "arquivo": ["data/amostras/audio/problemas (1).mp3"],
+        "inicio": "2026-11-12T16:00:00"
+      }
+    },
+    {
+      "paciente_id": "leito-21",
+      "audio": {"arquivo": ["data/amostras/audio/problemas (2).mp3"], "inicio": "2026-11-12T16:10:00"}
+    },
+    {
+      "paciente_id": "leito-22",
+      "audio": {"arquivo": ["data/amostras/audio/problemas (3).mp3"], "inicio": "2026-11-12T16:20:00"}
+    },
+    {
+      "paciente_id": "leito-23",
+      "audio": {"arquivo": ["data/amostras/audio/problemas (4).mp3"], "inicio": "2026-11-12T16:30:00"}
+    },
+    {
+      "paciente_id": "leito-24",
+      "audio": {"arquivo": ["data/amostras/audio/problemas (5).mp3"], "inicio": "2026-11-12T16:40:00"}
+    },
+    {
+      "paciente_id": "leito-25",
+      "audio": {"arquivo": ["data/amostras/audio/problemas (6).mp3"], "inicio": "2026-11-12T16:50:00"}
     }
   ]
 }

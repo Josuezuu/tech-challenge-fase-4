@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.93,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "enoxaparina",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "enoxaparin",
+      "negada": false
+    },
+    {
+      "texto": "20 mg",
+      "categoria": "Dosage",
+      "offset": 23,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "SC",
+      "categoria": "MedicationRoute",
+      "offset": 30,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 24 horas",
+      "categoria": "Frequency",
+      "offset": 34,
+      "comprimento": 15,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

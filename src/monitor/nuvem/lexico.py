@@ -78,6 +78,37 @@ def negado(norm: str, inicio: int) -> bool:
     return any(p in NEGACOES for p in anteriores)
 
 
+# Sintoma de outra pessoa: "meu filho está com febre". O Text Analytics for
+# health em português não preenche ``assertion.association`` (testado em
+# 17/11/2026), então a atribuição é feita aqui.
+PARENTES = (
+    "filho", "filha", "filhos", "filhas", "mae", "pai", "esposa", "marido", "irmao", "irma",
+    "avo", "neto", "neta", "bebe", "crianca", "sobrinho", "sobrinha", "tio", "tia",
+)
+RE_PARENTE = re.compile(rf"\b(?:meu|minha|meus|minhas|o|a|nosso|nossa)\s+(?:{'|'.join(PARENTES)})\b")
+# Fala em primeira pessoa depois do parente devolve o sintoma ao paciente:
+# "minha mãe disse que eu estou com febre".
+PRIMEIRA_PESSOA = {"eu", "estou", "tenho", "sinto", "senti", "sentindo", "comigo", "fiquei", "tive"}
+RE_FIM_DE_FRASE = re.compile(r"[.!?]")
+
+
+def de_terceiro(norm: str, inicio: int, parentes: tuple[tuple[int, int], ...] = ()) -> bool:
+    """O termo em ``inicio`` descreve outra pessoa?
+
+    Sim quando, na mesma frase e antes do termo, aparece um parente
+    (entidade ``FamilyRelation`` do Azure, em ``parentes``, ou "meu filho",
+    "minha mãe"...) e, entre o parente e o termo, não há fala em primeira pessoa.
+    """
+    fins = [m.end() for m in RE_FIM_DE_FRASE.finditer(norm, 0, inicio)]
+    frase_inicio = fins[-1] if fins else 0
+    fins_parente = [m.end() for m in RE_PARENTE.finditer(norm, frase_inicio, inicio)]
+    fins_parente += [f for i, f in parentes if frase_inicio <= i and f <= inicio]
+    if not fins_parente:
+        return False
+    entre = re.findall(r"\w+", norm[max(fins_parente):inicio])
+    return not any(p in PRIMEIRA_PESSOA for p in entre)
+
+
 def entidades(texto: str) -> list[dict]:
     """Entidades no formato do Text Analytics for health (subconjunto).
 

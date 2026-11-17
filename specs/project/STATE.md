@@ -14,7 +14,7 @@
 | Áudio | pronta; Azure Speech + Language reais em 9 áudios (3 sintéticos da voz Maria, as 6 consultas `paciente_*.mp3` dos leitos 20–25, também geradas digitalmente, e as 3 gravações do Gabriel, leitos 26–28); alteração vocal validada também com voz humana (leitos 26–29: 0 alarme falso em 6 pares reais; voz cansada manipulada acusada, `leito-29`) | `features/audio/spec.md` |
 | Cenário, avaliação, painel | pronta; Avaliação é uma visão separada na barra lateral (não é aba do paciente) e mostra cada vídeo gravado, anotado | `features/painel/spec.md` |
 
-Suíte: 188 testes rápidos + 2 lentos, todos verdes (16/11).
+Suíte: 193 testes rápidos + 2 lentos, todos verdes (17/11).
 
 ## Decisões
 
@@ -48,19 +48,19 @@ Suíte: 188 testes rápidos + 2 lentos, todos verdes (16/11).
 
 ## Bloqueios
 
-- **Áudios reais (A1–A3):** só existem as 3 amostras de voz sintética (Microsoft Maria, Windows). Com voz sintética, o Azure Speech transcreve quase perfeito e a demonstração do edital ("áudios de consultas") fica fraca. O cenário já procura `data/gravacoes/A1|A2|A3` (`.m4a` ou `.wav`) antes das amostras.
+- **Áudios reais:** resolvido em 16/11 com as gravações de voz humana do Gabriel nos leitos 26 (`paciente_1010`), 28 (`paciente_7870`) e 29 (`paciente_8830` como referência e `paciente_8830_cansada` como consulta). As amostras sintéticas (Microsoft Maria) ficam para medir o WER contra roteiro.
 
 ## A fazer
 
 - [x] Primeira rodada real do Azure (15/11): Speech e Language reais no cenário e na avaliação; respostas em `docs/execucoes_gravadas/azure_*`. Usar `MONITOR_MODO_NUVEM=simulado` daqui em diante
 - [x] "tossir", "tossindo", "cansado" e "cansada" na lista de termos (16/11); gabarito de `sintetico_termos` passa a esperar "cansado" (4 termos, VP 4, FP 0, FN 0)
 - [x] "Aperto no peito" (ALTA), "coração acelerado" e "taquicardia" (INFO) na lista de termos (16/11); `leito-29` passa a gerar os dois alertas
-- [ ] Sintoma de terceiro ("meu filho está com febre", leito-24) ainda vira termo do paciente
-- [ ] Gravar A1 (voz normal), A2 (voz cansada) e A3 (consulta do leito-12: falta de ar, dor no peito, tontura); roteiros nos `.txt` de `data/amostras/audio/`
+- [x] Sintoma de terceiro (17/11): "meu filho está com febre" (leito-24) não vira mais termo do paciente (`lexico.de_terceiro`: parente na mesma frase, antes do termo, sem primeira pessoa no meio; usa a entidade `FamilyRelation` do Azure). Cenário: 70 eventos e 61 alertas (14 críticos, 21 de atenção, 26 informativos)
+- [x] Voz humana no cenário (16/11): leitos 26, 28 e 29 (ver "Áudios reais" acima); dispensa gravar A1–A3
 - [x] Gravar V2 (fisioterapia, elevação lateral, 16/11): paciente próprio `fisioterapia-01`, só vídeo; 6 repetições, 2 incompletas (72° e 76°), 2/2 acertos e 0 falso positivo contra a anotação
 - [x] Texto dos alertas padronizado (16/11): `Alerta <NÍVEL> · <paciente> · <motivo>. <corpo da LLM> Avaliação da equipe necessária.`; 62/62 com texto da OpenAI
 - [x] Rodar com as gravações do grupo (vídeo): 7 gravações, 6/10 eventos, 0 falso positivo; ver `features/video/spec.md`, seção "Gravações do grupo (14/11)"
-- [ ] Conferir se o Text Analytics for health em `pt` marca "falta de ar" e "tontura" como `SymptomOrSign` (senão entram pela lista curada)
+- [x] Conferido no Azure real (17/11): o Text Analytics for health em `pt` marca "falta de ar", "tontura" e "cansado" como `SymptomOrSign` e "febre" negada; "dor no peito" vem partido em "dor no" (`SymptomOrSign`) + "peito" (`BodyStructure`) e entra pela lista curada. `assertion.association` não é preenchida em português, por isso a regra própria de sintoma de terceiro
 - [x] Criar o repositório no GitHub e convidar o Gabriel (`Josuezuu/tech-challenge-fase-4`, público; convite de escrita para `gaburanello` em 10/11)
 
 ## Ideias adiadas

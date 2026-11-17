@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Ceftriaxona",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 11,
+      "confianca": 0.99,
+      "normalizado": "ceftriaxone",
+      "negada": false
+    },
+    {
+      "texto": "2000mg",
+      "categoria": "Dosage",
+      "offset": 20,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12 em 12 horas",
+      "categoria": "Frequency",
+      "offset": 41,
+      "comprimento": 14,
+      "confianca": 0.74,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

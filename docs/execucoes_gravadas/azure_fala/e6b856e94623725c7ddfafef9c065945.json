@@ -1,0 +1,176 @@
+{
+  "texto": "Bom dia, doutora, estou com uma dor de garganta muito forte há 4 dias e dificuldade para engolir. Queria saber se pode ser infeção, se preciso tomar antibiótico.",
+  "palavras": [
+    {
+      "texto": "bom",
+      "inicio_s": 0.59,
+      "fim_s": 0.83,
+      "confianca": 0.9792251
+    },
+    {
+      "texto": "dia",
+      "inicio_s": 0.83,
+      "fim_s": 0.99,
+      "confianca": 0.90675616
+    },
+    {
+      "texto": "doutora",
+      "inicio_s": 0.99,
+      "fim_s": 1.47,
+      "confianca": 0.9149985
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 1.71,
+      "fim_s": 1.99,
+      "confianca": 0.99148023
+    },
+    {
+      "texto": "com",
+      "inicio_s": 1.99,
+      "fim_s": 2.11,
+      "confianca": 0.9909951
+    },
+    {
+      "texto": "uma",
+      "inicio_s": 2.11,
+      "fim_s": 2.27,
+      "confianca": 0.8572839
+    },
+    {
+      "texto": "dor",
+      "inicio_s": 2.27,
+      "fim_s": 2.39,
+      "confianca": 0.90599495
+    },
+    {
+      "texto": "de",
+      "inicio_s": 2.39,
+      "fim_s": 2.47,
+      "confianca": 0.9912248
+    },
+    {
+      "texto": "garganta",
+      "inicio_s": 2.47,
+      "fim_s": 2.91,
+      "confianca": 0.82292867
+    },
+    {
+      "texto": "muito",
+      "inicio_s": 2.91,
+      "fim_s": 3.23,
+      "confianca": 0.9627423
+    },
+    {
+      "texto": "forte",
+      "inicio_s": 3.23,
+      "fim_s": 3.83,
+      "confianca": 0.84168583
+    },
+    {
+      "texto": "há",
+      "inicio_s": 3.87,
+      "fim_s": 3.91,
+      "confianca": 0.7945663
+    },
+    {
+      "texto": "quatro",
+      "inicio_s": 3.99,
+      "fim_s": 4.31,
+      "confianca": 0.9911719
+    },
+    {
+      "texto": "dias",
+      "inicio_s": 4.63,
+      "fim_s": 4.83,
+      "confianca": 0.84972787
+    },
+    {
+      "texto": "e",
+      "inicio_s": 4.83,
+      "fim_s": 4.87,
+      "confianca": 0.82557815
+    },
+    {
+      "texto": "dificuldade",
+      "inicio_s": 5.07,
+      "fim_s": 5.67,
+      "confianca": 0.9885914
+    },
+    {
+      "texto": "para",
+      "inicio_s": 5.67,
+      "fim_s": 5.83,
+      "confianca": 0.9808008
+    },
+    {
+      "texto": "engolir",
+      "inicio_s": 5.91,
+      "fim_s": 6.15,
+      "confianca": 0.9684038
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 7.19,
+      "fim_s": 7.47,
+      "confianca": 0.82218707
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 7.47,
+      "fim_s": 7.87,
+      "confianca": 0.9912335
+    },
+    {
+      "texto": "se",
+      "inicio_s": 7.87,
+      "fim_s": 8.03,
+      "confianca": 0.83848053
+    },
+    {
+      "texto": "pode",
+      "inicio_s": 8.03,
+      "fim_s": 8.31,
+      "confianca": 0.9671682
+    },
+    {
+      "texto": "ser",
+      "inicio_s": 8.31,
+      "fim_s": 8.47,
+      "confianca": 0.98844415
+    },
+    {
+      "texto": "infeção",
+      "inicio_s": 8.47,
+      "fim_s": 9.11,
+      "confianca": 0.9132472
+    },
+    {
+      "texto": "se",
+      "inicio_s": 9.11,
+      "fim_s": 9.19,
+      "confianca": 0.98565
+    },
+    {
+      "texto": "preciso",
+      "inicio_s": 9.19,
+      "fim_s": 9.59,
+      "confianca": 0.96689576
+    },
+    {
+      "texto": "tomar",
+      "inicio_s": 9.59,
+      "fim_s": 9.83,
+      "confianca": 0.9916437
+    },
+    {
+      "texto": "antibiótico",
+      "inicio_s": 9.83,
+      "fim_s": 10.59,
+      "confianca": 0.82324636
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 11.2426875,
+  "servico": "azure"
+}

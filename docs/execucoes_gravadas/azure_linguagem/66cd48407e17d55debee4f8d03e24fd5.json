@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "vancomicina",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "vancomycin",
+      "negada": false
+    },
+    {
+      "texto": "1250mg",
+      "categoria": "Dosage",
+      "offset": 21,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 28,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 12 horas",
+      "categoria": "Frequency",
+      "offset": 31,
+      "comprimento": 15,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

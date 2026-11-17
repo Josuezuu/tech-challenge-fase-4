@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "omeprazol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 1.0,
+      "normalizado": "omeprazole",
+      "negada": false
+    },
+    {
+      "texto": "20 mg",
+      "categoria": "Dosage",
+      "offset": 10,
+      "comprimento": 5,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "24",
+      "categoria": "Time",
+      "offset": 22,
+      "comprimento": 2,
+      "confianca": 0.61,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "/24h",
+      "categoria": "Frequency",
+      "offset": 24,
+      "comprimento": 4,
+      "confianca": 0.88,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

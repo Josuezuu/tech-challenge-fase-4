@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.8,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "ANLODIPINO",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "amlodipine",
+      "negada": false
+    },
+    {
+      "texto": "5 mg",
+      "categoria": "Dosage",
+      "offset": 22,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 8,
+      "confianca": 0.91,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 24 horas",
+      "categoria": "Frequency",
+      "offset": 36,
+      "comprimento": 15,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Omeprazol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 1.0,
+      "normalizado": "omeprazole",
+      "negada": false
+    },
+    {
+      "texto": "20 mg",
+      "categoria": "Dosage",
+      "offset": 10,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "uma vez ao dia",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 14,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

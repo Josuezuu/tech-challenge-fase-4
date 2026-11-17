@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "furosemida",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "furosemide",
+      "negada": false
+    },
+    {
+      "texto": "80mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 4,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 22,
+      "comprimento": 6,
+      "confianca": 0.85,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Metoprolol",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "metoprolol",
+      "negada": false
+    },
+    {
+      "texto": "100 mg",
+      "categoria": "Dosage",
+      "offset": 19,
+      "comprimento": 6,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 34,
+      "comprimento": 6,
+      "confianca": 0.95,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

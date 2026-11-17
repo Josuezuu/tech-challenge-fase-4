@@ -1,0 +1,84 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Boa tarde, Dr. Tenho sentido meu coração acelerado. ",
+      "sentimento": "positive",
+      "positivo": 0.99,
+      "neutro": 0.0,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Um aperto no peito quando faço esforço. ",
+      "sentimento": "neutral",
+      "positivo": 0.01,
+      "neutro": 0.97,
+      "negativo": 0.03,
+      "offset": 52
+    },
+    {
+      "texto": "Então queria saber se é grave ou se precisa fazer um eletrocardiograma.",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.15,
+      "negativo": 0.85,
+      "offset": 92
+    }
+  ],
+  "frases_chave": [
+    "coração",
+    "esforço",
+    "Dr.",
+    "aperto",
+    "peito",
+    "eletrocardiograma"
+  ],
+  "entidades": [
+    {
+      "texto": "Boa tarde",
+      "categoria": "Time",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.84,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "coração acelerado",
+      "categoria": "SymptomOrSign",
+      "offset": 33,
+      "comprimento": 17,
+      "confianca": 0.9,
+      "normalizado": "Pounding heart",
+      "negada": false
+    },
+    {
+      "texto": "aperto no peito",
+      "categoria": "SymptomOrSign",
+      "offset": 55,
+      "comprimento": 15,
+      "confianca": 0.95,
+      "normalizado": "Chest tightness",
+      "negada": false
+    },
+    {
+      "texto": "grave",
+      "categoria": "ConditionQualifier",
+      "offset": 116,
+      "comprimento": 5,
+      "confianca": 0.9,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "eletrocardiograma",
+      "categoria": "ExaminationName",
+      "offset": 145,
+      "comprimento": 17,
+      "confianca": 0.99,
+      "normalizado": "Electrocardiogram",
+      "negada": false
+    }
+  ]
+}

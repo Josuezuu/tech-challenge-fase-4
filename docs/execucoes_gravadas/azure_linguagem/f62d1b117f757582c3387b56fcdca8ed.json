@@ -1,0 +1,58 @@
+{
+  "entidades": [
+    {
+      "texto": "ANLODIPINO",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "amlodipine",
+      "negada": false
+    },
+    {
+      "texto": "7,5 mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 6,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 19,
+      "comprimento": 2,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "24",
+      "categoria": "Time",
+      "offset": 26,
+      "comprimento": 2,
+      "confianca": 0.86,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "em 24",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 5,
+      "confianca": 0.57,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "horas",
+      "categoria": "Time",
+      "offset": 35,
+      "comprimento": 5,
+      "confianca": 0.57,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

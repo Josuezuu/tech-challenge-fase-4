@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Metoprolol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "metoprolol",
+      "negada": false
+    },
+    {
+      "texto": "25 mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "oral",
+      "categoria": "MedicationRoute",
+      "offset": 21,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 6,
+      "confianca": 0.95,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

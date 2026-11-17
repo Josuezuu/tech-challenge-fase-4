@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "metoprolol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "metoprolol",
+      "negada": false
+    },
+    {
+      "texto": "12,5mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via oral",
+      "categoria": "MedicationRoute",
+      "offset": 19,
+      "comprimento": 8,
+      "confianca": 0.89,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 14,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

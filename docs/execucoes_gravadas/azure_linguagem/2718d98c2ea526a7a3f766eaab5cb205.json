@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "MORFINA",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 7,
+      "confianca": 1.0,
+      "normalizado": "morphine",
+      "negada": false
+    },
+    {
+      "texto": "8mg",
+      "categoria": "Dosage",
+      "offset": 16,
+      "comprimento": 3,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "SC",
+      "categoria": "MedicationRoute",
+      "offset": 21,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "4 em 4 horas",
+      "categoria": "Frequency",
+      "offset": 28,
+      "comprimento": 12,
+      "confianca": 0.73,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

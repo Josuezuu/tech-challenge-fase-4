@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "FUROSEMIDA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "furosemide",
+      "negada": false
+    },
+    {
+      "texto": "20mg",
+      "categoria": "Dosage",
+      "offset": 11,
+      "comprimento": 4,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 17,
+      "comprimento": 2,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "em 12 horas",
+      "categoria": "Frequency",
+      "offset": 27,
+      "comprimento": 11,
+      "confianca": 0.58,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Boa tarde, doutora. ",
+      "sentimento": "positive",
+      "positivo": 1.0,
+      "neutro": 0.0,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Ando sentindo muita tontura quando levanto da cama e estou muito cansada, então queria saber se pode ser pressão baixa ou anemia?",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 20
+    }
+  ],
+  "frases_chave": [
+    "muita tontura",
+    "pressão",
+    "tarde",
+    "doutora",
+    "cama",
+    "anemia"
+  ],
+  "entidades": [
+    {
+      "texto": "doutora",
+      "categoria": "HealthcareProfession",
+      "offset": 11,
+      "comprimento": 7,
+      "confianca": 0.87,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "muita",
+      "categoria": "ConditionQualifier",
+      "offset": 34,
+      "comprimento": 5,
+      "confianca": 0.68,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "tontura",
+      "categoria": "SymptomOrSign",
+      "offset": 40,
+      "comprimento": 7,
+      "confianca": 0.98,
+      "normalizado": "Dizziness",
+      "negada": false
+    },
+    {
+      "texto": "muito",
+      "categoria": "ConditionQualifier",
+      "offset": 79,
+      "comprimento": 5,
+      "confianca": 0.65,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "cansada",
+      "categoria": "SymptomOrSign",
+      "offset": 85,
+      "comprimento": 7,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "pressão baixa",
+      "categoria": "Diagnosis",
+      "offset": 125,
+      "comprimento": 13,
+      "confianca": 0.72,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "anemia",
+      "categoria": "Diagnosis",
+      "offset": 142,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": "Anemia",
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.71,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "FUROSEMIDA",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": "furosemide",
+      "negada": false
+    },
+    {
+      "texto": "40 mg",
+      "categoria": "Dosage",
+      "offset": 22,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 28,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 31,
+      "comprimento": 6,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

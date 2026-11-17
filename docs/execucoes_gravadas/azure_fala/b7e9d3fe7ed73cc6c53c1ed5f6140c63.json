@@ -1,0 +1,158 @@
+{
+  "texto": "Boa tarde, doutora. Ando sentindo muita tontura quando levanto da cama e estou muito cansada, então queria saber se pode ser pressão baixa ou anemia?",
+  "palavras": [
+    {
+      "texto": "boa",
+      "inicio_s": 0.15,
+      "fim_s": 0.59,
+      "confianca": 0.8080051
+    },
+    {
+      "texto": "tarde",
+      "inicio_s": 0.59,
+      "fim_s": 1.15,
+      "confianca": 0.9614132
+    },
+    {
+      "texto": "doutora",
+      "inicio_s": 1.23,
+      "fim_s": 2.03,
+      "confianca": 0.83347446
+    },
+    {
+      "texto": "ando",
+      "inicio_s": 2.07,
+      "fim_s": 2.39,
+      "confianca": 0.8356873
+    },
+    {
+      "texto": "sentindo",
+      "inicio_s": 2.39,
+      "fim_s": 2.91,
+      "confianca": 0.95244277
+    },
+    {
+      "texto": "muita",
+      "inicio_s": 2.91,
+      "fim_s": 3.31,
+      "confianca": 0.9651087
+    },
+    {
+      "texto": "tontura",
+      "inicio_s": 3.31,
+      "fim_s": 3.79,
+      "confianca": 0.9847511
+    },
+    {
+      "texto": "quando",
+      "inicio_s": 3.79,
+      "fim_s": 4.07,
+      "confianca": 0.83763236
+    },
+    {
+      "texto": "levanto",
+      "inicio_s": 4.07,
+      "fim_s": 4.51,
+      "confianca": 0.99053735
+    },
+    {
+      "texto": "da",
+      "inicio_s": 4.51,
+      "fim_s": 4.67,
+      "confianca": 0.9782597
+    },
+    {
+      "texto": "cama",
+      "inicio_s": 4.67,
+      "fim_s": 4.99,
+      "confianca": 0.8544291
+    },
+    {
+      "texto": "e",
+      "inicio_s": 4.99,
+      "fim_s": 5.03,
+      "confianca": 0.4022262
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 5.03,
+      "fim_s": 5.31,
+      "confianca": 0.8512237
+    },
+    {
+      "texto": "muito",
+      "inicio_s": 5.31,
+      "fim_s": 5.71,
+      "confianca": 0.83417076
+    },
+    {
+      "texto": "cansada",
+      "inicio_s": 5.71,
+      "fim_s": 6.43,
+      "confianca": 0.9510624
+    },
+    {
+      "texto": "então",
+      "inicio_s": 6.47,
+      "fim_s": 6.87,
+      "confianca": 0.9693945
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 6.87,
+      "fim_s": 7.19,
+      "confianca": 0.8816566
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 7.19,
+      "fim_s": 7.63,
+      "confianca": 0.99183196
+    },
+    {
+      "texto": "se",
+      "inicio_s": 7.63,
+      "fim_s": 7.75,
+      "confianca": 0.8349381
+    },
+    {
+      "texto": "pode",
+      "inicio_s": 7.75,
+      "fim_s": 8.07,
+      "confianca": 0.82173324
+    },
+    {
+      "texto": "ser",
+      "inicio_s": 8.07,
+      "fim_s": 8.27,
+      "confianca": 0.9903532
+    },
+    {
+      "texto": "pressão",
+      "inicio_s": 8.27,
+      "fim_s": 8.63,
+      "confianca": 0.8401741
+    },
+    {
+      "texto": "baixa",
+      "inicio_s": 8.63,
+      "fim_s": 9.15,
+      "confianca": 0.9631993
+    },
+    {
+      "texto": "ou",
+      "inicio_s": 9.15,
+      "fim_s": 9.31,
+      "confianca": 0.7977869
+    },
+    {
+      "texto": "anemia",
+      "inicio_s": 9.31,
+      "fim_s": 9.95,
+      "confianca": 0.26702538
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 10.68,
+  "servico": "azure"
+}

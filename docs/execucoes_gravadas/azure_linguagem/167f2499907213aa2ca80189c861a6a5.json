@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Insulina",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "Insulin",
+      "negada": false
+    },
+    {
+      "texto": "8UI",
+      "categoria": "Dosage",
+      "offset": 9,
+      "comprimento": 3,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "SC",
+      "categoria": "MedicationRoute",
+      "offset": 14,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "3 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 18,
+      "comprimento": 14,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

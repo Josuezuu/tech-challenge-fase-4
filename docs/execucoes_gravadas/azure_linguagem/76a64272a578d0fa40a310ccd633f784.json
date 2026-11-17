@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "Morfina",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 7,
+      "confianca": 1.0,
+      "normalizado": "morphine",
+      "negada": false
+    },
+    {
+      "texto": "4mg",
+      "categoria": "Dosage",
+      "offset": 8,
+      "comprimento": 3,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 12,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "4/4h",
+      "categoria": "Frequency",
+      "offset": 26,
+      "comprimento": 4,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

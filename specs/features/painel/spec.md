@@ -34,13 +34,13 @@ Enquanto as gravações não chegam, o cenário roda com as amostras sintéticas
 
 | Área | Conteúdo |
 |---|---|
-| Barra lateral | Pacientes com o nível mais alto de alerta (cor por nível); botão **"Reproduzir cenário"** que chama o `run_cenario` e recarrega |
+| Barra lateral | Botão **"Reproduzir cenário"** que chama o `run_cenario` e recarrega; seletor de visão **Pacientes** × **Avaliação do sistema**; na visão Pacientes, a lista em ordem (leitos por número, depois os demais, como `fisioterapia-01`; 16/11), cada um com o nível mais alto de alerta |
 | Alertas | Lista em ordem de horário: nível, regra, modalidades, texto, origem do texto; expandir mostra os eventos com as evidências |
 | Sinais vitais | Gráfico das séries do paciente com as faixas clínicas e os eventos marcados |
 | Vídeo | Vídeo anotado (`st.video`) e os recortes dos eventos |
 | Áudio | Transcrição com termos críticos destacados, sentimento por frase, tabela de atributos de voz e z-scores, origem (Azure real/gravado/simulado) |
 | Prescrições | Linha do tempo por medicamento com os itens anômalos marcados |
-| Avaliação | Tabelas do `resultados.json` |
+| Avaliação do sistema (visão própria, fora das abas do paciente; 16/11) | Tabelas do `resultados.json` e os vídeos avaliados. É o conjunto de teste com gabarito, não depende do paciente selecionado |
 
 Cada área aparece só se houver dado; se não houver, mostra uma linha explicando como gerar.
 
@@ -65,4 +65,4 @@ Aceite: `streamlit.testing.v1.AppTest.from_file("app/painel.py").run()` sem exce
 
 SPEC_DEVIATION: o manifesto traz `primeira_concordancia` além de `primeiro_critico`. O primeiro crítico do cenário é uma prescrição de severidade máxima (dias antes), que não mede a fusão; o RF-69 passa a ser lido pela primeira concordância.
 
-**Vídeos avaliados (14/11).** A aba Avaliação mostra, abaixo da tabela, um bloco por clipe de `data/gravacoes/anotacoes.json`: o vídeo anotado (esqueleto, zona do leito, estado por quadro), a tabela esperado × detectado com a severidade, a descrição e o recorte de cada evento, e os perdidos em vermelho. `run_video --avaliar` grava a sessão de cada clipe (`video_navegador` em H.264, eventos, relatório) dentro de `results/avaliacao/video.json`; a conversão `para_h264` saiu de `cenario.py` para `monitor.video.anotacao`, com teste. Validado no navegador: os 7 vídeos carregam (`readyState` 4, sem erro de mídia).
+**Vídeos avaliados (14/11).** A visão Avaliação do sistema mostra, abaixo da tabela, um bloco por clipe de `data/gravacoes/anotacoes.json`: o vídeo anotado (esqueleto, zona do leito, estado por quadro), a tabela esperado × detectado com a severidade, a descrição e o recorte de cada evento, e os perdidos em vermelho. `run_video --avaliar` grava a sessão de cada clipe (`video_navegador` em H.264, eventos, relatório) dentro de `results/avaliacao/video.json`; a conversão `para_h264` saiu de `cenario.py` para `monitor.video.anotacao`, com teste. Validado no navegador: os 7 vídeos carregam (`readyState` 4, sem erro de mídia).

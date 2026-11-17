@@ -1,0 +1,92 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Boa tarde, doutora. ",
+      "sentimento": "positive",
+      "positivo": 1.0,
+      "neutro": 0.0,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Não estou conseguindo dormir direito há semanas. ",
+      "sentimento": "negative",
+      "positivo": 0.07,
+      "neutro": 0.1,
+      "negativo": 0.83,
+      "offset": 20
+    },
+    {
+      "texto": "Ando cansado e irritada, então queria saber se isso é estresse ou se tem algum tratamento.",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 69
+    }
+  ],
+  "frases_chave": [
+    "tarde",
+    "doutora",
+    "semanas",
+    "estresse",
+    "tratamento"
+  ],
+  "entidades": [
+    {
+      "texto": "doutora",
+      "categoria": "HealthcareProfession",
+      "offset": 11,
+      "comprimento": 7,
+      "confianca": 0.87,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "conseguindo dormir direito",
+      "categoria": "SymptomOrSign",
+      "offset": 30,
+      "comprimento": 26,
+      "confianca": 0.91,
+      "normalizado": null,
+      "negada": true
+    },
+    {
+      "texto": "há semanas",
+      "categoria": "Time",
+      "offset": 57,
+      "comprimento": 10,
+      "confianca": 0.78,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "cansado",
+      "categoria": "SymptomOrSign",
+      "offset": 74,
+      "comprimento": 7,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "irritada",
+      "categoria": "SymptomOrSign",
+      "offset": 84,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "tratamento",
+      "categoria": "TreatmentName",
+      "offset": 148,
+      "comprimento": 10,
+      "confianca": 0.7,
+      "normalizado": "Therapeutic procedure",
+      "negada": false
+    }
+  ]
+}

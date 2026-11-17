@@ -1,0 +1,164 @@
+{
+  "texto": "Boa tarde, doutora. Não estou conseguindo dormir direito há semanas. Ando cansado e irritada, então queria saber se isso é estresse ou se tem algum tratamento.",
+  "palavras": [
+    {
+      "texto": "boa",
+      "inicio_s": 0.31,
+      "fim_s": 0.51,
+      "confianca": 0.8834049
+    },
+    {
+      "texto": "tarde",
+      "inicio_s": 0.51,
+      "fim_s": 0.83,
+      "confianca": 0.99203295
+    },
+    {
+      "texto": "doutora",
+      "inicio_s": 0.83,
+      "fim_s": 1.47,
+      "confianca": 0.895773
+    },
+    {
+      "texto": "não",
+      "inicio_s": 1.55,
+      "fim_s": 1.75,
+      "confianca": 0.98813885
+    },
+    {
+      "texto": "estou",
+      "inicio_s": 1.75,
+      "fim_s": 1.99,
+      "confianca": 0.99184287
+    },
+    {
+      "texto": "conseguindo",
+      "inicio_s": 1.99,
+      "fim_s": 2.39,
+      "confianca": 0.8509147
+    },
+    {
+      "texto": "dormir",
+      "inicio_s": 2.39,
+      "fim_s": 2.67,
+      "confianca": 0.98833
+    },
+    {
+      "texto": "direito",
+      "inicio_s": 2.67,
+      "fim_s": 3.03,
+      "confianca": 0.98972577
+    },
+    {
+      "texto": "há",
+      "inicio_s": 3.03,
+      "fim_s": 3.07,
+      "confianca": 0.7424713
+    },
+    {
+      "texto": "semanas",
+      "inicio_s": 3.07,
+      "fim_s": 3.83,
+      "confianca": 0.8221079
+    },
+    {
+      "texto": "ando",
+      "inicio_s": 4.07,
+      "fim_s": 4.19,
+      "confianca": 0.94256204
+    },
+    {
+      "texto": "cansado",
+      "inicio_s": 4.19,
+      "fim_s": 4.91,
+      "confianca": 0.9597685
+    },
+    {
+      "texto": "e",
+      "inicio_s": 5.27,
+      "fim_s": 5.51,
+      "confianca": 0.8181464
+    },
+    {
+      "texto": "irritada",
+      "inicio_s": 5.55,
+      "fim_s": 5.87,
+      "confianca": 0.774899
+    },
+    {
+      "texto": "então",
+      "inicio_s": 6.39,
+      "fim_s": 6.71,
+      "confianca": 0.8335633
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 6.75,
+      "fim_s": 6.99,
+      "confianca": 0.8386082
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 6.99,
+      "fim_s": 7.23,
+      "confianca": 0.9000442
+    },
+    {
+      "texto": "se",
+      "inicio_s": 7.35,
+      "fim_s": 7.59,
+      "confianca": 0.9871458
+    },
+    {
+      "texto": "isso",
+      "inicio_s": 7.59,
+      "fim_s": 7.95,
+      "confianca": 0.8676924
+    },
+    {
+      "texto": "é",
+      "inicio_s": 7.95,
+      "fim_s": 7.99,
+      "confianca": 0.97252774
+    },
+    {
+      "texto": "estresse",
+      "inicio_s": 7.99,
+      "fim_s": 8.55,
+      "confianca": 0.9849939
+    },
+    {
+      "texto": "ou",
+      "inicio_s": 8.55,
+      "fim_s": 8.63,
+      "confianca": 0.9793321
+    },
+    {
+      "texto": "se",
+      "inicio_s": 8.63,
+      "fim_s": 8.79,
+      "confianca": 0.9663045
+    },
+    {
+      "texto": "tem",
+      "inicio_s": 8.79,
+      "fim_s": 8.91,
+      "confianca": 0.85161847
+    },
+    {
+      "texto": "algum",
+      "inicio_s": 8.91,
+      "fim_s": 9.11,
+      "confianca": 0.8226154
+    },
+    {
+      "texto": "tratamento",
+      "inicio_s": 9.15,
+      "fim_s": 9.91,
+      "confianca": 0.99074566
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 10.6453125,
+  "servico": "azure"
+}

@@ -7,7 +7,7 @@ Uma consulta (com referência do paciente para a alteração vocal)::
 
 → ``results/eventos/audio_<paciente>.jsonl`` e ``results/audio/<nome>.json``.
 
-Avaliação (sem ``--audio``, usa as amostras sintéticas de ``data/amostras/audio``)::
+Avaliação (sem ``--audio``, usa as amostras sintéticas e as consultas dos leitos 26-28 de ``data/amostras/audio``)::
 
     python -m experiments.run_audio --avaliar
 
@@ -34,6 +34,14 @@ PARES_SINTETICOS = [
     (AMOSTRAS / "sintetico_normal.wav", AMOSTRAS / "sintetico_alterado.wav"),
     (AMOSTRAS / "sintetico_normal.wav", AMOSTRAS / "sintetico_termos.wav"),
 ]
+# Voz humana (mesma pessoa, leitos 26-28): duas consultas normais contra a referência 1010
+# (não pode acusar) e a 8830 "cansada" (experiments.gerar_voz_cansada) contra a própria 8830 (tem de acusar).
+PARES_HUMANOS = [
+    (AMOSTRAS / "paciente_1010.m4a", AMOSTRAS / "paciente_8830.m4a"),
+    (AMOSTRAS / "paciente_1010.m4a", AMOSTRAS / "paciente_7870.m4a"),
+    (AMOSTRAS / "paciente_8830.m4a", AMOSTRAS / "paciente_8830_cansada.wav"),
+]
+PARES_AVALIACAO = PARES_SINTETICOS + [p for p in PARES_HUMANOS if all(a.exists() for a in p)]
 
 
 def gravar_json(caminho: Path, dados: dict) -> None:
@@ -72,7 +80,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{len(r.eventos)} eventos → {destino_eventos}")
 
     if args.avaliar:
-        pares = [(args.referencia, args.audio)] if args.audio and args.referencia else PARES_SINTETICOS
+        pares = [(args.referencia, args.audio)] if args.audio and args.referencia else PARES_AVALIACAO
         resultado = avaliar(pares, clientes, args.whisper)
         destino = CAMINHOS.resultados / "avaliacao" / "audio.json"
         gravar_json(destino, resultado)

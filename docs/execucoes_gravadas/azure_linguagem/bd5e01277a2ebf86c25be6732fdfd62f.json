@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "enoxaparina",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "enoxaparin",
+      "negada": false
+    },
+    {
+      "texto": "80 mg",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "subcutânea",
+      "categoria": "MedicationRoute",
+      "offset": 19,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "uma vez ao dia",
+      "categoria": "Frequency",
+      "offset": 31,
+      "comprimento": 14,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

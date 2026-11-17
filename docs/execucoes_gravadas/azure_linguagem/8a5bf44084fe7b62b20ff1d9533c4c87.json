@@ -1,0 +1,206 @@
+{
+  "sentimento": "positive",
+  "frases": [
+    {
+      "texto": "Bom dia. ",
+      "sentimento": "positive",
+      "positivo": 0.99,
+      "neutro": 0.01,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Hoje eu acordei cedo e tomei o café da manhã no quarto. ",
+      "sentimento": "neutral",
+      "positivo": 0.02,
+      "neutro": 0.98,
+      "negativo": 0.0,
+      "offset": 9
+    },
+    {
+      "texto": "A enfermeira passou às 8:00 para medir a pressão. ",
+      "sentimento": "neutral",
+      "positivo": 0.0,
+      "neutro": 1.0,
+      "negativo": 0.0,
+      "offset": 65
+    },
+    {
+      "texto": "E depois eu conversei com a minha filha pelo telefone. ",
+      "sentimento": "neutral",
+      "positivo": 0.0,
+      "neutro": 1.0,
+      "negativo": 0.0,
+      "offset": 115
+    },
+    {
+      "texto": "Ela vem me visitar no sábado à tarde com os meus netos. ",
+      "sentimento": "neutral",
+      "positivo": 0.08,
+      "neutro": 0.92,
+      "negativo": 0.0,
+      "offset": 170
+    },
+    {
+      "texto": "O almoço estava gostoso. ",
+      "sentimento": "positive",
+      "positivo": 1.0,
+      "neutro": 0.0,
+      "negativo": 0.0,
+      "offset": 226
+    },
+    {
+      "texto": "E eu consegui caminhar um pouco pelo corredor. ",
+      "sentimento": "neutral",
+      "positivo": 0.0,
+      "neutro": 1.0,
+      "negativo": 0.0,
+      "offset": 251
+    },
+    {
+      "texto": "A tarde eu li o jornal e assisti a um programa de música na televisão.",
+      "sentimento": "neutral",
+      "positivo": 0.01,
+      "neutro": 0.98,
+      "negativo": 0.01,
+      "offset": 298
+    }
+  ],
+  "frases_chave": [
+    "Bom dia",
+    "pressão",
+    "sábado",
+    "almoço",
+    "música",
+    "televisão",
+    "café",
+    "manhã",
+    "quarto",
+    "enfermeira",
+    "filha",
+    "telefone",
+    "netos",
+    "corredor",
+    "jornal",
+    "programa"
+  ],
+  "entidades": [
+    {
+      "texto": "Hoje",
+      "categoria": "Time",
+      "offset": 9,
+      "comprimento": 4,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "acordei cedo",
+      "categoria": "SymptomOrSign",
+      "offset": 17,
+      "comprimento": 12,
+      "confianca": 0.87,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "enfermeira",
+      "categoria": "HealthcareProfession",
+      "offset": 67,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "medir a",
+      "categoria": "ExaminationName",
+      "offset": 98,
+      "comprimento": 7,
+      "confianca": 0.81,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "pressão",
+      "categoria": "ExaminationName",
+      "offset": 106,
+      "comprimento": 7,
+      "confianca": 0.99,
+      "normalizado": "Pressure - physical agent",
+      "negada": false
+    },
+    {
+      "texto": "filha",
+      "categoria": "FamilyRelation",
+      "offset": 149,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "pelo",
+      "categoria": "GeneOrProtein",
+      "offset": 155,
+      "comprimento": 4,
+      "confianca": 0.6,
+      "normalizado": "PELO gene",
+      "negada": false
+    },
+    {
+      "texto": "visitar",
+      "categoria": "AdministrativeEvent",
+      "offset": 181,
+      "comprimento": 7,
+      "confianca": 0.68,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "sábado à tarde",
+      "categoria": "Time",
+      "offset": 192,
+      "comprimento": 14,
+      "confianca": 0.74,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "netos",
+      "categoria": "FamilyRelation",
+      "offset": 219,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "estava gostoso",
+      "categoria": "SymptomOrSign",
+      "offset": 235,
+      "comprimento": 14,
+      "confianca": 0.65,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "pelo",
+      "categoria": "GeneOrProtein",
+      "offset": 283,
+      "comprimento": 4,
+      "confianca": 0.6,
+      "normalizado": "PELO gene",
+      "negada": false
+    },
+    {
+      "texto": "tarde",
+      "categoria": "Time",
+      "offset": 300,
+      "comprimento": 5,
+      "confianca": 0.71,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

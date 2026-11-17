@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "vancomicina",
+      "categoria": "MedicationName",
+      "offset": 8,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "vancomycin",
+      "negada": false
+    },
+    {
+      "texto": "500mg",
+      "categoria": "Dosage",
+      "offset": 20,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 26,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2x ao dia",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 9,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

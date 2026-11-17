@@ -1,0 +1,142 @@
+{
+  "sentimento": "negative",
+  "frases": [
+    {
+      "texto": "Doutor, eu não tenho febre, mas estou com falta de ar desde ontem. ",
+      "sentimento": "negative",
+      "positivo": 0.04,
+      "neutro": 0.02,
+      "negativo": 0.94,
+      "offset": 0
+    },
+    {
+      "texto": "Ponto à noite. ",
+      "sentimento": "neutral",
+      "positivo": 0.04,
+      "neutro": 0.95,
+      "negativo": 0.01,
+      "offset": 67
+    },
+    {
+      "texto": "Eu senti dor no peito e um pouco de tontura quando levantei ponto hoje. ",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 82
+    },
+    {
+      "texto": "Eu estou muito cansado e com medo de piorar.",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 154
+    }
+  ],
+  "frases_chave": [
+    "Doutor",
+    "febre",
+    "falta",
+    "ar",
+    "ontem",
+    "Ponto",
+    "noite",
+    "dor",
+    "peito",
+    "tontura",
+    "medo"
+  ],
+  "entidades": [
+    {
+      "texto": "febre",
+      "categoria": "SymptomOrSign",
+      "offset": 21,
+      "comprimento": 5,
+      "confianca": 0.98,
+      "normalizado": "Fever",
+      "negada": true
+    },
+    {
+      "texto": "falta de ar",
+      "categoria": "SymptomOrSign",
+      "offset": 42,
+      "comprimento": 11,
+      "confianca": 0.98,
+      "normalizado": "Dyspnea",
+      "negada": false
+    },
+    {
+      "texto": "ontem",
+      "categoria": "Time",
+      "offset": 60,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "à noite",
+      "categoria": "Frequency",
+      "offset": 73,
+      "comprimento": 7,
+      "confianca": 0.62,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "dor no",
+      "categoria": "SymptomOrSign",
+      "offset": 91,
+      "comprimento": 6,
+      "confianca": 0.75,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "peito",
+      "categoria": "BodyStructure",
+      "offset": 98,
+      "comprimento": 5,
+      "confianca": 0.6,
+      "normalizado": "Chest",
+      "negada": false
+    },
+    {
+      "texto": "tontura",
+      "categoria": "SymptomOrSign",
+      "offset": 118,
+      "comprimento": 7,
+      "confianca": 0.98,
+      "normalizado": "Dizziness",
+      "negada": false
+    },
+    {
+      "texto": "hoje",
+      "categoria": "Time",
+      "offset": 148,
+      "comprimento": 4,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "muito",
+      "categoria": "ConditionQualifier",
+      "offset": 163,
+      "comprimento": 5,
+      "confianca": 0.82,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "cansado",
+      "categoria": "SymptomOrSign",
+      "offset": 169,
+      "comprimento": 7,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

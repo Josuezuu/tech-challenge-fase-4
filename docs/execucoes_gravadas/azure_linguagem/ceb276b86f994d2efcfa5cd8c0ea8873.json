@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "MORFINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 7,
+      "confianca": 1.0,
+      "normalizado": "morphine",
+      "negada": false
+    },
+    {
+      "texto": "2 mg",
+      "categoria": "Dosage",
+      "offset": 8,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "subcutânea",
+      "categoria": "MedicationRoute",
+      "offset": 13,
+      "comprimento": 10,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6 vezes ao dia",
+      "categoria": "Frequency",
+      "offset": 24,
+      "comprimento": 14,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

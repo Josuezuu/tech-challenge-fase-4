@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.66,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "PARACETAMOL",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "acetaminophen",
+      "negada": false
+    },
+    {
+      "texto": "1 g",
+      "categoria": "Dosage",
+      "offset": 23,
+      "comprimento": 3,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 27,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6/6h",
+      "categoria": "Frequency",
+      "offset": 33,
+      "comprimento": 4,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

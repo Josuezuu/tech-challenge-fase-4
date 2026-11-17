@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "ceftriaxona",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "ceftriaxone",
+      "negada": false
+    },
+    {
+      "texto": "5350 mg",
+      "categoria": "Dosage",
+      "offset": 21,
+      "comprimento": 7,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 30,
+      "comprimento": 10,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 42,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

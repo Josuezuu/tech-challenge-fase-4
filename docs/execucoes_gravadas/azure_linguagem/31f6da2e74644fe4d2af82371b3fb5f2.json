@@ -1,0 +1,106 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Bom dia, doutor. ",
+      "sentimento": "positive",
+      "positivo": 0.99,
+      "neutro": 0.01,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Acordei com dor nas costas e com febre e já faz uns 3 dias que estou com o corpo dolorido e sem apetite, então queria saber se pode ser algo grave, se preciso fazer algum exame.",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 17
+    }
+  ],
+  "frases_chave": [
+    "Bom dia",
+    "doutor",
+    "dor",
+    "costas",
+    "febre",
+    "corpo",
+    "apetite",
+    "exame",
+    "3"
+  ],
+  "entidades": [
+    {
+      "texto": "doutor",
+      "categoria": "HealthcareProfession",
+      "offset": 9,
+      "comprimento": 6,
+      "confianca": 0.79,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "Acordei",
+      "categoria": "AdministrativeEvent",
+      "offset": 17,
+      "comprimento": 7,
+      "confianca": 0.8,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "dor nas costas",
+      "categoria": "SymptomOrSign",
+      "offset": 29,
+      "comprimento": 14,
+      "confianca": 0.95,
+      "normalizado": "Back Pain",
+      "negada": false
+    },
+    {
+      "texto": "febre",
+      "categoria": "SymptomOrSign",
+      "offset": 50,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": "Fever",
+      "negada": false
+    },
+    {
+      "texto": "uns 3 dias",
+      "categoria": "Time",
+      "offset": 65,
+      "comprimento": 10,
+      "confianca": 0.81,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "corpo dolorido",
+      "categoria": "SymptomOrSign",
+      "offset": 92,
+      "comprimento": 14,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "apetite",
+      "categoria": "SymptomOrSign",
+      "offset": 113,
+      "comprimento": 7,
+      "confianca": 1.0,
+      "normalizado": "Desire for food",
+      "negada": true
+    },
+    {
+      "texto": "exame",
+      "categoria": "ExaminationName",
+      "offset": 188,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": "Evaluation procedure",
+      "negada": false
+    }
+  ]
+}

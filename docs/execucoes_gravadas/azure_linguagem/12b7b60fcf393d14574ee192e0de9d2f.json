@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "tramadol",
+      "categoria": "MedicationName",
+      "offset": 9,
+      "comprimento": 8,
+      "confianca": 1.0,
+      "normalizado": "tramadol",
+      "negada": false
+    },
+    {
+      "texto": "75mg",
+      "categoria": "Dosage",
+      "offset": 18,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 24,
+      "comprimento": 10,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "8/8h",
+      "categoria": "Frequency",
+      "offset": 36,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

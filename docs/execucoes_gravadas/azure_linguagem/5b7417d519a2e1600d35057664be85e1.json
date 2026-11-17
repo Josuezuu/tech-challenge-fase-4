@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "CEFTRIAXONA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "ceftriaxone",
+      "negada": false
+    },
+    {
+      "texto": "2g",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 2,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 10,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 31,
+      "comprimento": 6,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "paracetamol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "acetaminophen",
+      "negada": false
+    },
+    {
+      "texto": "1 g",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 3,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "via",
+      "categoria": "MedicationRoute",
+      "offset": 16,
+      "comprimento": 3,
+      "confianca": 0.62,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "oral",
+      "categoria": "MedicationRoute",
+      "offset": 20,
+      "comprimento": 4,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6/6h",
+      "categoria": "Frequency",
+      "offset": 28,
+      "comprimento": 4,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

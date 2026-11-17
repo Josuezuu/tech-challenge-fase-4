@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "Suspender",
+      "categoria": "Course",
+      "offset": 0,
+      "comprimento": 9,
+      "confianca": 0.94,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VANCOMICINA",
+      "categoria": "MedicationName",
+      "offset": 11,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "vancomycin",
+      "negada": false
+    },
+    {
+      "texto": "1250mg",
+      "categoria": "Dosage",
+      "offset": 23,
+      "comprimento": 6,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "endovenosa",
+      "categoria": "MedicationRoute",
+      "offset": 31,
+      "comprimento": 10,
+      "confianca": 0.97,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12 em 12 horas",
+      "categoria": "Frequency",
+      "offset": 46,
+      "comprimento": 14,
+      "confianca": 0.83,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

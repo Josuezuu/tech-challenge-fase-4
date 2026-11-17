@@ -1,0 +1,13 @@
+{
+  "sintetico": false,
+  "manipulada": {
+    "origem": "data/amostras/audio/paciente_8830.m4a",
+    "nivel": "moderada",
+    "lentidao": 1.2,
+    "pausa_a_cada_palavras": 5,
+    "pausa_s": 0.6,
+    "ganho_db": -6.0,
+    "sopro_db": null
+  },
+  "alteracao_vocal": true
+}

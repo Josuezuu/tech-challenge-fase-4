@@ -1,0 +1,188 @@
+{
+  "texto": "Bom dia, doutor. Sinto uma dor no estômago depois de comer e uma queimação que sobe pela garganta, então queria saber se pode ser gastrite, se preciso mudar a alimentação.",
+  "palavras": [
+    {
+      "texto": "bom",
+      "inicio_s": 0.15,
+      "fim_s": 0.51,
+      "confianca": 0.94842035
+    },
+    {
+      "texto": "dia",
+      "inicio_s": 0.51,
+      "fim_s": 0.99,
+      "confianca": 0.8072237
+    },
+    {
+      "texto": "doutor",
+      "inicio_s": 1.03,
+      "fim_s": 1.83,
+      "confianca": 0.9762323
+    },
+    {
+      "texto": "sinto",
+      "inicio_s": 1.83,
+      "fim_s": 2.39,
+      "confianca": 0.9696261
+    },
+    {
+      "texto": "uma",
+      "inicio_s": 2.39,
+      "fim_s": 2.59,
+      "confianca": 0.8323046
+    },
+    {
+      "texto": "dor",
+      "inicio_s": 2.59,
+      "fim_s": 2.87,
+      "confianca": 0.9913244
+    },
+    {
+      "texto": "no",
+      "inicio_s": 2.87,
+      "fim_s": 2.95,
+      "confianca": 0.99052083
+    },
+    {
+      "texto": "estômago",
+      "inicio_s": 2.95,
+      "fim_s": 3.43,
+      "confianca": 0.83838993
+    },
+    {
+      "texto": "depois",
+      "inicio_s": 3.43,
+      "fim_s": 3.79,
+      "confianca": 0.99163496
+    },
+    {
+      "texto": "de",
+      "inicio_s": 3.79,
+      "fim_s": 3.91,
+      "confianca": 0.9596524
+    },
+    {
+      "texto": "comer",
+      "inicio_s": 3.91,
+      "fim_s": 4.27,
+      "confianca": 0.8202412
+    },
+    {
+      "texto": "e",
+      "inicio_s": 4.27,
+      "fim_s": 4.35,
+      "confianca": 0.8616918
+    },
+    {
+      "texto": "uma",
+      "inicio_s": 4.35,
+      "fim_s": 4.55,
+      "confianca": 0.98837215
+    },
+    {
+      "texto": "queimação",
+      "inicio_s": 4.55,
+      "fim_s": 5.15,
+      "confianca": 0.78847235
+    },
+    {
+      "texto": "que",
+      "inicio_s": 5.15,
+      "fim_s": 5.31,
+      "confianca": 0.8240191
+    },
+    {
+      "texto": "sobe",
+      "inicio_s": 5.31,
+      "fim_s": 5.71,
+      "confianca": 0.9257384
+    },
+    {
+      "texto": "pela",
+      "inicio_s": 5.71,
+      "fim_s": 5.95,
+      "confianca": 0.90654176
+    },
+    {
+      "texto": "garganta",
+      "inicio_s": 5.95,
+      "fim_s": 6.63,
+      "confianca": 0.8366791
+    },
+    {
+      "texto": "então",
+      "inicio_s": 6.71,
+      "fim_s": 7.11,
+      "confianca": 0.82382905
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 7.11,
+      "fim_s": 7.43,
+      "confianca": 0.9444892
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 7.43,
+      "fim_s": 7.83,
+      "confianca": 0.82968384
+    },
+    {
+      "texto": "se",
+      "inicio_s": 7.83,
+      "fim_s": 7.99,
+      "confianca": 0.9911628
+    },
+    {
+      "texto": "pode",
+      "inicio_s": 7.99,
+      "fim_s": 8.27,
+      "confianca": 0.99107236
+    },
+    {
+      "texto": "ser",
+      "inicio_s": 8.27,
+      "fim_s": 8.47,
+      "confianca": 0.98777777
+    },
+    {
+      "texto": "gastrite",
+      "inicio_s": 8.47,
+      "fim_s": 9.07,
+      "confianca": 0.8685945
+    },
+    {
+      "texto": "se",
+      "inicio_s": 9.07,
+      "fim_s": 9.23,
+      "confianca": 0.98803943
+    },
+    {
+      "texto": "preciso",
+      "inicio_s": 9.23,
+      "fim_s": 9.67,
+      "confianca": 0.98664814
+    },
+    {
+      "texto": "mudar",
+      "inicio_s": 9.67,
+      "fim_s": 10.03,
+      "confianca": 0.9807819
+    },
+    {
+      "texto": "a",
+      "inicio_s": 10.03,
+      "fim_s": 10.07,
+      "confianca": 0.8087686
+    },
+    {
+      "texto": "alimentação",
+      "inicio_s": 10.07,
+      "fim_s": 10.87,
+      "confianca": 0.97797763
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 11.688,
+  "servico": "azure"
+}

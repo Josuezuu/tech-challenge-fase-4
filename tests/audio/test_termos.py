@@ -82,3 +82,29 @@ def test_sentimento_negativo_acima_do_limiar():
     assert [e.tipo for e in eventos] == ["sentimento_negativo"]
     assert eventos[0].valor == pytest.approx(0.9)
     assert eventos[0].instante == INICIO
+
+
+def test_queixas_comuns_viram_termo_info(tmp_path):
+    texto = "Estou com uma dor de cabeça muito forte há 2 dias e uma sensação de enjoo"
+    analise = ClienteLinguagem(SEM_CHAVE, "simulado", Gravador("l", tmp_path)).analisar(texto)
+    eventos = detectar(analise, transcricao_de(texto), "leito-22", INICIO)
+
+    termos = {e.evidencia["termo"]: e.severidade for e in do_tipo(eventos, "termo_critico")}
+    assert termos == {"dor de cabeca": Severidade.INFO, "enjoo": Severidade.INFO}
+
+
+def test_formas_faladas_cansada_e_tossir(tmp_path):
+    texto = "Comecei a tossir na segunda e estou muito cansada"
+    analise = ClienteLinguagem(SEM_CHAVE, "simulado", Gravador("l", tmp_path)).analisar(texto)
+    eventos = detectar(analise, transcricao_de(texto), "leito-23", INICIO)
+
+    assert {e.evidencia["termo"] for e in do_tipo(eventos, "termo_critico")} == {"tossir", "cansada"}
+
+
+def test_queixas_cardiacas_aperto_no_peito_e_coracao_acelerado(tmp_path):
+    # Frase da consulta paciente_8830, que antes não gerava evento.
+    texto = "Estou sentindo o coração acelerado e um aperto no peito"
+    analise = ClienteLinguagem(SEM_CHAVE, "simulado", Gravador("l", tmp_path)).analisar(texto)
+    termos = {e.evidencia["termo"]: e.severidade for e in do_tipo(detectar(analise, transcricao_de(texto), "x", INICIO), "termo_critico")}
+
+    assert termos == {"aperto no peito": Severidade.ALTA, "coracao acelerado": Severidade.INFO}

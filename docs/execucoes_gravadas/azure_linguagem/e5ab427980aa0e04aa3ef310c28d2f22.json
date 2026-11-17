@@ -1,0 +1,49 @@
+{
+  "entidades": [
+    {
+      "texto": "paracetamol",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "acetaminophen",
+      "negada": false
+    },
+    {
+      "texto": "1400 mg",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 7,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "VO",
+      "categoria": "MedicationRoute",
+      "offset": 21,
+      "comprimento": 2,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6",
+      "categoria": "Time",
+      "offset": 28,
+      "comprimento": 1,
+      "confianca": 0.56,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "6 horas",
+      "categoria": "Frequency",
+      "offset": 33,
+      "comprimento": 7,
+      "confianca": 0.6,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

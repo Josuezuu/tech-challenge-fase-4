@@ -1,0 +1,96 @@
+{
+  "sentimento": "mixed",
+  "frases": [
+    {
+      "texto": "Bom dia, doutora. ",
+      "sentimento": "positive",
+      "positivo": 0.88,
+      "neutro": 0.12,
+      "negativo": 0.0,
+      "offset": 0
+    },
+    {
+      "texto": "Estou com uma dor de cabeça muito forte há 2 dias e uma sensação de enjoo, então queria saber se pode ser enxaqueca ou se preciso fazer algum exame.",
+      "sentimento": "negative",
+      "positivo": 0.0,
+      "neutro": 0.0,
+      "negativo": 1.0,
+      "offset": 18
+    }
+  ],
+  "frases_chave": [
+    "Bom dia",
+    "cabeça",
+    "sensação",
+    "doutora",
+    "dor",
+    "2 dias",
+    "enjoo",
+    "exame"
+  ],
+  "entidades": [
+    {
+      "texto": "doutora",
+      "categoria": "HealthcareProfession",
+      "offset": 9,
+      "comprimento": 7,
+      "confianca": 0.83,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "dor de cabeça",
+      "categoria": "SymptomOrSign",
+      "offset": 32,
+      "comprimento": 13,
+      "confianca": 0.96,
+      "normalizado": "Headache",
+      "negada": false
+    },
+    {
+      "texto": "muito forte",
+      "categoria": "ConditionQualifier",
+      "offset": 46,
+      "comprimento": 11,
+      "confianca": 0.96,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "2 dias",
+      "categoria": "Time",
+      "offset": 61,
+      "comprimento": 6,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "sensação de enjoo",
+      "categoria": "SymptomOrSign",
+      "offset": 74,
+      "comprimento": 17,
+      "confianca": 0.78,
+      "normalizado": "Nausea",
+      "negada": false
+    },
+    {
+      "texto": "enxaqueca",
+      "categoria": "Diagnosis",
+      "offset": 124,
+      "comprimento": 9,
+      "confianca": 1.0,
+      "normalizado": "Migraine Disorders",
+      "negada": false
+    },
+    {
+      "texto": "exame",
+      "categoria": "ExaminationName",
+      "offset": 160,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": "Evaluation procedure",
+      "negada": false
+    }
+  ]
+}

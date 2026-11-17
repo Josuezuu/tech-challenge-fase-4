@@ -1,0 +1,194 @@
+{
+  "texto": "Oi, doutora. Meu filho está com febre desde ontem à noite. Não quer comer nada. Então queria saber se posso dar algum remédio em casa ou, se preciso, levá-lo ao pronto-socorro.",
+  "palavras": [
+    {
+      "texto": "oi",
+      "inicio_s": 0.11,
+      "fim_s": 0.63,
+      "confianca": 0.94581616
+    },
+    {
+      "texto": "doutora",
+      "inicio_s": 0.63,
+      "fim_s": 1.43,
+      "confianca": 0.86974543
+    },
+    {
+      "texto": "meu",
+      "inicio_s": 1.51,
+      "fim_s": 1.83,
+      "confianca": 0.83055717
+    },
+    {
+      "texto": "filho",
+      "inicio_s": 1.83,
+      "fim_s": 2.11,
+      "confianca": 0.99153054
+    },
+    {
+      "texto": "está",
+      "inicio_s": 2.11,
+      "fim_s": 2.31,
+      "confianca": 0.9723203
+    },
+    {
+      "texto": "com",
+      "inicio_s": 2.31,
+      "fim_s": 2.55,
+      "confianca": 0.9916488
+    },
+    {
+      "texto": "febre",
+      "inicio_s": 2.55,
+      "fim_s": 2.91,
+      "confianca": 0.9530591
+    },
+    {
+      "texto": "desde",
+      "inicio_s": 2.91,
+      "fim_s": 3.31,
+      "confianca": 0.9795053
+    },
+    {
+      "texto": "ontem",
+      "inicio_s": 3.31,
+      "fim_s": 3.67,
+      "confianca": 0.96420205
+    },
+    {
+      "texto": "à",
+      "inicio_s": 3.67,
+      "fim_s": 3.71,
+      "confianca": 0.82510614
+    },
+    {
+      "texto": "noite",
+      "inicio_s": 3.71,
+      "fim_s": 4.23,
+      "confianca": 0.99190784
+    },
+    {
+      "texto": "não",
+      "inicio_s": 4.23,
+      "fim_s": 4.39,
+      "confianca": 0.9898555
+    },
+    {
+      "texto": "quer",
+      "inicio_s": 4.39,
+      "fim_s": 4.67,
+      "confianca": 0.98797506
+    },
+    {
+      "texto": "comer",
+      "inicio_s": 4.67,
+      "fim_s": 5.07,
+      "confianca": 0.8611053
+    },
+    {
+      "texto": "nada",
+      "inicio_s": 5.07,
+      "fim_s": 5.51,
+      "confianca": 0.9817826
+    },
+    {
+      "texto": "então",
+      "inicio_s": 5.59,
+      "fim_s": 5.99,
+      "confianca": 0.8372514
+    },
+    {
+      "texto": "queria",
+      "inicio_s": 5.99,
+      "fim_s": 6.31,
+      "confianca": 0.82539433
+    },
+    {
+      "texto": "saber",
+      "inicio_s": 6.31,
+      "fim_s": 6.71,
+      "confianca": 0.9917257
+    },
+    {
+      "texto": "se",
+      "inicio_s": 6.71,
+      "fim_s": 6.87,
+      "confianca": 0.985438
+    },
+    {
+      "texto": "posso",
+      "inicio_s": 6.87,
+      "fim_s": 7.19,
+      "confianca": 0.95012254
+    },
+    {
+      "texto": "dar",
+      "inicio_s": 7.19,
+      "fim_s": 7.35,
+      "confianca": 0.81413805
+    },
+    {
+      "texto": "algum",
+      "inicio_s": 7.35,
+      "fim_s": 7.67,
+      "confianca": 0.8322628
+    },
+    {
+      "texto": "remédio",
+      "inicio_s": 7.67,
+      "fim_s": 8.15,
+      "confianca": 0.9876885
+    },
+    {
+      "texto": "em",
+      "inicio_s": 8.15,
+      "fim_s": 8.23,
+      "confianca": 0.9793835
+    },
+    {
+      "texto": "casa",
+      "inicio_s": 8.23,
+      "fim_s": 8.55,
+      "confianca": 0.9533469
+    },
+    {
+      "texto": "ou",
+      "inicio_s": 8.55,
+      "fim_s": 8.71,
+      "confianca": 0.83560914
+    },
+    {
+      "texto": "se",
+      "inicio_s": 8.71,
+      "fim_s": 8.87,
+      "confianca": 0.9782516
+    },
+    {
+      "texto": "preciso",
+      "inicio_s": 8.87,
+      "fim_s": 9.31,
+      "confianca": 0.98932076
+    },
+    {
+      "texto": "levá-lo",
+      "inicio_s": 9.31,
+      "fim_s": 9.79,
+      "confianca": 0.84086424
+    },
+    {
+      "texto": "ao",
+      "inicio_s": 9.79,
+      "fim_s": 9.91,
+      "confianca": 0.9626737
+    },
+    {
+      "texto": "pronto-socorro",
+      "inicio_s": 9.91,
+      "fim_s": 10.83,
+      "confianca": 0.32902738
+    }
+  ],
+  "idioma": "pt-BR",
+  "duracao_s": 11.592,
+  "servico": "azure"
+}

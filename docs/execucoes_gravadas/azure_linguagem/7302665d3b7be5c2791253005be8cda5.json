@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "morfina",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 7,
+      "confianca": 1.0,
+      "normalizado": "morphine",
+      "negada": false
+    },
+    {
+      "texto": "8mg",
+      "categoria": "Dosage",
+      "offset": 8,
+      "comprimento": 3,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "SC",
+      "categoria": "MedicationRoute",
+      "offset": 12,
+      "comprimento": 2,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "4/4h",
+      "categoria": "Frequency",
+      "offset": 18,
+      "comprimento": 4,
+      "confianca": 0.76,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

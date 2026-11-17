@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "VANCOMICINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "vancomycin",
+      "negada": false
+    },
+    {
+      "texto": "1,5 g",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "IV",
+      "categoria": "MedicationRoute",
+      "offset": 18,
+      "comprimento": 2,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "12/12h",
+      "categoria": "Frequency",
+      "offset": 24,
+      "comprimento": 6,
+      "confianca": 0.92,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

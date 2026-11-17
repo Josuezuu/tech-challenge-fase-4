@@ -1,0 +1,40 @@
+{
+  "entidades": [
+    {
+      "texto": "ENOXAPARINA",
+      "categoria": "MedicationName",
+      "offset": 0,
+      "comprimento": 11,
+      "confianca": 1.0,
+      "normalizado": "enoxaparin",
+      "negada": false
+    },
+    {
+      "texto": "20 mg",
+      "categoria": "Dosage",
+      "offset": 12,
+      "comprimento": 5,
+      "confianca": 0.99,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "subcutânea",
+      "categoria": "MedicationRoute",
+      "offset": 18,
+      "comprimento": 10,
+      "confianca": 1.0,
+      "normalizado": null,
+      "negada": false
+    },
+    {
+      "texto": "a cada 24 horas",
+      "categoria": "Frequency",
+      "offset": 29,
+      "comprimento": 15,
+      "confianca": 0.98,
+      "normalizado": null,
+      "negada": false
+    }
+  ]
+}

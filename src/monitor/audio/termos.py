@@ -10,6 +10,9 @@ Termo crítico = termo da lista curada do ``config`` que aparece
 2. no texto, sem ter sido marcado pelo Azure (coloquialismo que o modelo não
    reconhece), e sem negação nas três palavras anteriores — ``fonte_termo = "lista"``.
 
+Nos dois casos, sintoma de outra pessoa ("meu filho está com febre") não
+conta: ver ``lexico.de_terceiro``.
+
 O instante do evento é o da primeira palavra do termo na transcrição.
 """
 
@@ -24,7 +27,7 @@ from monitor.audio.config import CONFIG, ConfigAudio
 from monitor.eventos import Evento, Fonte, Severidade
 from monitor.nuvem.azure_fala import Transcricao
 from monitor.nuvem.azure_linguagem import AnaliseTexto
-from monitor.nuvem.lexico import negado, normalizar
+from monitor.nuvem.lexico import de_terceiro, negado, normalizar
 
 DETECTOR_TERMOS = "audio_termos/v1"
 DETECTOR_SENTIMENTO = "audio_sentimento/v1"
@@ -61,11 +64,12 @@ def achar_termos(analise: AnaliseTexto, texto: str, cfg: ConfigAudio = CONFIG) -
     norm = normalizar(texto)  # mesmo comprimento do texto NFC: os offsets valem para os dois
     ocorrencias: list[Ocorrencia] = []
     negadas: list[tuple[int, int]] = []
+    parentes = tuple((e.offset, e.offset + e.comprimento) for e in analise.entidades if e.categoria == "FamilyRelation")
 
     for e in analise.entidades:
         if e.categoria not in cfg.categorias_termo:
             continue
-        if e.negada:
+        if e.negada or de_terceiro(norm, e.offset, parentes):
             negadas.append((e.offset, e.offset + e.comprimento))
             continue
         termo = _termo_da_lista(e.texto, cfg)
@@ -77,7 +81,7 @@ def achar_termos(analise: AnaliseTexto, texto: str, cfg: ConfigAudio = CONFIG) -
             ja_achado = any(o.termo == termo and _sobrepoe(m.start(), m.end(), o.offset, o.offset + len(o.trecho))
                             for o in ocorrencias)
             negado_pelo_azure = any(_sobrepoe(m.start(), m.end(), i, f) for i, f in negadas)
-            if ja_achado or negado_pelo_azure or negado(norm, m.start()):
+            if ja_achado or negado_pelo_azure or negado(norm, m.start()) or de_terceiro(norm, m.start(), parentes):
                 continue
             ocorrencias.append(Ocorrencia(termo, texto[m.start():m.end()], m.start(), "lista", "lista", None))
 

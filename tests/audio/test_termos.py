@@ -108,3 +108,30 @@ def test_queixas_cardiacas_aperto_no_peito_e_coracao_acelerado(tmp_path):
     termos = {e.evidencia["termo"]: e.severidade for e in do_tipo(detectar(analise, transcricao_de(texto), "x", INICIO), "termo_critico")}
 
     assert termos == {"aperto no peito": Severidade.ALTA, "coracao acelerado": Severidade.INFO}
+
+
+def test_sintoma_de_terceiro_nao_vira_termo_do_paciente(tmp_path):
+    # Consulta do leito-24: quem tem febre é o filho, não o paciente.
+    texto = "Oi, doutora. Meu filho está com febre desde ontem à noite. Não quer comer nada."
+    analise = ClienteLinguagem(SEM_CHAVE, "simulado", Gravador("l", tmp_path)).analisar(texto)
+    assert do_tipo(detectar(analise, transcricao_de(texto), "leito-24", INICIO), "termo_critico") == []
+
+
+def test_sintoma_de_terceiro_marcado_pelo_azure_com_familyrelation():
+    # Resposta real do Azure: "filho" vem como FamilyRelation e "febre" como SymptomOrSign não negada.
+    texto = "Oi, doutora. Meu filho está com febre desde ontem à noite."
+    entidades = (
+        EntidadeSaude("filho", "FamilyRelation", 17, 5, 0.98, None, False),
+        EntidadeSaude("febre", "SymptomOrSign", 32, 5, 0.97, "Fever", False),
+    )
+    assert do_tipo(detectar(analise_vazia(entidades=entidades), transcricao_de(texto), "p", INICIO), "termo_critico") == []
+
+
+@pytest.mark.parametrize("texto, termos", [
+    ("Minha mãe disse que eu estou com febre", {"febre"}),  # primeira pessoa depois do parente
+    ("Meu filho está bem. Eu estou com tontura", {"tontura"}),  # parente em outra frase
+    ("Estou com falta de ar e meu marido com tosse", {"falta de ar"}),  # parente depois do sintoma do paciente
+])
+def test_sintoma_volta_ao_paciente_quando_ele_fala_de_si(texto, termos):
+    eventos = detectar(analise_vazia(), transcricao_de(texto), "p", INICIO)
+    assert {e.evidencia["termo"] for e in do_tipo(eventos, "termo_critico")} == termos

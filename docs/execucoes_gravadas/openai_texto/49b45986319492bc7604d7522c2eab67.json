@@ -1,4 +1,4 @@
 {
-  "texto": "Texto livre da prescrição às 08:00:00 apresenta divergência em relação ao campo estruturado na via.",
+  "texto": "Texto livre na prescrição difere do campo estruturado em \"via\" às 08:00:00.",
   "modelo": "gpt-4o-mini"
 }

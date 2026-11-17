@@ -1,4 +1,4 @@
 {
-  "texto": "Foi observado um sentimento negativo no áudio da consulta, com a frase: \"Então queria saber se é grave ou se precisa fazer um eletrocardiograma.\", registrada às 17:30:13.",
+  "texto": "Foi identificado um sentimento negativo na gravação de áudio às 17:30:13, onde o paciente questiona sobre a gravidade da situação e a necessidade de um eletrocardiograma.",
   "modelo": "gpt-4o-mini"
 }
